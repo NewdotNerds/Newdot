@@ -1,3 +1,6 @@
-<div class="posts">
-  <!--<%= post.title %>-->
+<div class="post-panel">
+  <%= avatar_for(post.user, size:40) %>
+  <%= post.username %>
+  <h3><%= post.title %></h3>
+  <%= post.body %>
 </div>
