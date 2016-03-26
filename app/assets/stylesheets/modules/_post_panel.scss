@@ -1,5 +1,11 @@
 .post-panel {
-  border: 1px solid #efefef;
-  padding: 1em;
-  margin-bottom: 1.5em;
-}
+  border-bottom: 1px solid $border-color;
+  padding: 20px 0 25px;
+
+  .main-body {
+    .post-title a {
+      color: $black;
+      text-decoration: none;
+    }
+  }
+} 

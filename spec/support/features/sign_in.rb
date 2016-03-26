@@ -5,4 +5,9 @@ module Features
     fill_in "Password", with: user.password
     click_on "Log in"
   end
+
+  def sign_in_a_user
+  	user = create(:user, username: 'exampleuser', email: 'example@user.com', password: 'mypassword')
+  	sign_in user
+  end
 end

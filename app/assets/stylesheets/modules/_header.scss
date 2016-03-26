@@ -1,12 +1,18 @@
-.new-story-button,
-.current-user-avatar {
-  margin-top: 8px;
-}
+nav.navbar {
 
-.new-story-button {
-  margin-right: 8px;
-}
+  #logo {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-.current-user-avatar > a {
-  padding: 0 !important;
-}
+  .new-post-button {
+    margin-top: 7px;
+  }
+  
+  // FIXME
+  .avatar-wrapper {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 5px;
+  }
+} 

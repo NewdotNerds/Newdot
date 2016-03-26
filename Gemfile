@@ -14,6 +14,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
+gem 'fog', '1.23.0'
+gem 'net-ssh'
+
 
 group :development, :test do
   gem 'byebug'
@@ -23,6 +26,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'guard-rspec', require: false
 end
 
 group :test do
@@ -31,6 +35,10 @@ group :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'faker', '~> 1.6.1'
   gem 'launchy', '~> 2.4.3'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
 end
 
 

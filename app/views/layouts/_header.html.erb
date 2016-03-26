@@ -1,14 +1,29 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">MyApp</a>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="new-story-button"><%= link_to "Write a story", new_post_path, class: "button" %></li>
-      <% if user_signed_in? %>
-        <li class="current-user-avatar"><%= link_to(avatar_for(current_user, size: 35), current_user) %></li>
-        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "Sign in / Sign up", new_user_session_path, class: "button" %></li>
-      <% end %>
-    </ul>
+    <div class="navbar-header">
+      <%= link_to "Stories", root_path, class: "navbar-brand", id: "logo" %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="new-post-button"><%= link_to "Write story", new_post_path, clas: "button" %></li>
+        <% if user_signed_in? %>
+          <li>
+            <a href="#" class="avatar-wrapper" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+             <%= avatar_for(current_user, size: 40) %></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign in", new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div> 
   </div>
 </nav>

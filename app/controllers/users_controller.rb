@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
-  before_action :check_authorization, only: [:edit, :update]
-  before_action :set_user
+  before_action :check_for_correct_user, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit, :update]
 
   def show
   end
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   private
 
-    def check_authorization
+    def check_for_correct_user
       unless current_user.id == params[:id].to_i
         redirect_to root_url
       end

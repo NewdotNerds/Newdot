@@ -1,6 +1,8 @@
 <div class="post-panel">
-  <%= avatar_for(post.user, size:40) %>
-  <%= post.username %>
-  <h3><%= post.title %></h3>
-  <%= post.body %>
+  <%= render partial: 'posts/post_metadata', locals: { post: post } %>
+ 
+  <div class="main-body">
+    <h3 class="post-title"><%= link_to post.title, post %></h3>
+    <div class="post-body"><%= post.body %></div>
+  </div>
 </div>

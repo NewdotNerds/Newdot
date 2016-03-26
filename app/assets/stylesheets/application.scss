@@ -1,8 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import 'partials/assets';
+@import 'partials/variables';
+
+@import 'partials/base';
+@import 'partials/buttons';
+
+@import 'pages/posts.show';
+
 //Modules
-@import "modules/buttons";
+@import "modules/post_metadata";
 @import "modules/avatar";
 @import "modules/post_panel";
 @import "modules/header";
