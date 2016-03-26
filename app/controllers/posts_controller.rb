@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def create
     post = current_user.posts.build(post_params)
-    if @post.save
+    if post.save
       redirect_to dashboard_url, notice: "Succesfully created a post!"
     else
       flash.now[:alert] = "Could not save the post, Please try again"
