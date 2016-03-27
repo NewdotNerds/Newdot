@@ -6,9 +6,11 @@
 
 @import 'partials/base';
 @import 'partials/buttons';
+@import 'partials/headings';
 
 @import 'pages/posts.show';
 @import 'pages/tags.show';
+@import 'pages/users.show';
 
 //Modules
 @import "modules/post_metadata";
