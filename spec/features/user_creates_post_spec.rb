@@ -11,10 +11,10 @@ feature "User creates post" do
   scenario "successfully and edits the post" do
     sign_in_a_user
     visit root_path
-    click_on "Write story"
-    fill_in "Title", with: "My awesome Article"
-    fill_in "Body", with: "some awesome content..."
-    fill_in "Tags", with: "travel, fun, life"
+    click_on "Write a story"
+    fill_in "post[title]", with: "My awesome Article"
+    fill_in "post[body]", with: "some awesome content..."
+    fill_in "post[all_tags]", with: "travel, fun, life"
     click_on "Publish"
     visit root_path
     expect(page).to have_content "My awesome Article"
