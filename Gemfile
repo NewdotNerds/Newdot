@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
-gem 'fog', '1.23.0'
+gem 'fog', '~> 1.37'
 gem 'net-ssh'
 
 
