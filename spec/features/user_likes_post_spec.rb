@@ -1,4 +1,5 @@
 require "rails_helper"
+
 RSpec.feature "Liking a post" do
   let(:user) { create(:user) }
   let(:post) { create(:psot) }
@@ -7,6 +8,12 @@ RSpec.feature "Liking a post" do
   	sign_in user
   	visit post_path(post)
   	click_on "Like"
-  	expect(page).to have_content "1"
+  	
+  	expect(current_path).to eq(post_path(post))
+  	expect(page).to have_button "Unlike"
+
+  	click_on "Unlike"
+  	expect(current_path).to eq(post_path(post))
+  	expect(page).to have_button "Like"
   end
 end

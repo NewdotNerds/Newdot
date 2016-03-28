@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :posts, dependent: :destroy  
   has_many :responses, dependent: :destroy
   has_many :likes
-  has_many :liked_posts, through: :likes, source: :likeable source_type: : "Post"
+  has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true
   
@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   end
 
   def likes?(post)
-    liked_post_ids.include?(post_id)
+    liked_post_ids.include?(post.id)
   end
 
   private
