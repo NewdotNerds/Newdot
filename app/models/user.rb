@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy  
   has_many :responses, dependent: :destroy
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :likeable source_type: : "Post"
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true
   
@@ -12,12 +14,18 @@ class User < ActiveRecord::Base
 
   include UserFollowing
   include TagFollowing
-
   mount_uploader :avatar, AvatarUploader
 
-  def follow(other_user)
-    return false if self.id == other_user.id
-    active_relationships.create(followed_id: other_user.id)
+  def add_like_to(post)
+    likes.create(likeable: post)
+  end
+
+  def remove_like_from(post)
+    likes.find_by(likeable: post).destroy
+  end
+
+  def likes?(post)
+    liked_post_ids.include?(post_id)
   end
 
   private
