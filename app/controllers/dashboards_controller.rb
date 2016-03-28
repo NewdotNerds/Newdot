@@ -4,6 +4,6 @@ class DashboardsController < ApplicationController
 
   def show
   	@posts = Post.all.includes(:user)
-  	@featured_tags = Tag.all.limit(8)
+  	@featured_tags = Tag.all.limit(8)#Tag.where(featured: true) or something like that.
   end
 end

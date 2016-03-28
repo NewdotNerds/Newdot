@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root "homes#show"
   resources :users, only: [:show, :edit, :update]
-  resources :posts, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :posts, except: [:index] do
+    resources :responses, only: [:create]
+  end
   resources :tags, only: [:show]
   resources :relationships, only: [:create, :destroy]
   resources :interests, only: [:create, :destroy]
