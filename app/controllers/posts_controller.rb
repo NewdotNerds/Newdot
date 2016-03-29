@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   def create
     post = current_user.posts.build(post_params)
     if post.save
-      redirect_to dashboard_url, notice: "Succesfully created a post!"
+      redirect_to dashboard_url, notice: "Successfully created a post!"
     else
       flash.now[:alert] = "Could not save the post, Please try again"
       render :new
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to dashboard_url, notice: "Succesfully deleted the post"
+    redirect_to dashboard_url, notice: "Successfully deleted the post"
   end
 
   private
