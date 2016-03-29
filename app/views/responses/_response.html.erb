@@ -8,9 +8,12 @@
   </div>
 
   <p><%= response.body %></p>
+
   <div class="response-stats clearfix">
     <div id="response_<%= response.id %>_likes">
       <%= render partial: 'responses/likes', locals: { response: response } %>
-    </div>  
+    </div>
   </div>  
+
+  <%= button_to "Bookmark", "#" %>
 </div>

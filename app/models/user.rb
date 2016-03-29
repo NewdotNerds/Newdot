@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :liked_responses, through: :likes, source: :likeable, source_type: "Response"
   has_many :bookmarks
   has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: "Post"
+  has_many :bookmarked_responses, through: :bookmarks, source: :bookmarkable, source_type: "Response"
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true
   
