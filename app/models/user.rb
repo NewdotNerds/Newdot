@@ -25,12 +25,8 @@ class User < ActiveRecord::Base
     likes.where(likeable: likeable_obj).destroy_all
   end
 
-  def likes_post?(post)
-    liked_post_ids.include?(post.id)
-  end
-
-  def likes_response?(response)
-    liked_response_ids.include?(response.id)
+  def liked?(likeable_obj)
+    send("liked_#{downcased_class_name(likeable_obj)}_ids").include?(likeable_obj.id)
   end
 
   private
@@ -39,5 +35,10 @@ class User < ActiveRecord::Base
       if avatar.size > 5.megabytes
       	errors.add(:avatar, "should be less than 5MB")
       end
+    end
+
+    #returns a string of the objects class name downcased
+    def downcased_class_name(obj)
+      obj.class.to_s.downcase
     end
 end

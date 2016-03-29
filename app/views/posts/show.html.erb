@@ -4,9 +4,12 @@
 
     <h3 class="title"><%= @post.title %></h3>
     <p class="body"><%= @post.body %></p>
-    <div id="post_<%= @post.id %>_likes">
+    <div class="post-stats clearfix">
+      <div id="post_<%= @post.id %>_likes">
       <%= render partial: 'posts/likes', locals: { post: @post } %>
+      </div>  
     </div>
+    
           
 
     <div class="post-tags">
