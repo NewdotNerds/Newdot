@@ -4,12 +4,11 @@
 
     <h3 class="title"><%= @post.title %></h3>
     <p class="body"><%= @post.body %></p>
-    <div class="post-stats clearfix">
-      <div id="post_<%= @post.id %>_likes">
+
+    <div id="post_<%= @post.id %>_likes">
       <%= render partial: 'posts/likes', locals: { post: @post } %>
-      </div>  
     </div>
-    
+
     <% if user_signed_in? && current_user.bookmarked?(@post) %>
       <%= button_to "Unbookmark", post_bookmark_path(@post, current_user.bookmarks.find_by(bookmarkable: @post)), method: :delete %>
     <% else %>
@@ -26,7 +25,7 @@
       <div class="edit-delete-button-wrapper">
         <%= link_to "Edit", edit_post_path(@post), class: 'button' %>
         <%= link_to "Delete", post_path(@post), method: :delete, class: 'button' %>
-      </div>          
+      </div>
     <% end %>
 
     <%= form_for [@post, @response] do |f| %>
@@ -37,9 +36,7 @@
     <% end %>
 
     <% if @post.responses.any? %>
-      <div id="responses">
-        <%= render @post.responses %>  
-      </div>      
+      <%= render @post.responses %>
     <% end %>
   </div>
 </div> 

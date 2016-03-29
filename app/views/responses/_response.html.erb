@@ -1,6 +1,6 @@
 <div class="response">
   <div class="post-metadata">
-  	<%= avatar_for response.user, size: 40 %>
+    <%= avatar_for response.user, size: 40 %>
     <div class="post-info">
       <%= link_to response.username, response.user %><br/>
       <small><%= time_ago_in_words(response.created_at) %> ago</small>
@@ -9,11 +9,9 @@
 
   <p><%= response.body %></p>
 
-  <div class="response-stats clearfix">
-    <div id="response_<%= response.id %>_likes">
-      <%= render partial: 'responses/likes', locals: { response: response } %>
-    </div>    
-  </div>  
+  <div id="response_<%= response.id %>_likes">
+    <%= render partial: 'responses/likes', locals: { response: response } %>
+  </div>
 
   <% if user_signed_in? && current_user.bookmarked_response?(response) %>
     <%= button_to "Unbookmark", response_bookmark_path(response, current_user.bookmarks.find_by(bookmarkable: response)), method: :delete %>
