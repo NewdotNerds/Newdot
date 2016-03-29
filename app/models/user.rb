@@ -44,6 +44,10 @@ class User < ActiveRecord::Base
     bookmarked_post_ids.include?(post.id)
   end
 
+  def bookmarked_response?(response)
+    bookmarked_response_ids.include?(response.id)
+  end
+
   private
 
     def avatar_image_size
