@@ -70,14 +70,27 @@ RSpec.describe User, type: :model do
 
       user.remove_like_from(post)
       expect(user.liked?(post)).to be_falsy
+    end
 
-      it "can like and unlike a response" do
-        user.add_like_to(response)
-        expect(user.liked?(response)).to be_truthy
+    it "can like and unlike a response" do
+      user.add_like_to(response)
+      expect(user.liked?(response)).to be_truthy
 
-        user.remove_like_from(response)
-        expect(user.liked?(response)).to be_falsy
-      end
+      user.remove_like_from(response)
+      expect(user.liked?(response)).to be_falsy
+    end
+  end
+
+  describe "adding bookmarks" do
+    let(:user) { create(:user) }
+    let(:post) { create(:post) }
+
+    it "can bookmark and unbookmark a post" do
+      user.add_bookmark_to(post)
+      expect(user.bookmarked?(post)).to be_truthy
+
+      user.remove_bookmark_from(post)
+      expect(user.bookmarked?(post)).to be_falsy
     end
   end
 end

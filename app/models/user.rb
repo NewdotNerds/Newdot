@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
   has_many :liked_responses, through: :likes, source: :likeable, source_type: "Response"
+  has_many :bookmarks
+  has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: "Post"
 
   validates :username, uniqueness: { case_sensitive: false }, presence: true
   
@@ -27,6 +29,18 @@ class User < ActiveRecord::Base
 
   def liked?(likeable_obj)
     send("liked_#{downcased_class_name(likeable_obj)}_ids").include?(likeable_obj.id)
+  end
+
+  def add_bookmark_to(bookmarkable_obj)
+    bookmarks.where(bookmarkable: bookmarkable_obj).first_or_create
+  end
+
+  def remove_bookmark_from(bookmarkable_obj)
+    bookmarks.where(bookmarkable: bookmarkable_obj).destroy_all
+  end
+
+  def bookmarked?(post)
+    bookmarked_post_ids.include?(post.id)
   end
 
   private
