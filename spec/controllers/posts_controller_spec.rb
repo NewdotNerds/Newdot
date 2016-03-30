@@ -9,7 +9,6 @@ RSpec.describe PostsController do
       expect(response).to render_template(:show)
     end
   end
-
  
   describe "GET #new" do
     it "requires a logged-in user" do
@@ -31,7 +30,7 @@ RSpec.describe PostsController do
 
   context "when user is signed in" do
     before :each do
-     login_user
+      login_user
     end
 
     it "allows the access to new page" do
@@ -54,10 +53,10 @@ RSpec.describe PostsController do
     end
   end
 
-  context "when a user trying to edit, update, or delete other post" do
+  context "when a user trying to edit, update, or delete other users post" do
     let(:user) { create(:user) }
     let(:other_user) { create(:user) }
-    let!(:other_user_post) { create(:psot, user: other_user) }
+    let!(:other_user_post) { create(:post, user: other_user) }
 
     before :each do
       @request.env["devise.mapping"] = Devise.mappings[:user]
@@ -66,12 +65,12 @@ RSpec.describe PostsController do
 
     it "does not allow user to edit post" do
       get :edit, id: other_user_post.id
-      expect(response).to redirect_to(dashboard_path)
+      expect(response).to redirect_to(root_path)
     end
 
     it "does not allow user to update post" do
       patch :update, id: other_user_post.id, post: attributes_for(:post)
-      expect(response).to redirect_to(dashboard_path)
+      expect(response).to redirect_to(root_path)
     end
 
     it "does not allow user to delete post" do

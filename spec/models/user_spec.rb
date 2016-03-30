@@ -49,7 +49,7 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_following_tag(music_tag)
 
       user.follow_tag(music_tag)
-      expect(user).ro be_following_tag(music_tag)
+      expect(user).to be_following_tag(music_tag)
 
       user.unfollow_tag(music_tag)
       expect(user).not_to be_following_tag(music_tag)

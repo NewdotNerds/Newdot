@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160329212149) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "interests", ["follower_id", "tag_id"], name: "index_interests_on_follower_id_and_tag_id", unique: true, using: :btree
   add_index "interests", ["follower_id"], name: "index_interests_on_follower_id", using: :btree
   add_index "interests", ["tag_id"], name: "index_interests_on_tag_id", using: :btree
 
@@ -45,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160329212149) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "likes", ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
@@ -65,6 +67,7 @@ ActiveRecord::Schema.define(version: 20160329212149) do
   end
 
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "responses", force: :cascade do |t|
@@ -117,9 +120,12 @@ ActiveRecord::Schema.define(version: 20160329212149) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "bookmarks", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "responses", "posts"
   add_foreign_key "responses", "users"
+  add_foreign_key "taggings", "posts"
+  add_foreign_key "taggings", "tags"
 end

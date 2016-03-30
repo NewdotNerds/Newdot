@@ -1,6 +1,6 @@
 <div class="post-panel">
   <%= render partial: 'posts/post_metadata', locals: { post: post } %>
- 
+
   <div class="main-body">
     <h3 class="post-title"><%= link_to post.title, post %></h3>
     <div class="post-body"><%= post.body %></div>
@@ -20,5 +20,5 @@
         <%= link_to_responses_to(post) %>
       <% end %>
     </div>
-  </div>  
+  </div>
 </div>

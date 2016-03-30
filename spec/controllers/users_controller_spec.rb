@@ -28,8 +28,6 @@ RSpec.describe UsersController do
   	  sign_in user
     end
 
-
-
     describe "GET #edit" do
       it "restrict access to other users' profile edit page" do
         get :edit, id: other_user.id

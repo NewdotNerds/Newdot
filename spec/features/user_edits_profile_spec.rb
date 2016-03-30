@@ -1,6 +1,7 @@
 require "rails_helper"
 
 feature "Editing profile" do
+  let(:user) { create(:user) }
   let(:other_user) { create(:user) }
   before :each do
   	sign_in user

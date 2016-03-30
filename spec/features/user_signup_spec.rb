@@ -4,7 +4,7 @@ feature "User signs up" do
   scenario "successfully" do
     visit root_path
     click_on "Sign up"
-    fill_in "Username", with: "Example User"
+    fill_in "Username", with: "Example-User"
     fill_in "Email", with: "example@gmail.com"
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"

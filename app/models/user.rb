@@ -3,18 +3,19 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :posts, dependent: :destroy  
+  validates :username, uniqueness: { case_sensitive: false },
+                       presence: true
+  validate :avatar_image_size
+
+  has_many :posts, dependent: :destroy
   has_many :responses, dependent: :destroy
   has_many :likes
   has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
   has_many :liked_responses, through: :likes, source: :likeable, source_type: "Response"
+
   has_many :bookmarks
   has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: "Post"
   has_many :bookmarked_responses, through: :bookmarks, source: :bookmarkable, source_type: "Response"
-
-  validates :username, uniqueness: { case_sensitive: false }, presence: true
-  
-  validate :avatar_image_size
 
   include UserFollowing
   include TagFollowing
@@ -46,13 +47,14 @@ class User < ActiveRecord::Base
 
   private
 
+    # Validates the size on an uploaded image.
     def avatar_image_size
       if avatar.size > 5.megabytes
-      	errors.add(:avatar, "should be less than 5MB")
+        errors.add(:avatar, "should be less than 5MB")
       end
     end
 
-    #returns a string of the objects class name downcased
+    # Returns a string of the objects class name downcased.
     def downcased_class_name(obj)
       obj.class.to_s.downcase
     end

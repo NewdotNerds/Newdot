@@ -8,7 +8,7 @@ RSpec.describe Relationship, type: :model do
       expect(relationship).to be_valid
     end
 
-    it "is invalid without follower_id"
+    it "is invalid without follower_id" do
       relationship.follower_id = nil
       expect(relationship).to be_invalid
     end
