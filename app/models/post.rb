@@ -15,6 +15,8 @@ class Post < ActiveRecord::Base
   default_scope { order(created_at: :desc) }
   scope :latest, ->(number) { order(created_at: :desc).limit(number) }
 
+  mount_uploader :picture, PictureUploader
+
   def self.tagged_with(name)
     Tag.find_by!(name: name).posts
   end
