@@ -13,8 +13,28 @@
 
   .main-body {
     .post-title a {
+      margin-bottom: 20px;
       color: $black;
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    .post-body {
+      font-size: 18px;
+      line-height: 1.5;
+      letter-spacing: -0.004em;
+      font-weight: 200;
+    }
+
+    .read-more {
+      display: block;
+      text-decoration: none;
+      color: $super-light-font-color;
+      font-size: 12px;
+      margin-top: 8px;
+      &:hover {
+        color: $light-font-color;
+      }
     }
   }
 
