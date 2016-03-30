@@ -11,6 +11,10 @@
       <%= render partial: 'posts/likes', locals: { post: post } %>
     </div>
 
+    <div id="post_<%= post.id %>_bookmarks" class="pull-right">
+      <%= render partial: 'posts/bookmarks', locals: { post: post } %>
+    </div>
+
     <div class="response-count pull-right">
       <% if post.responses.any? %>
         <%= link_to_responses_to(post) %>
