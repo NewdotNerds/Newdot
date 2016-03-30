@@ -99,10 +99,10 @@ RSpec.describe User, type: :model do
 
     it "can bookmark and unbookmark a response" do
       user.add_bookmark_to(response)
-      expect(user.bookmarked_response?(response)).to be_truthy
+      expect(user.bookmarked?(response)).to be_truthy
 
       user.remove_bookmark_from(response)
-      expect(user.bookmarked_response?(response)).to be_falsy
+      expect(user.bookmarked?(response)).to be_falsy
     end
   end
 end

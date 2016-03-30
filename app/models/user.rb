@@ -40,12 +40,8 @@ class User < ActiveRecord::Base
     bookmarks.where(bookmarkable: bookmarkable_obj).destroy_all
   end
 
-  def bookmarked?(post)
-    bookmarked_post_ids.include?(post.id)
-  end
-
-  def bookmarked_response?(response)
-    bookmarked_response_ids.include?(response.id)
+  def bookmarked?(bookmarkable_obj)
+    send("bookmarked_#{downcased_class_name(bookmarkable_obj)}_ids").include?(bookmarkable_obj.id)
   end
 
   private
