@@ -1,11 +1,13 @@
 .feed-metadata {
   padding-top: 1.4em;
+  color: $light-gray;
   span[class^="icon"] {
     margin-right: 5px;
     color: $light-gray;
   }
   a {
     color: $super-light-font-color;
+    text-decoration: none;
     &:hover {
       color: $light-font-color;
     }
