@@ -11,28 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160331215606) do
+ActiveRecord::Schema.define(version: 20160331232618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.inet     "current_sign_in_ip"
-    t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "bookmarks", force: :cascade do |t|
     t.string   "bookmarkable_type"
@@ -42,6 +33,7 @@ ActiveRecord::Schema.define(version: 20160331215606) do
     t.datetime "updated_at",        null: false
   end
 
+  add_index "bookmarks", ["bookmarkable_type", "bookmarkable_id"], name: "index_bookmarks_on_bookmarkable_type_and_bookmarkable_id", using: :btree
   add_index "bookmarks", ["user_id"], name: "index_bookmarks_on_user_id", using: :btree
 
   create_table "interests", force: :cascade do |t|
@@ -51,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160331215606) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "interests", ["follower_id", "tag_id"], name: "index_interests_on_follower_id_and_tag_id", unique: true, using: :btree
   add_index "interests", ["follower_id"], name: "index_interests_on_follower_id", using: :btree
   add_index "interests", ["tag_id"], name: "index_interests_on_tag_id", using: :btree
 
@@ -62,15 +55,17 @@ ActiveRecord::Schema.define(version: 20160331215606) do
     t.datetime "updated_at",    null: false
   end
 
+  add_index "likes", ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "user_id"
     t.string   "picture"
+    t.integer  "likes_count", default: 0
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
@@ -83,14 +78,16 @@ ActiveRecord::Schema.define(version: 20160331215606) do
   end
 
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "responses", force: :cascade do |t|
     t.text     "body"
     t.integer  "post_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.integer  "likes_count", default: 0
   end
 
   add_index "responses", ["post_id"], name: "index_responses_on_post_id", using: :btree
@@ -108,9 +105,9 @@ ActiveRecord::Schema.define(version: 20160331215606) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean  "featured", default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "featured",   default: false
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
@@ -136,6 +133,12 @@ ActiveRecord::Schema.define(version: 20160331215606) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "posts", "users"
+  add_foreign_key "responses", "posts"
+  add_foreign_key "responses", "users"
+  add_foreign_key "taggings", "posts"
+  add_foreign_key "taggings", "tags"
 end

@@ -1,5 +1,6 @@
 <div class="col-md-6 col-md-offset-1">
   <% if @dashboard.with_tag? %>
+
     <% if admin_signed_in? %>
       <%= feature_tag_button_for(@dashboard.tag) %>
     <% else %>

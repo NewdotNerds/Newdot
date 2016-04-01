@@ -7,18 +7,19 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
 
   def create
-  	current_user.add_like_to(@likeable)
-  	respond_to do |format|
-  	  format.html { redirect_to :back}
-  	  format.js
-  	end
+    current_user.add_like_to(@likeable)
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
+    
   end
 
   def destroy
-  	Like.find(params[:id]).destroy
-  	respond_to do |format|
-  	  format.html { redirect_to :back }
-  	  format.js
-  	end  	
+    Like.find(params[:id]).destroy
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 end
