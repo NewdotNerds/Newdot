@@ -20,6 +20,7 @@
   <% else %>
     <%= render @dashboard.posts if @dashboard.non_filtered? %>
     <%= render @dashboard.tag_posts if @dashboard.with_tag? %>
+    <%= render @dashboard.filtered_posts if @dashboard.filtered? %>
   <% end %>
 </div>
 
@@ -35,6 +36,25 @@
     <div class="tags-wrapper following-tags">
       <%= render @dashboard.following_tags %>
     </div>
+    <% end %>
+
+    <% if @dashboard.non_filtered? %>
+      <h4 class="small-heading with-border">Top stories</h4>
+      <div class="sidebar-top-stories">
+        <ul>
+          <% @dashboard.top_stories.each_with_index do |post, index| %>
+            <li class="top-stories-list-item">
+              <div class="count-button-wrapper">
+                <span class="count-button"><%= index + 1 %></span>
+              </div>
+              <div class="top-stories-links">
+                <%= link_to post.title, post, class: 'post-title' %><br/>
+                <small><%= link_to post.username, post.user, class: 'post-username' %></small>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
   </aside>
 <% end %>
