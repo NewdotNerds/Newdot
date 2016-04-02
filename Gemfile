@@ -22,6 +22,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.0'
   gem 'poltergeist', '~> 1.8'
+  gem 'awesome_print', '~> 1.6'
 end
 
 group :development do

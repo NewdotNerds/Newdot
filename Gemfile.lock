@@ -41,6 +41,7 @@ GEM
     arel (6.0.3)
     autoprefixer-rails (6.3.4)
       execjs
+    awesome_print (1.6.1)
     bcrypt (3.1.11-x64-mingw32)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
@@ -389,6 +390,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  awesome_print (~> 1.6)
   bootstrap-sass (~> 3.3)
   byebug
   capybara (~> 2.5.0)
