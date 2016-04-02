@@ -1,3 +1,5 @@
+require 'elasticsearch/model'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -21,7 +23,11 @@ class User < ActiveRecord::Base
 
   include UserFollowing
   include TagFollowing
+
   mount_uploader :avatar, AvatarUploader
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   def add_like_to(likeable_obj)
     likes.where(likeable: likeable_obj).first_or_create
@@ -61,3 +67,5 @@ class User < ActiveRecord::Base
       obj.class.to_s.downcase
     end
 end
+ 
+ User.import
