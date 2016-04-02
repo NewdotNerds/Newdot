@@ -1,26 +1,27 @@
 $unreadCount = $('<span id="unread-notifications-count"></span>');
 
+
 var Notification = {
 
   setup: function() {
-    Notification.getNewNotifications();
-
-    setInterval(function() {
+    if ($('#notifications').length > 0) {
       Notification.getNewNotifications();
-    }, 5000);
 
-    $('#notifications').click(Notification.markAsRead);
+      setInterval(function() {
+        Notification.getNewNotifications();
+      }, 5000);
+
+      $('#notifications').click(Notification.markAsRead);
+    }
   },
 
   getNewNotifications: function() {
-    if ($('#notifications').length > 0) {
-      $.ajax({
-        url: "/api/notifications.json",
-        dataType: "JSON",
-        method: "GET",
-        success: Notification.render
-      });
-    }
+    $.ajax({
+      url: "/api/notifications.json",
+      dataType: "JSON",
+      method: "GET",
+      success: Notification.render
+    });
   },
 
   render: function(data) {
@@ -56,7 +57,7 @@ var Notification = {
         $('#bell').after($unreadCount);
         $('#bell').hide();
         $('#notifications').addClass('active');
-      }       
+      }
     } else {
       $('#notification-items').html("<li><a>No notifications yet</a></li>");
     }
