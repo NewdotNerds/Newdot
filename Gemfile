@@ -21,6 +21,7 @@ gem 'net-ssh'
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.4.0'
+  gem 'poltergeist', '~> 1.8'
 end
 
 group :development do
