@@ -12,6 +12,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Elasticsearch
+gem 'elasticsearch-model', '~> 0.1.8'
+gem 'elasticsearch-rails', '~> 0.1.8'
+
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'
