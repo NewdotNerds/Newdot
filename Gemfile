@@ -16,6 +16,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
 
+# Background Job
+ gem 'sidekiq', '~> 4.0'
+
+
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'
