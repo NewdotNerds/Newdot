@@ -15,17 +15,19 @@ class Post < ActiveRecord::Base
 
   delegate :username, to: :user
 
-  default_scope { order(created_at: :desc) }
-  scope :latest, ->(number) { order(created_at: :desc).limit(number) }
-  scope :top_stories, ->(number) { order(:likes_count).limit(number) }
+  scope :recent, -> { order(created_at: :desc) }
+  scope :latest, ->(number) { recent.limit(number) }
+  scope :top_stories, ->(number) { order(likes_count: :desc).limit(number) }
+  
 
   mount_uploader :picture, PictureUploader
 
   include Elasticsearch::Model
 
   # Sync up Elasticsearch with PostgreSQL
-  after_save :index_document
-  after_destroy :delete_document
+  after_commit    :index_document, on: [:create, :update]
+  after_commit :delete_document, on: [:destroy]
+  
 
   settings index: { number_of_shards: 1 } do
     mappings dynamic: 'false' do
@@ -80,6 +82,7 @@ class Post < ActiveRecord::Base
   private
 
     def index_document
+      logger.debug "#{title} with ID: #{self.id}"
       PostIndexJob.perform_later('index', self.id)
     end
 

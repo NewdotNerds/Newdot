@@ -17,7 +17,9 @@ gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
 
 # Background Job
- gem 'sidekiq', '~> 4.0'
+gem 'sidekiq', '~> 4.0'
+gem 'sinatra', require: false
+gem 'slim'
 
 
 gem 'carrierwave', '~> 0.10.0'
@@ -51,6 +53,7 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
+  gem 'puma', '~> 2.15'
 end
 
 
