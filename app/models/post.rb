@@ -82,7 +82,6 @@ class Post < ActiveRecord::Base
   private
 
     def index_document
-      logger.debug "#{title} with ID: #{self.id}"
       PostIndexJob.perform_later('index', self.id)
     end
 
