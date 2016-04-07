@@ -6,7 +6,7 @@ module ApplicationHelper
   	    if current_user.following?(user)
   	  	  render partial: 'shared/unfollow_button', locals: { user: user }
   	  	else
-  	  	  render partial 'shared/follow_button', locals: { user: user }
+  	  	  render partial: 'shared/follow_button', locals: { user: user }
   	  	end
   	  end
   	else
