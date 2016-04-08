@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  before_action :beautify_url
+  before_action :beautify_url, only: [:show]
   layout "simple"
 
   def show
@@ -8,6 +8,10 @@ class SearchController < ApplicationController
   end
 
   private 
+
+    def autocomplete
+    render json: Post.search(params[:term]).map(&:title)
+  end
 
     def beautify_url
       if params[:search].present?
