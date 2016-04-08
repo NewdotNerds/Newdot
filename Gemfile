@@ -22,6 +22,9 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
+# Profiling
+gem 'rack-mini-profiler', '~> 0.9.8'
+
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'

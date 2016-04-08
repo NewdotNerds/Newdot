@@ -39,7 +39,7 @@ module SearchablePost
     self.as_json({
       only: [:title, :body],
       include: {
-        user: { only: :username },
+        user: { methods: [:avatar_url], only: [:username, :avatar_url] },
         tags: { only: :name }
       }
     })
