@@ -7,6 +7,7 @@ class SearchController < ApplicationController
     @users = User.search(params[:q]).records.to_a
   end
   
+  # GET /autocomplete.json?term=rails
   def autocomplete
     # render json: Post.search(params[:term]).map(&:title)
     @posts = Post.search(params[:term])
