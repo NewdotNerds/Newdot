@@ -7,15 +7,16 @@ class SearchController < ApplicationController
     @users = User.search(params[:q]).records.to_a
   end
 
-  private 
-
-    def autocomplete
-    render json: Post.search(params[:term]).map(&:title)
+  def autocomplete
+    # render json: Post.search(params[:term]).map(&:title)
+    @posts = Post.search(params[:term]).records.to_a
   end
+
+  private
 
     def beautify_url
       if params[:search].present?
-      	redirect_to search_url(q: params[:search][:q])
+        redirect_to search_url(q: params[:search][:q])
       end
     end
 end

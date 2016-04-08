@@ -16,7 +16,7 @@
     </ul>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li class="main-searchbar">
+        <li class="main-searchbar" id="main-searchbar">
           <%= form_for :search, url: search_path, method: :get do |f| %>
             <%= button_tag do %>
               <span class="glyphicon glyphicon-search"></span>
@@ -29,7 +29,8 @@
           <li id="notifications">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <span class="icon-bell-o notification-bell" id="bell"></span></a>
-            <ul class="dropdown-menu" id="notification-items"></ul>
+            <ul class="dropdown-menu" id="notification-items">
+            </ul>
           </li>
           <li>
             <a href="#" class="avatar-wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">

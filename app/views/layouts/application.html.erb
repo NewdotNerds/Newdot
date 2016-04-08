@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myapp</title>
+  <title>Stories</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,14 +10,14 @@
   <% if admin_signed_in? %>
     <%= render 'layouts/admin_header' %>
   <% else %>
-    <%= render "layouts/header" %>
+    <%= render 'layouts/header' %>
   <% end %>
   <%= render 'layouts/alert_messages' %>
 
   <div class="container-fluid">
     <%= yield %>
     <%= yield :sidebar %>
-  </div>
+  </div> 
 
 </body>
 </html>

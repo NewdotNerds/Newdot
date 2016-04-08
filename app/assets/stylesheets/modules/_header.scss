@@ -1,15 +1,13 @@
 body {
-  padding-top: 53px;
+  padding-top: 53px; /*** to deal with fixed top navbar ***/
 }
-
 nav.navbar {
   margin-bottom: 0 !important;
   border-radius: 0 !important;
   border-color: $border-color !important;
   &.navbar-default {
     background-color: #fff !important;
-  } 
-
+  }
   #logo {
     text-transform: uppercase;
     font-weight: bold;
@@ -37,7 +35,6 @@ nav.navbar {
     margin-top: 7px;
     margin-right: 10px;
   }
-  
   // FIXME
   .avatar-wrapper {
     padding-top: 0;
@@ -91,6 +88,29 @@ nav.navbar {
   }
   .notification-metadata {
     display: inline-block;
+  }
+}
+
+#autocomplete-items {
+  position: absolute;
+  top: 53px;
+  right: 120px;
+  list-style: none;
+  padding: 0 10px;
+  width: 360px;
+  background: #fff;
+  border: 1px solid $border-color;
+  border-radius: 3px;
+  display: block;
+  li {
+    padding: 8px 10px;
+    a {
+      color: $font-black;
+      font-size: 12px;
+    }
+  }
+  .avatar-image {
+    margin-right: 5px;
   }
 }
 
