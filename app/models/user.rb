@@ -68,7 +68,8 @@ class User < ActiveRecord::Base
       obj.class.to_s.downcase
     end
 
-    def clear_nofitications
+    # Clears notifications where deleted user is the actor.
+    def clear_notifications
       Notification.where(actor_id: self.id).destroy_all
     end
 end

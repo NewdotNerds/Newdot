@@ -39,6 +39,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec', '~> 1.0'
 end
 
 group :test do
