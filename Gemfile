@@ -24,6 +24,8 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
+gem 'sidetiq', '~> 0.7.0'
+
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'

@@ -2,9 +2,10 @@ class DigestMailer < ApplicationMailer
   add_template_helper(UsersHelper)
   add_template_helper(PostsHelper)
 
+  # TODO: change mail to: @user.email when it's production ready
   def daily_email(user)
     @user = user
-    @recommended = Post.top_stories(2)
-    mail to: @user.email, subject: "Newdot Daily Digest"
+    @recommended = Post.latest(4)
+    mail to: "torresomar44@gmail.com", subject: "Newdot Daily Digest"
   end
 end
