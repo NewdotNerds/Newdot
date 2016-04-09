@@ -24,10 +24,6 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
-# Profiling
-gem 'rack-mini-profiler', '~> 0.9.8'
-
-
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'
@@ -42,10 +38,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'rails_best_practices', '~> 1.15'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec', '~> 1.0'
+  # Profiling
+  gem 'rack-mini-profiler', '~> 0.9.8'
 end
 
 group :test do
