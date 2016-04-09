@@ -17,11 +17,7 @@
       placeholder: 'Tags separated by a comma ...' %>
   </div>
 
-<<<<<<< HEAD
   <div id="js-taggle" style="position: relative;"></div>
-=======
-  <div id="js-taggle"></div>
->>>>>>> e07c2ccfe9642db908e81424ca44ff8674ec3845
 
   <%= f.submit "Publish", class: "button green-inner-button" %>
 <% end %>
@@ -32,15 +28,10 @@ var editor = new MediumEditor('.medium-editable', {
     text: "Tell your Story ..."
   }
 });
-<<<<<<< HEAD
 var my_taggle = new Taggle('js-taggle', {
   duplicateTagClass: 'bounce'
 });
-
 $('input[type="submit"]').hover(function() {
   $('#post_all_tags').val(my_taggle.getTagValues());
 });
-=======
-var my_taggle = new Taggle('js-taggle');
->>>>>>> e07c2ccfe9642db908e81424ca44ff8674ec3845
 </script>
