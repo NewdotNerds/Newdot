@@ -10,8 +10,8 @@
 
     <h3 class="title"><%= @post.title %></h3>
     <div class="body">
-      <p><%= markdown(@post.body) %></p>  
-    </div>    
+      <p><%= markdown(@post.body) %></p>
+    </div>
 
     <div class="post-tags">
       <% @post.tags.each do |tag| %>
@@ -39,6 +39,7 @@
       </div>
       <%= follow_button_for @post.user %>
     </div>
+
 
     <% if user_signed_in? && current_user?(@post.user) %>
       <div class="edit-delete-button-wrapper">
