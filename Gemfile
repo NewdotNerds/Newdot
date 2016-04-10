@@ -14,6 +14,9 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'redcarpet', '~> 3.3'
 
+# Load will_paginate before elasticsearch gems.
+gem 'will_paginate', '~> 3.1'
+
 # Elasticsearch
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
@@ -24,8 +27,6 @@ gem 'sinatra', require: false
 gem 'slim'
 
 gem 'sidetiq', '~> 0.7.0'
-
-gem 'will_paginate', '~> 3.1'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
