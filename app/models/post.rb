@@ -61,6 +61,13 @@ class Post < ActiveRecord::Base
     published_at.present?
   end
 
+  def words
+    body.split(' ')
+  end
+
+  def word_count
+    words.size
+  end
 end
 
 # Delete the previous posts index in Elasticsearch
