@@ -15,8 +15,7 @@ module ApplicationHelper
   end
 
   def follow_tag_button_for(tag)
-    if user_
-      signed_in?
+    if user_signed_in?
       if current_user.following_tag?(tag)
         render partial: 'shared/unfollow_tag_button', locals: { tag: tag }
       else
