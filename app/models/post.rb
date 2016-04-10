@@ -40,6 +40,17 @@ class Post < ActiveRecord::Base
   def all_tags
     tags.map(&:name).join(", ")
   end
+
+  def publish
+    self.published_at = Time.zone.now
+    save
+  end
+
+  def save_as_draft
+    self.published_at = nil
+    save
+  end
+
 end
 
 # Delete the previous posts index in Elasticsearch
