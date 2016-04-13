@@ -4,10 +4,6 @@ class TagsController < ApplicationController
   def show
     tag = Tag.find(params[:id])
     @dashboard = Dashboard.new(user: current_user, posts: tagged_posts, tag: @tag)
-    respond_to do |format|
-      format.html { render 'dashboards/show' }
-      format.js   { render 'dashboards/show' }
-    end
   end
 
   private
