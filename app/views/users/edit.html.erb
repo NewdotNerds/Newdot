@@ -7,13 +7,13 @@
             <p class="hero-description"><%= f.text_area :description, rows: 5, placeholder: "Tell the world about yourself!" %></p>
           </div>
 
-		  <div class="hero-avatar">
-		    <label class="change-avatar" id="change-avatar" style="background-image: url('<%= @user.avatar.url %>')">
-		      <%= f.file_field :avatar %>
-		      <span class="icon-camera"></span>
-		    </label>
-		  </div>
-		</header>
+		      <div class="hero-avatar">
+		        <label class="change-avatar" id="change-avatar" style="background-image: url('<%= @user.avatar.url %>')">
+		          <%= f.file_field :avatar %>
+		          <span class="icon-camera"></span>
+		        </label>
+		      </div>
+		    </header>
 
         <%= f.submit "Save Change", class: 'button green-inner-button' %>
     <% end %>

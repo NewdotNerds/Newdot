@@ -16,10 +16,10 @@ class BookmarksController < ApplicationController
 
   def destroy
     current_user.remove_bookmark_from(@bookmarkable)
-  	respond_to do |format|
-  	  format.html { redirect_to :back }
-  	  format.js
-  	end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
   private

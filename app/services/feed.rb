@@ -39,25 +39,25 @@ class Feed
 
   private
 
-     def user_ids
-       user.following_ids + [@user.id]
-     end
+    def user_ids
+      user.following_ids + [@user.id]
+    end
 
-     def following_users_post_ids
-       Post.where(user_id: user.following_ids).pluck(:id)
-     end
+    def following_users_post_ids
+      Post.where(user_id: user.following_ids).pluck(:id)
+    end
 
-     def tagged_post_ids
-       Tagging.where(tag_id: user.following_tag_ids).pluck(:post_id).uniq
-     end
+    def tagged_post_ids
+      Tagging.where(tag_id: user.following_tag_ids).pluck(:post_id).uniq
+    end
 
-     def feed_post_ids
-       (Post.where(user_id: user_ids).pluck(:id) + tagged_post_ids + recommended_post_ids).uniq
-     end
+    def feed_post_ids
+      (Post.where(user_id: user_ids).pluck(:id) + tagged_post_ids + recommended_post_ids).uniq
+    end
 
-     def recommended_post_ids
-       post_ids = []
-       user.following.each { |user| post_ids << user.liked_post_ids }
-       post_ids.flatten.uniq
-     end
+    def recommended_post_ids
+      post_ids = []
+      user.following.each { |user| post_ids << user.liked_post_ids }
+      post_ids.flatten.uniq
+    end
 end
