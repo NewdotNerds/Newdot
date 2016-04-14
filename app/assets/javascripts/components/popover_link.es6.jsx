@@ -43,6 +43,6 @@ class PopoverLink extends React.Component {
   }
 
   handleMouseLeave(event) {
-    this.setState({ showPopover: false });
+    setTimeout(() => { this.setState({ showPopover: false }); }, 400);
   }
 }
