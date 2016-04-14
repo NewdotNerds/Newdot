@@ -24,7 +24,7 @@
             <%= f.search_field :q, value: params[:q], placeholder: 'Search Stories', autocomplete: 'off', "ng-model" => "searchTerm" %>
           <% end %>
           <ul ng-show="searchTerm.length" class="dropdown-menu" id="autocomplete-items" ng-cloak>
-            <li><a href="/search?q={{searchTerm}}"><span class="glyphicon glyphicon-search"></span> Search for {{ searchTerm }}</a></li>
+            <li><a href="/search?q={{searchTerm}}"><span class="glyphicon glyphicon-search"></span> Search for <strong>{{ searchTerm }}</strong></a></li>
             <li ng-show="posts.length"><h4 class="autocomplete-heading">Posts</h4></li>
             <li ng-repeat="post in posts">
               <a ng-href="{{ post.url }}"><img width="35" class="avatar-image" ng-src="{{ post.avatar_url }}" />{{ post.title }}</a>
@@ -46,12 +46,13 @@
           <li>
             <a href="#" class="avatar-wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               <%= avatar_for(current_user, size: 40) %></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "New story", new_post_path %></li>
-              <li><%= link_to "Drafts and stories", stories_drafts_path %></li>
+            <ul class="dropdown-menu nav-dropdown">
+              <span class="dropdown-arrow"></span>
+              <li class="nd-main"><%= link_to "New story", new_post_path %></li>
+              <li class="nd-main"><%= link_to "Drafts and stories", stories_drafts_path %></li>
               <li role="separator" class="divider"></li>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+              <li class="nd-sub"><%= link_to "Profile", current_user %></li>
+              <li class="nd-sub"><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
         <% else %>
