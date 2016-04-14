@@ -28,7 +28,7 @@ class SearchResultsList extends React.Component {
     });
   }
 
-  renderPostHeading()) {
+  renderPostHeading() {
     if (this.props.posts.length === 0) { return; }
 
     return <li><h4 className="autocomplete-heading">Posts</h4></li>
