@@ -309,8 +309,6 @@ GEM
       slop (~> 3.4)
     puma (2.16.0)
     rack (1.6.4)
-    rack-mini-profiler (0.9.9.2)
-      rack (>= 1.2.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -497,7 +495,6 @@ DEPENDENCIES
   pg (~> 0.15)
   poltergeist (~> 1.8)
   puma (~> 2.15)
-  rack-mini-profiler (~> 0.9.8)
   rails (= 4.2.6)
   rails_12factor (= 0.0.2)
   rails_best_practices (~> 1.15)
