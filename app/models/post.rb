@@ -29,6 +29,12 @@ class Post < ActiveRecord::Base
 
   include SearchablePost
 
+  def self.new_draft_for(user)
+    post = self.new(user_id: user.id)
+    post.save_as_draft
+    post
+  end
+
   def self.tagged_with(name)
     Tag.find_by!(name: name).posts
   end
@@ -50,7 +56,7 @@ class Post < ActiveRecord::Base
 
   def save_as_draft
     self.published_at = nil
-    save(validation: false)
+    save(validate: false)
   end
 
   def unpublish
