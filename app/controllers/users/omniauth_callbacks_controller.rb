@@ -3,7 +3,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   # userful debugging code, insert the following to see the response from oauth
   # provider:
   # render :text => "<pre>" + env["omniauth.auth"].to_yaml and return
-  
+
+
   def facebook
     @user = User.find_or_create_from_facebook_omniauth(auth_hash)
 

@@ -1,16 +1,15 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  devise_for :admins, controllers: { sessions: 'admin/sessions' }
   root "dashboards#show"
+  devise_for :admins, controllers: { sessions: 'admin/sessions' }
   devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
-
   get "sign_in" => "sessions#new", as: :social_sign_in
 
   resources :users, only: [:show, :edit, :update] do
     resources :recommended_posts, only: [:index]
   end
-  
+
   resources :posts, except: [:index] do
     resources :responses, only: [:create]
     resources :likes, only: [:create, :destroy], module: :posts
@@ -29,7 +28,7 @@ Rails.application.routes.draw do
   get "me/stories/drafts" => "stories#drafts", as: :stories_drafts
   get "me/stories/public" => "stories#published", as: :stories_published
   get "search" => "search#show", as: :search
-
+  
   namespace :admin do
     resource :dashboard, only: [:show]
     resources :featured_tags, only: [:create, :destroy]
@@ -54,6 +53,6 @@ Rails.application.routes.draw do
   end
 
   authenticate :admin do
-    mount Sidekiq::Web => '/sidekiq'
+    mount Sidekiq::Web => '/sidekiq' 
   end
 end
