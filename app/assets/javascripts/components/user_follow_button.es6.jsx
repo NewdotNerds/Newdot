@@ -22,7 +22,7 @@ class UserFollowButton extends React.Component {
         </a>
       );
     }
-    
+
     if (this.state.following) {
       return (
         <button 

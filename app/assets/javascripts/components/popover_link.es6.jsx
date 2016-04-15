@@ -33,7 +33,7 @@ class PopoverLink extends React.Component {
   }
 
   handleMouseEnter(event) {
-  	let position;
+    let position;
     if (window.innerHeight/2 > event.clientY) {
       position = "bottom";
     } else {
