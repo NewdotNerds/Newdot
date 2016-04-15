@@ -17,7 +17,7 @@ class OverlayTriggerButton extends React.Component {
               <span className="glyphicon glyphicon-remove"></span>
             </button>
             <nav className="users-overlay">
-              <h2 className="grayed-heading center">People Liked "{this.props.title}"</h2>
+              <h2 className="grayed-heading center">{this.props.overlayHeading}</h2>
               <ul>
                 {this.renderUsers()}
               </ul>
@@ -36,7 +36,7 @@ class OverlayTriggerButton extends React.Component {
               <span className="glyphicon glyphicon-remove"></span>
             </button>
             <nav className="users-overlay">
-              <h2 className="grayed-heading center">People Liked {this.props.title}</h2>
+              <h2 className="grayed-heading center">{this.props.overlayHeading}</h2>
               <ul>
               </ul>
             </nav>
@@ -72,7 +72,7 @@ class OverlayTriggerButton extends React.Component {
 
   handleOpenClick(event) {
     $.ajax({
-      url: `/api/likers/?post_id=${this.props.post_id}`,
+      url: this.props.apiEndpoint,
       method: 'GET',
       success: (data) => {
         console.log(data);
@@ -85,3 +85,9 @@ class OverlayTriggerButton extends React.Component {
     this.setState({ isOpen: false });
   }
 }
+
+OverlayTriggerButton.propTypes = {
+  text: React.PropTypes.string,
+  overlayHeading: React.PropTypes.string,
+  apiEndpoint: React.PropTypes.string.isRequired
+};
