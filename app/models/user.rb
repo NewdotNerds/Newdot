@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-         :omniauthable, :omniauth_providers => [:facebook, :twitter]
+         :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
   validates :username, presence: true
   validate :avatar_image_size
 
@@ -76,6 +76,18 @@ class User < ActiveRecord::Base
     )
     user
   end
+
+  def self.find_or_create_from_google_omniauth(auth)
+    user = where(provider: auth.provider, uid: auth.uid).first_or_create
+    user.remote_avatar_url = auth.info.image
+    user.update(
+      username: auth.info.name,
+      email: auth.info.email,
+      password: Devise.friendly_token[0, 20]
+    )
+    user
+  end
+
 
   def self.new_with_session(params, session)
     if session["devise.user_attributes"]
