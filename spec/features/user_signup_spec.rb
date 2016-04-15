@@ -2,8 +2,7 @@ require "rails_helper"
 
 feature "User signs up" do
   scenario "successfully" do
-    visit root_path
-    click_on "Sign up"
+    visit new_user_session_path
     fill_in "Username", with: "Example-User"
     fill_in "Email", with: "example@gmail.com"
     fill_in "Password", with: "password"

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   root "dashboards#show"
   devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  get "sign_in" => "sessions#new", as: :social_sign_in
+
   resources :users, only: [:show, :edit, :update] do
     resources :recommended_posts, only: [:index]
   end
