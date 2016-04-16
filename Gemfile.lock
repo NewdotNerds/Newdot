@@ -507,6 +507,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  autoprefixer-rails
   awesome_print (~> 1.6)
   bonsai-elasticsearch-rails
   bootstrap-sass (~> 3.3)
