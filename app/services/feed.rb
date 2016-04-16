@@ -52,7 +52,7 @@ class Feed
     end
 
     def tagged_post_ids
-      Tagging.where(tag_id: user.following_tag_ids).pluck(:post_id).uniq
+      Tagging.where(tag_id: user.following_tag_ids).distinct.pluck(:post_id)
     end
 
     def featured_post_ids
@@ -62,10 +62,8 @@ class Feed
     def feed_post_ids
       (Post.where(user_id: user_ids).pluck(:id) + tagged_post_ids + recommended_post_ids + featured_post_ids).uniq
     end
-
+    
     def recommended_post_ids
-      post_ids = []
-      user.following.each { |user| post_ids << user.liked_post_ids }
-      post_ids.flatten.uniq
+      Post.joins(:likes).where(likes: { user_id: user.following_ids }).distinct.pluck(:id)
     end
 end
