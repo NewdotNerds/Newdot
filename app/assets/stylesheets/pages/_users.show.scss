@@ -14,11 +14,7 @@ body.recommended_posts.index {
   }
 
   .hero {
-  	display: -ms-flex;
-  	display: -webkit-flex;
   	display: flex;
-  	-ms-justify-content: space-between;
-    -webkit-justify-content: space-between;
   	justify-content: space-between;
     padding-bottom: 10px;
   }
