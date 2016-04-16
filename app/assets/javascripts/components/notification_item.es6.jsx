@@ -21,7 +21,7 @@ class NotificationItem extends React.Component {
           <div className="notification-metadata">
             {this.notificationContent()}
             <br/>
-            <small>{this.props.time_ago}</small>
+            <small>{this.notificationIcon()} {this.props.time_ago}</small>
           </div>
         </a>
       </li>
@@ -39,6 +39,20 @@ class NotificationItem extends React.Component {
         return `${actor} ${action} ${type}`;
     }
   }
+
+  // FIXME: this is tightly coupled to action.
+  notificationIcon() {
+    switch(this.props.action) {
+      case 'liked your':
+        return <span className="icon-heart-o"></span>;
+      case 'started following you':
+        return <span className="icon-user"></span>;
+      case 'responded to your':
+      case 'also commented on a':
+        return <span className="icon-commenting-o"></span>;
+    }
+  }
+
 
   handleMarkAsRead(id) {
     $.ajax({
