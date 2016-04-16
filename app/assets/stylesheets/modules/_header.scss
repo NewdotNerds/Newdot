@@ -2,6 +2,7 @@ body {
   padding-top: 51px; /*** to deal with fixed top navbar ***/
 }
 
+
 /** Navbar animation **/
 nav.navbar {
   transition: 0.3s transform;
@@ -12,7 +13,6 @@ nav.navbar {
     transform: translateY(-100%);
   }
 }
-
 nav.navbar {
   margin-bottom: 0 !important;
   padding: 8px 0;
@@ -67,16 +67,27 @@ nav.navbar {
     margin-top: 7px;
     margin-right: 10px;
   }
-  // FIXME
-  .avatar-wrapper {
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 5px;
+
+  .account {
+    padding-top: 5px;
   }
+  a.avatar-wrapper {
+    padding: 0;
+    display: inline;
+    margin: 5px 20px 0 10px;
+  }
+  a.avatar-wrapper img.avatar-image {
+    border: 1.5px solid $border-color;
+    transition: all .1s;
+  }
+  a.avatar-wrapper:hover img.avatar-image, .open a.avatar-wrapper img.avatar-image {
+    border: 1.5px solid $border-hover-color;
+  }
+
   .navbar-nav > .open > a {
     background-color: $white !important;
   }
-  // FIXME
+
   .nav-dropdown {
     background: #fff;
     @include border-radius($popover);
@@ -103,27 +114,25 @@ nav.navbar {
       line-height: 1.4;
     }
     .dropdown-arrow-top {
-      width: 0; 
-      height: 0; 
+      width: 0;
+      height: 0;
       border-left: 10px solid transparent;
       border-right: 10px solid transparent;
       z-index: 20;
-
       border-bottom: 10px solid #fff;
       position: absolute;
-      right: 7px;
+      right: 10px;
       top: -10px;
     }
     .dropdown-arrow-bottom {
-      width: 0; 
-      height: 0; 
+      width: 0;
+      height: 0;
       border-left: 12px solid transparent;
       border-right: 12px solid transparent;
       z-index: 10;
-
       border-bottom: 11px solid rgba(0, 0, 0, 0.11);
       position: absolute;
-      right: 5px;
+      right: 8px;
       top: -11px;
     }
   }
@@ -138,10 +147,11 @@ nav.navbar {
     width: 40px;
     height: 40px;
     padding: 0;
+    margin-top: 5px;
     position: relative;
     border: 1.5px solid $border-color;
+    transition: all .1s;
     @include border-radius($round);
-    margin-top: 5px;
     span {
       position: absolute;
       top: 50%;
@@ -156,7 +166,12 @@ nav.navbar {
       color: #fff;
     }
   }
+  a.dropdown-toggle:hover {
+    border: 1.5px solid $border-hover-color;
+  }
 }
+
+
 #notification-items {
   .avatar-image {
     margin-right: 18px;
@@ -176,6 +191,7 @@ nav.navbar {
     display: inline-block;
   }
 }
+
 
 #autocomplete-items {
   list-style: none;
