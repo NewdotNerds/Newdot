@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "me/stories/drafts" => "stories#drafts", as: :stories_drafts
   get "me/stories/public" => "stories#published", as: :stories_published
   get "search" => "search#show", as: :search
+  get "search/users" => "search#users", as: :search_users
   
   namespace :admin do
     resource :dashboard, only: [:show]

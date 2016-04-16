@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require medium-editor
 //= require handlebars
 //= require jquery-sortable
@@ -25,7 +26,6 @@
 //= require bootstrap-sprockets
 //= require react
 //= require react_ujs
-//= require turbolinks
 //= require components
 //= require overlay
 //= require_tree .
