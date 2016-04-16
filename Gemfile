@@ -30,6 +30,8 @@ gem 'slim'
 
 gem 'sidetiq', '~> 0.7.0'
 
+gem 'nokogiri', '~> 1.6'
+
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'

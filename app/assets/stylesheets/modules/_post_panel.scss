@@ -34,6 +34,16 @@
       line-height: 1.18;
       letter-spacing: -.022em;
       color: $light-gray;
+
+      p {
+        @include well-read;
+      }
+
+      h2, h3 {
+        @include well-read;
+        font-size: 22px;
+        color: $light-gray;
+      }
     }
 
     .read-more {
