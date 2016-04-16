@@ -14,7 +14,6 @@ class LikeButton extends React.Component {
   componentWillMount() {
     const { likeableType, likeableId } = this.props;
     this.token = PubSub.subscribe('LikeButton:onClick', (msg, data) => {
-      console.log('likebutton click detected', data);
       if (likeableType === data.type && likeableId === data.id) {
         this.setState({ liked: data.liked, likeCount: data.count });
       }
@@ -31,8 +30,8 @@ class LikeButton extends React.Component {
         <div className="like-button-wrapper">
           {this.renderLikeButton()}
         </div>
-        {this.renderLikeButton()}
-      </div>
+          {this.renderLikeCount()}
+        </div>
     );
   }
 
@@ -89,7 +88,6 @@ class LikeButton extends React.Component {
       method: 'POST',
       dataType: 'json',
       success: (data) => {
-        console.log(data);
         this.setState({ liked: data.liked, likeCount: data.count });
         PubSub.publish('LikeButton:onClick', data);
       }
@@ -99,7 +97,7 @@ class LikeButton extends React.Component {
 
 LikeButton.propTypes = {
   liked: React.PropTypes.bool.isRequired,
-  likeCount: React.PropTypes.oneOfType([React.PropTypes.number. React.PropTypes.string]).isRequired,
+  likeCount: React.PropTypes.oneOfType([React.PropTypes.number, React.PropTypes.string]).isRequired,
   likeEndpoint: React.PropTypes.string.isRequired,
   unlikeEndpoint: React.PropTypes.string.isRequired,
   likeableType: React.PropTypes.string.isRequired,
