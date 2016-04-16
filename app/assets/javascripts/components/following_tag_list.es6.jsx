@@ -20,7 +20,6 @@ class FollowingTagList extends React.Component {
   }
 
   renderFollowingTags() {
-    console.log(this.state.followingTags);
     return this.state.followingTags.map(tag => {
       return (
         <a
@@ -38,9 +37,12 @@ class FollowingTagList extends React.Component {
       url: '/api/following_tags.json',
       method: 'GET',
       success: (data) => {
-        console.log(data);
         this.setState({ followingTags: data });
       }
     });
   }
 }
+
+FollowingTagList.propTypes = {
+  followingTags: React.PropTypes.array.isRequired
+};
