@@ -64,6 +64,10 @@ body.recommended_posts.index {
   .edit-button {
     transform: translateX(-24px);
   }
+
+  .tag {
+    background-color: $background-gray;
+  }
   .posts-wrapper {
   	padding-top: 22px;
     padding-bottom: 22px;
