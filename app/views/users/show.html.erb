@@ -30,6 +30,7 @@
                             username: @user.username,
                             overlayTrigger: true },
                           ) %>
+
     <% end %>
 
     <% if user_signed_in? && current_user?(@user) %>
@@ -38,10 +39,14 @@
 
   </div>
 </div>
+
+
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
   <h4 class="small-heading with-border">latest</h4>
   <%= render @latest_posts %>
 </div>
+
+
 <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
   <div class="posts-wrapper">
     <h4 class="heading-border-b">Recommended by <%= @user.username %> &#149; 

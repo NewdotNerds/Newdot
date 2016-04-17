@@ -9,18 +9,26 @@ class UsersController < ApplicationController
     @recommended_posts = @user.liked_posts.latest(4).published
   end
 
-  def edit  	
+  def edit
   end
 
-  def update 
-    if @user.update(user_params) 	
+  def update
+    if @user.update(user_params)
       redirect_to @user
-    else 
+    else
       render :edit, alert: "Could not update, Please try again"
     end
   end
 
   private
+
+    def set_user
+      @user = User.friendly.find(params[:id])
+    end
+
+    def user_params
+      params.require(:user).permit(:username, :description, :avatar)
+    end
 
     def check_for_correct_user
       unless current_user.id == params[:id].to_i
@@ -28,15 +36,7 @@ class UsersController < ApplicationController
       end
     end
 
-    def set_user
-      @user = User.friendly.find(params[:id])
-    end
-
-    def user_params
-      params.require(:user).permit(:username, :avatar, :description)
-    end
-
-    #Sets @relationship for Unfollow button
+    # Sets @relationship for Unfollow button
     def check_for_relationship
       if user_signed_in? && current_user.following?(@user)
         @relationship = current_user.active_relationships.find_by(followed_id: @user.id)
