@@ -2,20 +2,19 @@ body.users.show,
 body.users.edit,
 body.recommended_posts.index {
   .banner-container {
-  	background-color: $background-gray;
-  	width: 100%;
+    background-color: $background-gray;
+    width: 100%;
   }
-
   .hero-wrapper {
-  	width: 50%;
-  	max-width: 550px;
+    width: 50%;
+    max-width: 550px;
+    margin: auto;
     padding-top: 2em;
     padding-bottom: 2.5em;
   }
-
   .hero {
-  	display: flex;
-  	justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     padding-bottom: 10px;
   }
   .profile-info {
@@ -23,23 +22,23 @@ body.recommended_posts.index {
     width: 80%;
   }
   .hero-title {
-  	font-weight: 700;
-  	font-size: 32px;
+    font-weight: 700;
+    font-size: 32px;
     cursor: default;
   }
   .hero-description {
     width: 85%;
-  	font-size: 16px;
-  	font-weight: normal;
-  	line-height: 1.2;
-  	margin-top: 4px;
-  	color: $light-font-color;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-top: 4px;
+    color: $light-font-color;
   }
   .hero-location {
     width: 85%;
     font-size: 18px;
     color: $light-font-color;
-    .icon-map-marker {
+    .fa-map-marker {
       color: tomato;
       margin-right: 6px;
     }
@@ -47,16 +46,20 @@ body.recommended_posts.index {
       width: 90%;
     }
   }
+  [data-react-class="UserFollowContainer"] {
+    display: inline-block;
+  }
+
   .following-metadata {
-  	margin: 1em 0 1.2em;
-  	> span {
+    margin: 1em 0 1.2em;
+    > span {
       color: $light-font-color;
       font-size: 16px;
       cursor: pointer;
-  	}
+    }
   }
   .following-count {
-  	margin-right: 12px;
+    margin-right: 12px;
   }
   .edit-button {
     transform: translateX(-24px);
@@ -66,11 +69,11 @@ body.recommended_posts.index {
     background-color: $background-gray;
   }
   .posts-wrapper {
-  	padding-top: 22px;
+    padding-top: 22px;
     padding-bottom: 22px;
-  	width: 50%;
-  	max-width: 550px;
-  	margin: auto;
+    width: 50%;
+    max-width: 550px;
+    margin: auto;
   }
 
   .recommended-post-card {
@@ -92,7 +95,6 @@ body.recommended_posts.index {
     color: $super-light-font-color;
     font-size: 14px;
   }
-
   label.change-avatar input[type="file"] {
     position: fixed;
     top: -1000px;
@@ -111,7 +113,7 @@ body.recommended_posts.index {
     position: relative;
     transition: all .1s;
 
-    span.icon-camera {
+    .fa-camera {
       position: absolute;
       top: 50%;
       left: 50%;

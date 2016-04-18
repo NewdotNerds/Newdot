@@ -12,14 +12,15 @@
     border: 1.5px solid $border-color;
     transition: all .1s;
     @include border-radius($round);
-    span {
+    i.fa-bell-o,
+    span#new-notifications-count {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 1.3em;
     }
-    span#bell {
+    #bell {
       color: $light-font-color;
     }
     span#new-notifications-count {
@@ -107,19 +108,19 @@
     display: inline-block;
   }
 
-  [class^="icon-"] {
+  .fa {
     margin-right: 8px;
   }
 
-  .icon-heart-o {
+  .fa-heart-o {
     color: #e81c4f;
   }
 
-  .icon-user {
+  .fa-user {
     color: lightblue;
   }
 
-  .icon-commenting-o {
+  .fa-commenting-o {
     color: $light-font-color;
   }
 }
@@ -167,13 +168,12 @@
 
     .ringer {
       margin: 0 auto;
-      width: 40%;
+      width: 50px;
       margin-top: 20px;
     }
   }
 
-  .bell-jar{opacity:0.2;fill:$black;}
-  .mouth,.eye{fill:$white;}
+  .bell-jar,.mouth,.eye{opacity:0.2;fill:$black;}
 
   .blink, {
     animation: blink 5s step-start 0s infinite;
@@ -181,18 +181,18 @@
 
   @keyframes blink {
     53% {
-      opacity: 1;
+      opacity: 0.2;
     }
     55% {
       opacity: 0.0;
     }
     57% {
-      opacity: 1;
+      opacity: 0.2;
     }
     59% {
       opacity: 0.0;
     }
     61% {
-      opacity: 1;
+      opacity: 0.2;
     }
   }

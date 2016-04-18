@@ -248,6 +248,8 @@ GEM
     fog-xml (0.1.2)
       fog-core
       nokogiri (~> 1.5, >= 1.5.11)
+    font-awesome-sass (4.5.0)
+      sass (>= 3.2)
     formatador (0.2.5)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
@@ -529,6 +531,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.5.0)
   faker (~> 1.6.1)
   fog (~> 1.37)
+  font-awesome-sass (~> 4.5)
   friendly_id (~> 5.1)
   guard-rspec
   jbuilder (~> 2.0)

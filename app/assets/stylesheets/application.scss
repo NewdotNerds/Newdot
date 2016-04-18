@@ -1,16 +1,34 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+// Use @import to import all Sass files, instead of using sprocket require.
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
-@import 'partials/assets';
-@import 'partials/variables';
+@import "partials/assets";
+@import "partials/variables";
 @import "partials/mixins";
 @import 'partials/miscellaneous';
 
+@import "partials/base";
+@import "partials/buttons";
+@import "partials/headings";
 
-@import 'partials/base';
-@import 'partials/buttons';
-@import 'partials/headings';
-
+// Pages (page specific styles)
 @import 'pages/posts.show';
 @import 'pages/tags.show';
 @import 'pages/users.show';
@@ -20,16 +38,16 @@
 @import 'pages/stories.drafts';
 @import 'pages/search.show';
 
-//Modules
-@import "modules/header";
-@import "modules/post_panel";
-@import "modules/avatar";
-@import "modules/post_metadata";
-@import "modules/sidebar";
-@import "modules/like_buttons";
-@import "modules/feed";
-@import "modules/user_card";
-@import "modules/searchbar";
+// Modules
+@import 'modules/header';
+@import 'modules/post_panel';
+@import 'modules/avatar';
+@import 'modules/post_metadata';
+@import 'modules/sidebar';
+@import 'modules/like_buttons';
+@import 'modules/feed';
+@import 'modules/user_card';
+@import 'modules/searchbar';
 @import 'modules/editor_form';
 @import 'modules/loader';
 @import 'modules/hero';
@@ -43,7 +61,6 @@
 @import 'modules/progress_bar';
 @import 'modules/page_load_animations';
 @import 'modules/add_tag_button';
-
 // Vendor
 @import 'vendor/medium-editor';
 @import 'vendor/medium-editor-insert-plugin';

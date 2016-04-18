@@ -44,15 +44,14 @@ class NotificationItem extends React.Component {
   notificationIcon() {
     switch(this.props.action) {
       case 'liked your':
-        return <span className="icon-heart-o"></span>;
+        return <i className="fa fa-heart-o"></i>;
       case 'started following you':
-        return <span className="icon-user"></span>;
+        return <i className="fa fa-user"></i>;
       case 'responded to your':
       case 'also commented on a':
-        return <span className="icon-commenting-o"></span>;
+        return <i className="fa fa-commenting-o"></i>;
     }
   }
-
 
   handleMarkAsRead(id) {
     $.ajax({
