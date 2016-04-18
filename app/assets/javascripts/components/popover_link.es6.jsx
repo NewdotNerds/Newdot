@@ -12,7 +12,7 @@ class PopoverLink extends React.Component {
         onMouseLeave={this.handleMouseLeave.bind(this)}
       >
         <a href={this.props.url}>
-          {this.props.text}
+          {this.props.children}
         </a>
         {this.renderPopover()}
       </span>
@@ -34,22 +34,28 @@ class PopoverLink extends React.Component {
 
   handleMouseEnter(event) {
     let position;
-    if (window.innerHeight/2 > event.clientY) {
-      position = "bottom";
+    const POPOVER_HEIGHT = 200;
+    if ( POPOVER_HEIGHT + 30 > event.clientY) {
+      this.position = "bottom";
     } else {
-      position = "top";
+      this.position = "top";
     }
-    $.ajax({
-      url: `/api/users/${this.props.user_id}`,
-      method: 'GET',
-      success: (data) => {
-        console.log(data);
-        this.setState({ user: data, showPopover: true, position: position });
-      }
-    });
+    this.timeoutID = setTimeout(() => {
+      $.ajax({
+        url: `/api/users/${this.props.user_id}`,
+        method: 'GET',
+        success: (data) => {
+          this.setState({ user: data, showPopover: true, position: this.position });
+        }
+      });
+    }, 450);
   }
 
   handleMouseLeave(event) {
-    setTimeout(() => { this.setState({ showPopover: false }); }, 400);
+    if (this.timeoutID) {
+      clearTimeout(this.timeoutID);
+      this.timeoutID = null;
+    }
+    setTimeout(() => { this.setState({ showPopover: false, position: null }); }, 180);
   }
 }
