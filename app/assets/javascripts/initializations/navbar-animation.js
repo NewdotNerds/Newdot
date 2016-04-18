@@ -1,8 +1,7 @@
-var Navbar = {
-  animate: function() {
+var NavbarAnimation = {
+  init: function() {
     var lastScrollTop = 0;
     var $navbar = $('[data-behavior="animated-navbar"]');
-    var $metadataBar = $('[data-behavior="animated-metadata"]');
     $(window).scroll(function(event) {
       var st = $(this).scrollTop();
       if (st > 500 && st > lastScrollTop) {
@@ -15,17 +14,10 @@ var Navbar = {
         $navbar.addClass('is-inView');
       }
 
-      if (st > lastScrollTop) {
-        $metadataBar.removeClass('is-inView');
-        $metadataBar.addClass('is-hidden');
-      } else {
-        $metadataBar.removeClass('is-hidden');
-        $metadataBar.addClass('is-inView');
-      }
       lastScrollTop = st;
     });
   }
 };
 
-$(document).ready( Navbar.animate );
-$(document).on( 'page:load', Navbar.animate );
+$(document).ready( NavbarAnimation.init );
+$(document).on( 'page:load', NavbarAnimation.init );
