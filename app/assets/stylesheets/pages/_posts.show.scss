@@ -1,4 +1,11 @@
 body.posts.show {
+    background: $white;
+  .navbar {
+    border: none;
+  }
+  .filter-links, .new-post-button {
+    display: none;
+  }
   .main-content {
     padding-top: 2em;
     padding-bottom: 2em;
@@ -13,7 +20,7 @@ body.posts.show {
       margin: auto;
     }
   }
-  
+
   .title {
     color: $black;
     font-weight: 600;
@@ -30,7 +37,7 @@ body.posts.show {
 
   .tag {
     padding: 0.5em 1em;
-    background: $light-gray;
+    background: $super-light-gray;
     text-decoration: none;
     text-transform: capitalize;
     color: rgba(0, 0, 0, 0.6);
@@ -69,19 +76,6 @@ body.posts.show {
   .edit-delete-button-wrapper {
     padding: 1em 0;
     margin-bottom: 1em;
-  }
-
-  .response-panel {
-    background: $white;
-    padding: 20px;
-    margin-bottom: 10px;
-    border: 1px solid rgba(0,0,0, 0.09);
-    @include box-shadow;
-    @include border-radius($radius);
-    .post-metadata {
-      margin-top: 0;
-      padding-bottom: 0;
-    }
   }
   #new_response {
     input[type="submit"] {
@@ -165,4 +159,4 @@ body.posts.show {
       }
     }
   }
-} 
+}
