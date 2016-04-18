@@ -1,4 +1,5 @@
 <div class="col-md-6 col-md-offset-1 dashboard-main-content">
+
   <% unless @dashboard.top_stories? %>
     <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
       <%= render @dashboard.posts %>
@@ -8,10 +9,11 @@
       <%= render 'posts/top_stories', posts: @dashboard.posts %>
     </div>
   <% end %>
-  
+
   <% unless @dashboard.top_stories? %>
     <%= will_paginate @dashboard.posts %>
   <% end %>
+
 </div>
 
 <% content_for :sidebar do %>
