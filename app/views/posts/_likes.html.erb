@@ -1,14 +1,14 @@
 <div class="like-button-wrapper">
   <% if user_signed_in? %>
     <%= react_component('LikeButton',
-                        { liked: current_user.liked?(post),
-                          likeCount: post.likes.size,
-                          likeEndpoint: api_post_likes_path(post),
-                          unlikeEndpoint: api_post_likes_path(post),
-                          likeableType: 'Post',
-                          likeableId: post.id,
-                          overlayHeading: "People liked #{post.title}",
-                          overlayEndpoint: api_likers_path(post_id: post.id)}) %>
+    { liked: current_user.liked?(post),
+      likeCount: post.likes.size,
+      likeEndpoint: api_post_likes_path(post),
+      unlikeEndpoint: api_post_likes_path(post),
+      likeableType: 'Post',
+      likeableId: post.id,
+      overlayHeading: "People liked #{post.title}",
+      overlayEndpoint: api_likers_path(post_id: post.id)}) %>
   <% else %>
     <%= button_to '', method: :get, class: 'like-button', data: { behavior: 'trigger-overlay' } do %>
       <i class="fa fa-heart-o"></i><span class="hide-text">Like</span>

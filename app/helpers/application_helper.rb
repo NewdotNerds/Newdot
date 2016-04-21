@@ -40,4 +40,5 @@ module ApplicationHelper
     options[:class].strip!
     link_to text, url, options
   end
+
 end

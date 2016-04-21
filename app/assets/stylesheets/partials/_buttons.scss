@@ -12,7 +12,7 @@
     color: rgba(0,0,0,0.8);
     border-color: $border-hover-color;
   }
-  
+
   &.green-border-button {
     color: $accent-color !important; // override bootstrap styles
     border-color: $accent-color;
@@ -47,7 +47,7 @@
     font-weight: bold;
   }
 }
-.unfollow-button {
+ .unfollow-button {
    position: relative;
    width: 6.5em;
    overflow: hidden;

@@ -10,3 +10,4 @@ class SearchUserListItem extends React.Component {
     );
   }
 }
+

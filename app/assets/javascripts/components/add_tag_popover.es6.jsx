@@ -52,3 +52,4 @@ class AddTagPopover extends React.Component {
     }
   }
 }
+

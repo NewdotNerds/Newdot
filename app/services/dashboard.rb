@@ -1,6 +1,6 @@
 class Dashboard
   attr_reader :user, :posts, :tag, :filter
- 
+
   def initialize(user: nil, posts: nil, tag: nil, filter: nil )
     @user = user
     @posts = posts
@@ -11,7 +11,7 @@ class Dashboard
   def featured_tags
     Tag.where(featured: true)
   end
- 
+
   def following_tags
     user.following_tags unless user.nil?
   end

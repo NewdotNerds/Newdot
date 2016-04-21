@@ -10,3 +10,4 @@ class SearchTagListItem extends React.Component {
     );
   }
 }
+

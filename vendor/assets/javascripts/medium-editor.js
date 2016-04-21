@@ -4118,14 +4118,17 @@ MediumEditor.extensions = {};
             /*
             Perform linking on blockElement basis, blockElements are HTML elements with text content and without
             child element.
+
             Example:
             - HTML content
             <blockquote>
               <p>link.</p>
               <p>my</p>
             </blockquote>
+
             - blockElements
             [<p>link.</p>, <p>my</p>]
+
             otherwise the detection can wrongly find the end of one paragraph and the beginning of another paragraph
             to constitute a link, such as a paragraph ending "link." and the next paragraph beginning with "my" is
             interpreted into "link.my" and the code tries to create a link across blockElements - which doesn't work

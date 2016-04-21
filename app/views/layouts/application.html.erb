@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html ng-app="Stories">
 <head>
-  <title>Stories</title>
+  <title>Newdot</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
   <%= render 'layouts/overlay' unless user_signed_in? %>
   <%= react_component('UserOverlay', {}) %>
-  
+
   <div data-behavior="progress-bar" class="progress-bar"></div>
 
   <% if admin_signed_in? %>
@@ -25,7 +26,7 @@
   <div class="container-fluid main-container">
     <%= yield %>
     <%= yield :sidebar %>
-  </div> 
+  </div>
 
 </body>
 <script type="text/javascript">

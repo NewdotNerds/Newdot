@@ -25,3 +25,4 @@ TagList.propTypes = {
   tags: React.PropTypes.array.isRequired,
   className: React.PropTypes.string
 };
+

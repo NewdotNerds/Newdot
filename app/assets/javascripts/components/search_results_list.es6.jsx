@@ -56,3 +56,4 @@ class SearchResultsList extends React.Component {
     return <li className="autocomplete-heading"><h4>Tags</h4></li>
   }
 }
+

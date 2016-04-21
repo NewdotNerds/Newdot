@@ -2,7 +2,7 @@ class API::NotificationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-  	@notifications = Notification.where(recipient: current_user).recent.paginate(page: params[:page], per_page: 7)
+    @notifications = Notification.where(recipient: current_user).recent.paginate(page: params[:page], per_page: 7)
     @new_notification_count = Notification.where(recipient: current_user, is_new: true).count
   end
 
@@ -19,8 +19,8 @@ class API::NotificationsController < ApplicationController
   end
 
   def mark_as_read
-  	notification = Notification.find_by(id: params[:id], recipient: current_user)
-  	notification.update(read_at: Time.zone.now)
-  	render nothing: true, status: 204
+    notification = Notification.find_by(id: params[:id], recipient: current_user)
+    notification.update(read_at: Time.zone.now)
+    render nothing: true, status: 204
   end
 end

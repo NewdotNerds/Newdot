@@ -21,9 +21,8 @@ Rails.application.routes.draw do
   get "me/stories/public" => "stories#published", as: :stories_published
   get "search" => "search#show", as: :search
   get "search/users" => "search#users", as: :search_users
-  
   post "posts/create_and_edit" => "posts#create_and_edit", as: :post_create_and_edit
-  
+
   namespace :admin do
     resource :dashboard, only: [:show]
     resources :featured_tags, only: [:create, :destroy]
@@ -34,7 +33,7 @@ Rails.application.routes.draw do
     resources :notifications, only: [:index] do
       post :mark_as_touched, on: :collection
       post :mark_all_as_read, on: :collection
-      post :mark_as_read, on: :member      
+      post :mark_as_read, on: :member
     end
 
     get "autocomplete" => "search_autocomplete#index"
@@ -42,6 +41,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :update, :destroy]
     resources :users, only: [:show]
     resources :likers, only: [:index]
+    resources :tag_followers, only: [:index]
     resources :followers, only: [:index]
     resources :following, only: [:index]
     resources :following_tags, only: [:index]

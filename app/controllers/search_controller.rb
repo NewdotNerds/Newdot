@@ -12,7 +12,7 @@ class SearchController < ApplicationController
   def users
     @users = User.search(query_term).records.to_a
   end
-  
+
   private
 
     def beautify_url

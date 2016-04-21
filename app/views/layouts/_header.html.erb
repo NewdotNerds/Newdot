@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
-        <%= image_tag('stories-logo.png', width: 55) %> <span>Stories</span>
+        <%= image_tag('stories-logo.png', height: 40, alt: "Stories") %>
       <% end %>
     </div>
     <ul class="nav navbar-nav filter-links">
@@ -21,7 +21,7 @@
       <% end %>
     </ul>
 
-    <div class="collapse navbar-collapse">    
+    <div class="folding-nav">
       <ul class="nav navbar-nav navbar-right">
         <li class="main-searchbar">
           <%= react_component('SearchContainer', {}, { prerender: true }) %>
@@ -34,9 +34,10 @@
           <%= render 'layouts/avatar_dropdown' %>
         <% else %>
           <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-          <li class="sign-in-button"><%= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button sign-in-button', data: { behavior: 'trigger-overlay' } %></li>
+          <li class="sign-in-button"><%= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
         <% end %>
       </ul>
-    </div> 
+    </div>
+
   </div>
 </nav>

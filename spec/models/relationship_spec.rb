@@ -9,12 +9,13 @@
 #  updated_at  :datetime         not null
 #
 
+
 require 'rails_helper'
 
 RSpec.describe Relationship, type: :model do
   describe "validations" do
-  	let(:relationship) { Relationship.new(follower_id: 1, followed_id: 2) }
-    
+    let(:relationship) { Relationship.new(follower_id: 1, followed_id: 2) }
+
     it "is valid with both follower and followed ids" do
       expect(relationship).to be_valid
     end

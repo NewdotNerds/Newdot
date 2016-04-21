@@ -13,7 +13,6 @@ var NavbarAnimation = {
         $navbar.removeClass('is-hidden');
         $navbar.addClass('is-inView');
       }
-
       lastScrollTop = st;
     });
   }
@@ -21,3 +20,4 @@ var NavbarAnimation = {
 
 $(document).ready( NavbarAnimation.init );
 $(document).on( 'page:load', NavbarAnimation.init );
+

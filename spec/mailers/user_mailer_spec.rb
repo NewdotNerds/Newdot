@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe UserMailer, type: :mailer do
-  ddescribe "welcome_email" do
+  describe "welcome_email" do
     let(:user) { create(:user) }
     let(:mail) { UserMailer.welcome_email(user) }
 
@@ -11,8 +11,9 @@ RSpec.describe UserMailer, type: :mailer do
       expect(mail.from).to eq(["stories@example.com"])
     end
 
-    #xit "renders the body" do
-    #  expect(mail.body.encoded).to match("Hi")
-    #end
+    # it "renders the body" do
+    #   expect(mail.body.encoded).to match("Hi")
+    # end
   end
+
 end

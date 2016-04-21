@@ -17,3 +17,4 @@ var EndlessScroll = {
 
 $(document).ready( EndlessScroll.init );
 $(document).on( 'page:load', EndlessScroll.init );
+

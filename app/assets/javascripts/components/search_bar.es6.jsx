@@ -28,3 +28,4 @@ class SearchBar extends React.Component {
     this.props.onSearchTermChange(term);
   }
 }
+

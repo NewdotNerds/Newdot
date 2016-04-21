@@ -12,13 +12,14 @@
   @include border-radius($popover);
   border: 1px solid $border-color;
   color: $font-black;
+  max-height: 200px;
   z-index: $z-popover;
   .po-username,
   .po-description {
     margin: 0;
   }
   .up-main {
-  	margin-bottom: 20px;
+    margin-bottom: 20px;
   }
   .po-username {
     font-size: 18px;
@@ -36,7 +37,7 @@
     margin-top: 4px;
     font-size: 14px;
     color: $light-gray;
-    .icon-map-marker {
+    .fa-map-marker {
       color: tomato;
       margin-right: 4px;
     }
@@ -70,7 +71,7 @@
     width: 72px
   }
   .follow-button {
-  	font-size: 11px;
+    font-size: 11px;
   }
   .follow-button,
   .unfollow-button {

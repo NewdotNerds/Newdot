@@ -13,10 +13,10 @@ body.dashboards.top_stories {
     background: $white;
     padding: 20px;
     margin-bottom: 10px;
-    border: 1px solid rgba(0,0,0,.09);
+    border: 1px solid rgba(0,0,0, 0.09);
     @include box-shadow;
     @include border-radius($radius);
-  }  
+  }
 }
 
 body.dashboards.top_stories {

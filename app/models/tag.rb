@@ -13,7 +13,7 @@
 class Tag < ActiveRecord::Base
   has_many :taggings, dependent: :destroy
   has_many :posts, through: :taggings
-  
+
   has_many :interests, dependent: :destroy
   has_many :followers, through: :interests, source: :follower
 
@@ -22,7 +22,7 @@ class Tag < ActiveRecord::Base
   include SearchableTag
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: [ :slugged, :finders ]
 
   def self.first_or_create_with_name!(name)
     where(lowercase_name: name.strip.downcase).first_or_create! do |tag|

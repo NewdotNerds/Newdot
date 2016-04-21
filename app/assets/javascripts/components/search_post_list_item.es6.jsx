@@ -10,3 +10,4 @@ class SearchPostListItem extends React.Component {
     );
   }
 }
+

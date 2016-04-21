@@ -149,3 +149,4 @@ class UserOverlay extends React.Component {
   }
 
 }
+

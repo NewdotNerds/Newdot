@@ -3,11 +3,11 @@ class DashboardsController < ApplicationController
   before_action :authenticate_user!, only: [:bookmarks]
 
   def show
-  	if user_signed_in?
-  	  @dashboard = Dashboard.new(user: current_user, posts: feed)
-  	else
-  	  @dashboard = Dashboard.new(posts: featured_posts) # TODO: change this to 'recommended by Stories staff'
-  	end
+    if user_signed_in?
+      @dashboard = Dashboard.new(user: current_user, posts: feed)
+    else
+      @dashboard = Dashboard.new(posts: featured_posts)
+    end
   end
 
   def bookmarks
@@ -15,7 +15,7 @@ class DashboardsController < ApplicationController
     respond_to do |format|
       format.html { render :show }
       format.js   { render :show }
-    end    
+    end
   end
 
   def top_stories

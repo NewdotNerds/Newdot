@@ -59,3 +59,4 @@ class PopoverLink extends React.Component {
     setTimeout(() => { this.setState({ showPopover: false, position: null }); }, 180);
   }
 }
+

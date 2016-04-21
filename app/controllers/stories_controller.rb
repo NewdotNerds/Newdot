@@ -6,6 +6,6 @@ class StoriesController < ApplicationController
   end
 
   def published
-  	@posts = current_user.posts.recent.published
+    @posts = current_user.posts.recent.published
   end
 end

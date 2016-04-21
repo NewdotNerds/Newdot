@@ -5,11 +5,7 @@
   font-size: 11px;
   font-weight: bold;
   color: $font-black;
-  &.with-border {
-    padding-top: 1.5em;
-    border-top: 1px solid $border-color;
-  }
-} 
+}
 
 .heading-border-b {
   color: $font-black;
@@ -21,6 +17,11 @@
   a {
     color: $accent-color;
   }
+}
+
+.border-top {
+  border-top: 1px solid $border-color;
+  padding-top: 1.5em;
 }
 
 .center {

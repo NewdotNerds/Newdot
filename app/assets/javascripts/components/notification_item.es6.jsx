@@ -66,3 +66,4 @@ class NotificationItem extends React.Component {
     });
   }
 }
+

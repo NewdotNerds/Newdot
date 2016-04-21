@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stories</title>
+  <title>Newdot</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
+  <%= favicon_link_tag 'favicon.png', type: 'image/png' %>
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
   <%= render 'layouts/overlay' unless user_signed_in? %>
@@ -19,6 +20,7 @@
     <%= yield %>
     <%= yield :sidebar %>
   </div> 
+
 </body>
 <script type="text/javascript">
   window.userSignedIn = <%= user_signed_in? %>;

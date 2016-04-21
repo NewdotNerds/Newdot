@@ -72,3 +72,4 @@ class SearchContainer extends React.Component {
     );
   }
 }
+

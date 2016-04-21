@@ -1,11 +1,11 @@
 <div class="bookmark-button-wrapper">
   <% if user_signed_in? %>
     <%= react_component('BookmarkButton',
-                        { bookmarked: current_user.bookmarked?(response),
-                          bookmarkEndpoint: api_response_bookmarks_path(response),
-                          unbookmarkEndpoint: api_response_bookmarks_path(response),
-                          bookmarkableType: 'Response',
-                          bookmarkableId: response.id }) %>
+    { bookmarked: current_user.bookmarked?(response),
+      bookmarkEndpoint: api_response_bookmarks_path(response),
+      unbookmarkEndpoint: api_response_bookmarks_path(response),
+      bookmarkableType: 'Response',
+      bookmarkableId: response.id }) %>
   <% else %>
     <%= button_to '', method: :get, class: 'bookmark-button', data: { behavior: 'trigger-overlay' } do %>
       <span class="icon-bookmark-o"></span><span class="hide-text">Bookmark</span>

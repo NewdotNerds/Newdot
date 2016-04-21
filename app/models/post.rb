@@ -27,6 +27,7 @@ class Post < ActiveRecord::Base
   has_many :responders, through: :responses, source: :user
   has_many :likes, as: :likeable, dependent: :destroy
   has_many :likers, through: :likes, source: :user
+
   has_many :bookmarks, as: :bookmarkable, dependent: :destroy
   has_many :bookmarkers, through: :bookmarks, source: :user
 
@@ -38,10 +39,9 @@ class Post < ActiveRecord::Base
   scope :published, -> { where.not(published_at: nil) }
   scope :drafts, -> { where(published_at: nil) }
   scope :featured, -> { where(featured: true) }
-  
 
   mount_uploader :picture, PictureUploader
-  
+
   before_save :generate_lead!
   # will_pagination configuration
   self.per_page = 5
@@ -49,7 +49,7 @@ class Post < ActiveRecord::Base
   include SearchablePost
 
   extend FriendlyId
-  friendly_id :title, use: [ :slugged, :history ]
+  friendly_id :title, use: [ :slugged, :history, :finders ]
 
   def self.new_draft_for(user)
     post = self.new(user_id: user.id)

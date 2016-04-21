@@ -55,7 +55,7 @@ RSpec.describe API::NotificationsController do
                                           actor: luke,
                                           action: "liked your",
                                           notifiable: lukes_post1,
-+                                          is_new: true)
+                                          is_new: true)
 
       @notification2 = Notification.create(recipient: solo,
                                           actor: luke,
