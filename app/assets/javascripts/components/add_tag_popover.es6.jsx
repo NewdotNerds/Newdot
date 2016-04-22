@@ -1,7 +1,7 @@
 class AddTagPopover extends React.Component {
   //Agregué el componentDidMount() para una mejor UX
   componentDidMount() {
-    React.findDOMNode(this.refs.tagInput).focus(); 
+    ReactDOM.findDOMNode(this.refs.tagInput).focus(); 
   }  
   
   constructor(props) {
