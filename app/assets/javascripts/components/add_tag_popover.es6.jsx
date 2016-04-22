@@ -1,4 +1,9 @@
 class AddTagPopover extends React.Component {
+  //Agregué el componentDidMount() para una mejor UX
+  componentDidMount() {
+    React.findDOMNode(this.refs.tagInput).focus(); 
+  }  
+  
   constructor(props) {
     super(props);
     this.state = { tagName: '' };
@@ -6,15 +11,17 @@ class AddTagPopover extends React.Component {
 
   render () {
     return (
-      <div className="add-tag-popover popover top">
+      <div className="add-tag-popover popover top" >
         <div className="arrow" />
         <h3 className="popover-title">
           Add your interest
         </h3>
         <div className="popover-content">
           <form onSubmit={this.handleAddTag.bind(this)}>
-            <div className="input-group">
+            <div className="input-group" >
               <input
+                ref="tagInput"
+                autofocus="true"
                 type="text"
                 value={this.state.tagName}
                 onChange={this.handleInputChange.bind(this)}

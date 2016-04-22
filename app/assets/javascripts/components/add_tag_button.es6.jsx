@@ -10,7 +10,7 @@ class AddTagButton extends React.Component {
     if (!this.state.showPopover) {
       return (
         <div className="add-tag-button">
-          <button onClick={this.handleButtonClick.bind(this)}>
+          <button onMouseEnter={this.handleButtonClick.bind(this)}>
             +
           </button>
         </div>
@@ -18,7 +18,7 @@ class AddTagButton extends React.Component {
     } else {
       return (
         <div className="add-tag-button">
-          <button className="active" onClick={this.closePopover}>
+          <button className="active" onMouseLeave={this.closePopover}>
             +
           </button>
           <AddTagPopover closePopover={this.closePopover}/>
