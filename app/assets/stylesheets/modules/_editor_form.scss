@@ -1,5 +1,12 @@
 $editor-padding-left: 60px;
 
+//eliminar el scroll bar horizontal
+.del-marg {
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .editor-form {
   position: relative;
   padding-bottom: 2em;
