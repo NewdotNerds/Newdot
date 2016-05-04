@@ -30,7 +30,7 @@ class UserFollowButton extends React.Component {
     if (window.userSignedIn === false) {
       return (
         <a href="" className="button green-border-button follow-button" onClick={this.openOverlay}>
-          Follow
+          Seguir
         </a>
       );
     }
@@ -42,7 +42,7 @@ class UserFollowButton extends React.Component {
           onClick={this.handleUnfollowClick.bind(this)}
           rel="nofollow" 
           >
-          <span className="top content">Following</span><br />
+          <span className="top content">Siguiendo</span><br />
           <span className="bottom content">Unfollow</span>
         </button>
       );
@@ -53,7 +53,7 @@ class UserFollowButton extends React.Component {
           className="button green-border-button follow-button" 
           rel="nofollow" 
         >
-          Follow
+          Seguir
         </button>
       );
     }

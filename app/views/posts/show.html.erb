@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <div class="author-info">
+    <!--<div class="author-info">
       <div clas="author-metadata">
         <%= avatar_for @post.user, size: 50 %>
         <div class="username-description">
@@ -42,12 +42,12 @@
         </div>
       </div>
       <%= follow_button_for @post.user %>
-    </div>
+    </div>-->
 
     <% if user_signed_in? && current_user?(@post.user) %>
       <div class="edit-delete-button-wrapper">
-        <%= link_to "Edit", edit_post_path(@post), class: 'button' %>
-        <%= link_to "Delete", post_path(@post), method: :delete, class: 'button' %>
+        <%= link_to "Editar", edit_post_path(@post), class: 'button edit-delete-post' %>
+        <%= link_to "Eliminar", post_path(@post), method: :delete, class: 'button edit-delete-post' %>
       </div>
     <% end %>
   </div>
@@ -56,7 +56,7 @@
 
 <div class="post-show-footer row" data-animation="fadeInUp-fadeOutDown">
   <div id="responses" class="col-xs-10 col-md-6 col-md-offset-3 col-xs-offset-1 main-content">
-    <h4 class="small-heading">Responses</h4>
+    <h4 class="small-heading">Respuestas</h4>
     <% if user_signed_in? %>
       <%= render partial: 'posts/response_editor', locals: { post: @post, new_response: @response } %>
     <% end %>
@@ -70,18 +70,16 @@
 </div>
 
 
-<div class="post-metadata-bar" data-page="post-metadata-bar">
+<!--<div class="post-metadata-bar" data-page="post-metadata-bar">
   <div class="flex-container" data-behavior="animated-metadata">
     <div class="post-stats flex-container">
       <%= render partial: 'posts/likes', locals: { post: @post } %>
-
       <div>
         <%= link_to post_path(@post, anchor: 'responses'), class: "response-icon-wrapper" do %>
           <i class="fa fa-comment-o"></i>
           <span class="response-count" data-behavior="response-count"><%= @post.responses.size %></span>
         <% end %>
       </div>
-
       <div class="bookmark-button">
         <%= render partial: 'posts/bookmarks', locals: { post: @post } %>
       </div>
@@ -94,4 +92,4 @@
       <%= follow_button_for @post.user %>
     </div>
   </div>
-</div>
+</div>-->

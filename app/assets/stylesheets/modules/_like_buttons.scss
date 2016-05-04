@@ -4,7 +4,7 @@
   outline: none;
   background-color: transparent;
   i.fa {
-    color: $accent-color;
+    color: $red; //$accent-color;
     font-size: 18px;
   }
 } 
@@ -38,11 +38,11 @@
   outline: none;
   background-color: transparent;
   i.fa {
-    color: $light-gray;
+    color: $red; //$light-gray;
     font-size: 18px;
     &:hover,
     &:active {
-      color: $light-font-color;
+      color: $red; //$light-font-color;
     }
   }
 }

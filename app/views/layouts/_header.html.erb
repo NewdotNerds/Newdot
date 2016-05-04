@@ -2,18 +2,18 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
-        <%= image_tag('stories-logo.png', height: 40, alt: "Stories") %>
+        <%= image_tag('tong.png', height: 40, alt: "Newdot") %>
       <% end %>
     </div>
     <ul class="nav navbar-nav filter-links">
       <li>
         <% if user_signed_in? %>
-          <%= nav_link_to "Home", root_path %>
+          <%= nav_link_to "Inicio", root_path %>
         <% else %>
           <%= nav_link_to "Staff pick", root_path %>
         <% end %>
       </li>
-      <li><%= nav_link_to "Top stories", top_stories_path %></li>
+      <li><%= nav_link_to "Destacados", top_stories_path %></li>
       <% if user_signed_in? %>
         <li><%= nav_link_to "Bookmarks", dashboard_bookmarks_path %></li>
       <% else %>
@@ -27,17 +27,16 @@
           <%= react_component('SearchContainer', {}, { prerender: true }) %>
         </li>
         <% if user_signed_in? %>
-          <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button" %></li>
+          <li class="new-post-button"><%= link_to "Nuevo Post", new_post_path %></li>
           <li id="notifications">
             <%= react_component('NotificationsContainer', {}) %>
           </li>
           <%= render 'layouts/avatar_dropdown' %>
         <% else %>
-          <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-          <li class="sign-in-button"><%= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
+          <li class="new-post-button"><%= link_to "Nuevo Post", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
+          <li class="sign-in-button"><%= link_to "Ingresa / Regístrate", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
         <% end %>
       </ul>
     </div>
-
   </div>
 </nav>

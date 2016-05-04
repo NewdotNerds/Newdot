@@ -16,36 +16,36 @@
     </header>
 
     <div>
-    <% if user_signed_in? %>
-      <%= react_component('UserFollowContainer', 
-      { followerCount: @user.followers.size, 
-        followingCount: @user.following.size, 
-        following: current_user.following?(@user), 
-        followed_id: @user.id, 
-        hideButton: current_user?(@user),
-        username: @user.username,
-        overlayTrigger: true },) %>
-    <% else %>
-      <%= react_component('UserFollowContainer', 
-      { followerCount: @user.followers.size, 
-        followingCount: @user.following.size, 
-        following: false, 
-        followed_id: @user.id, 
-        hideButton: false,
-        username: @user.username,
-        overlayTrigger: true },) %>
-    <% end %>
+      <% if user_signed_in? %>
+        <%= react_component('UserFollowContainer', 
+        { followerCount: @user.followers.size, 
+          followingCount: @user.following.size, 
+          following: current_user.following?(@user), 
+          followed_id: @user.id, 
+          hideButton: current_user?(@user),
+          username: @user.username,
+          overlayTrigger: true },) %>
+      <% else %>
+        <%= react_component('UserFollowContainer', 
+        { followerCount: @user.followers.size, 
+          followingCount: @user.following.size, 
+          following: false, 
+          followed_id: @user.id, 
+          hideButton: false,
+          username: @user.username,
+          overlayTrigger: true },) %>
+      <% end %>
 
-    <% if user_signed_in? && current_user?(@user) %>
-      <%= link_to "Edit", edit_user_path(@user), class: 'button green-border-button pull-right edit-button' %>
-    <% end %>
+      <% if user_signed_in? && current_user?(@user) %>
+        <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button pull-right edit-button' %>
+      <% end %>
     </div>
   </div>
 </div>
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
   <div class="flex-container border-top">
-    <h4 class="small-heading">Interests</h4>
+    <h4 class="small-heading">Intereses</h4>
     <% if user_signed_in? && current_user?(@user) %>
       <%= react_component('AddTagButton') %>
     <% end %>
@@ -57,7 +57,7 @@
   <% end %>
 
   <% if @latest_posts.any? %>
-    <h4 class="small-heading border-top">latest</h4>
+    <h4 class="small-heading border-top">Últimos Posts</h4>
     <%= render @latest_posts %>
   <% end %>
 </div>
@@ -66,8 +66,8 @@
 <% if @recommended_posts.any? %>
   <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
     <div class="posts-wrapper">
-      <h4 class="heading-border-b">Recommended by <%= @user.username %> &#149; 
-        <%= link_to "See all", user_recommended_posts_path(@user) %>
+      <h4 class="heading-border-b">Recomendado por <%= @user.username %> &#149; 
+        <%= link_to "Ver todos", user_recommended_posts_path(@user) %>
       </h4>
       <div class="flex-container f-wrap">
         <% @recommended_posts.each do |post| %>

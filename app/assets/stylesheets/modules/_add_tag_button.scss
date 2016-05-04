@@ -13,19 +13,22 @@
   background-color: $white;
   font-size: 16px;
   color: $white;
-  border: 1px solid;
-  color: $light-gray;
+  border: 1px solid $light-font-color;
+  color: $light-font-color; //$light-gray;
   outline: none;
   transition: all 200ms;
   display: block;
-  &.active {
+  &:active,
+  &:hover {
+    border: 1px solid $red;
+    color: $red;
     transform: rotate(45deg);
   }
 }
 .add-tag-popover {
   display: block;
   transform: translate(-43%, -100%);
-  min-width: 220px;
+  min-width: 200px;
   .popover-title {
     color: $light-font-color;
     text-align: center;
@@ -34,10 +37,11 @@
     text-align: center;
     .form-control:focus {
       outline: none !important;
+      height: 25px;
     }
-    .add-button {
+    /*.add-button {
       background: rgba($accent-color, 0.7);
       color: $white;
-    }
+    }*/
   }
 }

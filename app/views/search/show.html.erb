@@ -3,28 +3,27 @@
     <div class="row">
       <div class="col-md-12 large-searchbar">
         <%= form_for :search, url: search_path, method: :get do |f| %>
-          <%= f.search_field :q, value: params[:q], placeholder: 'Search Stories', autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
+          <%= f.search_field :q, value: params[:q], placeholder: 'Busca en Newdot', autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
         <% end %>
       </div>
     </div>
-
 
     <div class="row">
       <div class="col-md-2">
         <div class="search-filter-links">
           <div class="active filter-link">
             <%= link_to search_path(q: params[:q]) do %>
-              All <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+              Todo <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             <% end %>
           </div>
-          <div class="filter-link"><%= link_to 'People', search_users_path(q: params[:q]) %></div>
+          <div class="filter-link"><%= link_to 'Gente', search_users_path(q: params[:q]) %></div>
         </div>
       </div>
 
       <div class="col-md-6" data-animation="fadeInUp-fadeOutDown">
         <% if @posts.any? %>
           <div data-behavior="endless-scroll">
-            <h4 class="small-heading border-top">Stories</h4>
+            <h4 class="small-heading border-top">Posts</h4>
             <%= render @posts %>
           </div>
           <%= will_paginate @post_records %>
@@ -37,13 +36,12 @@
           <%= react_component('TagList', { tags: @tags }, { prerender: true }) %>
         <% end %>
         <% if @users.any? %>
-          <h4 class="small-heading border-top">People</h4>
+          <h4 class="small-heading border-top">Gente</h4>
           <% @users.each do |user| %>
             <%= render partial: 'search/user_card', locals: { user: user } %>
           <% end %>
         <% end %>
       </aside>
-
     </div>
   </div>
 </div>

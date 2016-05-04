@@ -2,13 +2,13 @@ module PostsHelper
   def post_length_in_minutes(body)
     min = body.split(" ").size / 250
     if min == 0
-      'less than a minute read'
+      'Menos de un minuto'
     else
-      "#{min} min read"
+      "#{min} minutos de lectura"
     end
   end
 
   def link_to_responses_to(post)
-    link_to (pluralize(post.responses.count, "response")), post_path(post, anchor: 'responses'), class: 'response-count'
+    link_to (pluralize(post.responses.count, "respuesta")), post_path(post, anchor: 'respuestas'), class: 'response-count'
   end
 end

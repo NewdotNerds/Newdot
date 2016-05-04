@@ -5,13 +5,12 @@
 
           <div class="profile-info">
             <h1 class="hero-title"><%= @user.username %></h1>
-            <p class="hero-description"><%= f.text_area :description, rows: 3, autofocus: true, placeholder: "Tell the world about yourself!" %></p>
+            <p class="hero-description"><%= f.text_area :description, rows: 3, autofocus: true, placeholder: "¡Cuéntale al mundo sobre tí!" %></p>
             <div class="hero-location">
               <%= icon('map-marker') %>
-              <%= f.text_field :location, id: 'autocomplete', onFocus: 'geolocate()', placeholder: 'Where do you live?' %>
+              <%= f.text_field :location, id: 'autocomplete', onFocus: 'geolocate()', placeholder: '¿Dónde vives?' %>
             </div>
           </div>
-
 
           <div class="hero-avatar">
             <label class="change-avatar" id="change-avatar" style="background-image: url('<%= @user.avatar.url %>')">
@@ -21,35 +20,30 @@
           </div>
         </header>
 
-        <%= f.submit "Save Change", class: 'button green-inner-button' %>
-        <%= link_to "Cancel", @user, class: 'button green-border-button' %>
+        <%= f.submit "Guardar cambios", class: 'button' %>
+        <%= link_to "Cancelar", @user, class: 'button cancel-edit-user' %>
     <% end %>
   </div>
 </div>
 
 <script type="text/javascript">
 /*** Google Map JavaScript API V3 ***/
-
 var autocomplete;
-
 function initAutocomplete() {
   // Create the autocomplete object, restricting the search to geographical
   // location types.
   autocomplete = new google.maps.places.Autocomplete(
       (document.getElementById('autocomplete')),
       {types: ['geocode']});
-
   // When the user selects an address from the dropdown, populate the address
   // fields in the form.
   autocomplete.addListener('place_changed', fillInAddress);
 }
-
 function fillInAddress() {
   // Get the place details from the autocomplete object.
   var place = autocomplete.getPlace();
   console.log(place);
 }
-
 // Bias the autocomplete object to the user's geographical location,
 // as supplied by the browser's 'navigator.geolocation' object.
 function geolocate() {

@@ -12,11 +12,11 @@
   margin: 30px 0;
 
   .button {
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
     width: 232px;
     color: $white;
-    text-align: left;
+    //text-align: left;
     transition: background-color 0.2s;
   }
 
@@ -45,5 +45,11 @@
     margin-right: 13px;
   }
 }
-
+.social {
+  border: none;
+  padding: 3px 0;
+  &:hover {
+    border: none;
+  }
+}
 

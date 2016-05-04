@@ -43,12 +43,12 @@ class NotificationItem extends React.Component {
   // FIXME: this is tightly coupled to action.
   notificationIcon() {
     switch(this.props.action) {
-      case 'liked your':
+      case 'le gustó tu':
         return <i className="fa fa-heart-o"></i>;
-      case 'started following you':
+      case 'empezó a seguirte':
         return <i className="fa fa-user"></i>;
-      case 'responded to your':
-      case 'also commented on a':
+      case 'respondió tu':
+      case 'también comentó en un':
         return <i className="fa fa-commenting-o"></i>;
     }
   }
@@ -66,4 +66,3 @@ class NotificationItem extends React.Component {
     });
   }
 }
-

@@ -1,31 +1,40 @@
 .button {
-  border: 1px solid $border-color;
-  padding: 0.6em 1em 0.7em 1em;
-  @include border-radius($button);
-  text-decoration: none;
-  color: rgba(0,0,0,0.6);
-  font-size: 14px;
+  /*border: 1px solid $border-color;
+  //padding: 0.6em 1em 0.7em 1em;
+  //@include border-radius($button);*/
+  background-color: $background-gray; //$green;
+  border: 1px solid $green;
+  border-radius: 4px;
+  color: #555;
+  /*text-decoration: none;
+  color: #555; /*rgba(0,0,0,0.6);*/
+  /*font-size: 14px;
+  
   outline: none;
-  transition: all .1s;
+  transition: all .1s;*/
   &:hover {
     text-decoration: none;
-    color: rgba(0,0,0,0.8);
-    border-color: $border-hover-color;
+    /*color: #333;*/
+    background-color: $green;
+    border: 1px solid $green;
+    color: #333;/*rgba(0,0,0,0.12);*/
+    /*border: 1px solid #333; /*$border-hover-color;*/
   }
 
-  &.green-border-button {
-    color: $accent-color !important; // override bootstrap styles
-    border-color: $accent-color;
-    background-color: #fff;
+  &.yellow-border-button {
+    color: #555 !important;
+    border-color: $green;
+    background-color: $green;
+    border-radius: 4px;
   }
-  &.green-inner-button {
-    color: #fff;
+  &.yellow-inner-button {
+    color: #333;
     background-color: $button-green;
     border-color: $button-green;
   }
-  &.green-inner-button:hover {
-    color: $button-green;
-    background-color: $white;
+  &.yellow-inner-button:hover {
+    color: #333; /*//$button-yellow;*/
+    background-color: $green;
     border-color: $button-green;
   }
 }
@@ -38,37 +47,53 @@
   @include border-radius($round);
   background-color: #fff;
   margin-right: 20px;
-  .count-button {
+  /*.count-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 12px;
     font-weight: bold;
+  }*/
+}
+.unfollow-button {
+  position: relative;
+  width: 6.5em;
+  overflow: hidden;
+  display: inline-block;
+  .content {
+    position: absolute;
+    padding: 0 1em;
+    left: 0;
+    /*//transition: top 0.4s ease 0.2s;*/
+    overflow: hidden;
+  }
+  /*.top {
+    top: 0;
+  }
+  &:hover .top {
+    top: -80px;
+  }
+  .bottom {
+    top: 80px;
+  }*/
+  /*&:hover .bottom {
+    top: 0;
+  }*/
+}
+.button-dropdown-new-post {
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  &:hover {
+    border: 2px solid #333;
+    color: #333;
   }
 }
- .unfollow-button {
-   position: relative;
-   width: 6.5em;
-   overflow: hidden;
-   display: inline-block;
-   .content {
-     position: absolute;
-     padding: 0.5em 1em;
-     left: 0;
-     transition: top 0.4s ease 0.2s;
-     overflow: hidden;
-   }
-   .top {
-     top: 0;
-   }
-   &:hover .top {
-     top: -80px;
-   }
-   .bottom {
-     top: 80px;
-   }
-   &:hover .bottom {
-     top: 0;
-   }
- }
+.a-to-button {
+  padding: 1px 6px;
+}
+.cancel-edit-user, .edit-delete-post {
+  padding: 3px 6px;
+}

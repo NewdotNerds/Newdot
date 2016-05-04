@@ -2,16 +2,16 @@
   <div class="col-md-10 col-md-offset-1">
     <div class="side-padding-5">
       <header class="hero flex-container flex-space-btw">
-        <h1 class="hero-title">Your Stories</h1>
-        <div class="button-set">
+        <h1 class="hero-title">Tus posts</h1>
+        <!--<div class="button-set">
           <%= link_to "Write a story", new_post_path, class: "button green-border-button" %>
-        </div>
+        </div>-->
       </header>
 
       <nav class="nav-tabs">
         <ul>
-          <li><%= nav_link_to "Drafts", stories_drafts_path %></li>
-          <li><%= nav_link_to "Public", stories_published_path %></li>
+          <li><%= nav_link_to "Borrador", stories_drafts_path %></li>
+          <li><%= nav_link_to "Publicados", stories_published_path %></li>
         </ul>
       </nav>
 
@@ -19,9 +19,9 @@
         <% if @drafts.any? %>
           <% @drafts.each do |draft| %>
             <div class="story-card" id="story_<%= draft.id %>">
-              <strong class="sc-title"><%= link_to (draft.title || "Untitled"), edit_post_path(draft) %></strong>
+              <strong class="sc-title"><%= link_to (draft.title || "Sin título"), edit_post_path(draft) %></strong>
               <small class="sc-metadata">
-                Last edited <%= time_ago_in_words(draft.updated_at) %> ago &#149; 
+                Editado por última vez hace <%= time_ago_in_words(draft.updated_at) %> &#149; 
                 <% if draft.body.present? %>
                   <%= post_length_in_minutes(draft.body) %> 
                   (<%= pluralize(draft.word_count, 'word') %>) so far &#149;
@@ -31,15 +31,15 @@
                     <span class="glyphicon glyphicon-chevron-down"></span>
                   </button>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "Edit", edit_post_path(draft) %></li>
-                    <li><%= link_to "Delete", api_post_path(draft), method: :delete, remote: true %></li>
+                    <li><%= link_to "Editar", edit_post_path(draft) %></li>
+                    <li><%= link_to "Eliminar", api_post_path(draft), method: :delete, remote: true %></li>
                   </ul>
                 </div>
               </small>
             </div>
           <% end %>
         <% else %>
-          <p class="no-sc-message">No drafts yet</p>
+          <p class="no-sc-message">No tienes borradores</p>
         <% end %>
       </div>
     </div>

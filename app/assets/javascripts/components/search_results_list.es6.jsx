@@ -7,7 +7,7 @@ class SearchResultsList extends React.Component {
         <span className="dropdown-arrow-bottom"></span>
         <li>
           <a href={`/search?q=${this.props.term}`}>
-            <i className="fa fa-search"></i> Search for <strong>{this.props.term}</strong>
+            <i className="fa fa-search"></i> Búsqueda para <strong>{this.props.term}</strong>
           </a>
         </li>
         {this.renderPostHeading()}
@@ -47,7 +47,7 @@ class SearchResultsList extends React.Component {
   renderUserHeading() {
     if (this.props.users.length === 0) { return; }
 
-    return <li className="autocomplete-heading"><h4>People</h4></li>
+    return <li className="autocomplete-heading"><h4>Gente</h4></li>
   }
 
   renderTagHeading() {

@@ -3,15 +3,19 @@ body.registrations.new {
   input[type="text"],
   input[type="password"],
   input[type="email"] {
-    font-size: 28px;
-    font-weight: 100;
+    font-size: 16px;
+    //font-weight: 100;
     width: 100%;
     border: none;
     outline: none;
-    background-color: rgb(250, 255, 189);
+    background-color: transparent; //rgb(250, 255, 189);
   }
   .form-input-wrapper {
-    padding: 1.5em 0;
+    width: 300px;
+    padding: 0.5em 0.5em;
+    border: 1px solid #333;
+    margin-bottom: 5px;
+    border-radius: 4px;
   }
   .remember-me {
     display: inline-block;
@@ -22,5 +26,22 @@ body.registrations.new {
     a {
       color: $font-black;
     }
+  }
+  .create-account {
+    margin-top: 5px;
+    width: 300px;
+    height: 40px;
+    font-size: 15px;  
+  }
+  form {
+    display: inline-block;
+  }
+  .container {
+    text-align: center;
+  }
+  .title {
+    color: $green;
+    margin-bottom: 100px;
+    font-size: 40px;
   }
 }

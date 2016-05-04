@@ -7,11 +7,11 @@
     width: 40px;
     height: 40px;
     padding: 0;
-    margin-top: 5px;
+    margin-top: 2px;
     position: relative;
-    border: 1.5px solid $border-color;
+    //border: 1.5px solid $border-color;
     transition: all .1s;
-    @include border-radius($round);
+    //@include border-radius($round);
     i.fa-bell-o,
     span#new-notifications-count {
       position: absolute;
@@ -21,14 +21,17 @@
       font-size: 1.3em;
     }
     #bell {
-      color: $light-font-color;
+      color: #fff; //$light-font-color;
+      &:hover {
+        color: #333;
+      }
     }
     span#new-notifications-count {
       color: $white;
     }
   }
   a.dropdown-toggle:hover {
-    border: 1.5px solid $border-hover-color;
+    //border: 1.5px solid $border-hover-color;
   }
 }
 .notification-container {
@@ -92,7 +95,8 @@
     padding: 8px 0;
     border-bottom: 1px solid $light-border-color;
     &.unread-notification {
-      border-left: 2px solid $accent-color;
+      background-color: $background-gray;
+      //border-left: 2px solid $accent-color;
     }
   }
   li > a {
@@ -109,6 +113,7 @@
   }
   .notification-metadata {
     display: inline-block;
+    font-style: bold;
   }
 
   .fa {

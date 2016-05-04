@@ -21,7 +21,7 @@ body.posts.show {
   }
 
   .title {
-    color: $black;
+    color: $font-black;
     font-weight: 600;
     font-size: 36px;
   }
@@ -35,11 +35,11 @@ body.posts.show {
   }
 
   .tag {
-    padding: 0.5em 1em;
-    background: $super-light-gray;
+    padding: 0.3em 0.5em;
+    //background: $super-light-gray;
     text-decoration: none;
     text-transform: capitalize;
-    color: rgba(0, 0, 0, 0.6);
+    //color: rgba(0, 0, 0, 0.6);
     font-size: 13px;
     @include border-radius($radius);
     margin-right: 8px;

@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to @user
     else
-      render :edit, alert: "Could not update, Please try again"
+      render :edit, alert: "No se pudo actualizar. Intenta de nuevo por favor"
     end
   end
 

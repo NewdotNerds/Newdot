@@ -54,7 +54,7 @@
   position: relative; }
   .medium-editor-placeholder:after {
     content: attr(data-placeholder) !important;
-    font-style: italic;
+    //font-style: italic;
     left: 0;
     position: absolute;
     top: 0;

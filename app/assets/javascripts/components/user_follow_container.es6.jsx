@@ -25,14 +25,14 @@ class UserFollowContainer extends React.Component {
     if (this.props.overlayTrigger) {
       return (
         <OverlayTriggerButton
-          text={`<b>${this.props.followingCount}</b> Following`}
+          text={`<b>${this.props.followingCount}</b> Siguiendo`}
           apiEndpoint={`/api/following?user_id=${this.props.followed_id}`}
-          overlayHeading={`${this.props.username} is Following`} />
+          overlayHeading={`${this.props.username} sigue a`} />
       );
     } else {
       return (
         <span className="following-count">
-          <b>{this.props.followingCount}</b> Following
+          <b>{this.props.followingCount}</b> Siguiendo
         </span>
       );
     }
@@ -44,7 +44,7 @@ class UserFollowContainer extends React.Component {
         <OverlayTriggerButton 
           text={`<b>${this.state.followerCount}</b> ${this.pluralizeFollower()}`}
           apiEndpoint={`/api/followers?user_id=${this.props.followed_id}`}
-          overlayHeading={`${this.props.username} is Followed by`} />
+          overlayHeading={`Seguidores de ${this.props.username}`} />
       );
     } else {
       return (
@@ -73,7 +73,7 @@ class UserFollowContainer extends React.Component {
   }
 
   pluralizeFollower() {
-    return (this.state.followerCount > 1 || this.state.followerCount === 0) ? 'Followers' : 'Follower';
+    return (this.state.followerCount > 1 || this.state.followerCount === 0) ? 'Seguidores' : 'Follower';
   }
 }
 

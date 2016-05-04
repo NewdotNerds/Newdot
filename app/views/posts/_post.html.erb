@@ -11,11 +11,11 @@
     <h3 class="post-title"><%= link_to post.title, post %></h3>
     <% if post.lead %>
       <div class="post-body"><%= truncate(post.lead, length: 140, separator: ' ', escape: false) %></div>
-      <%= link_to "Read more", post, class: 'read-more' %>
+      <%= link_to "Leer más", post, class: 'read-more' %>
     <% end %>
   </div>
 
-  <div class="post-stats clearfix">
+  <div class="post-stats stats clearfix">
     <div id="post_<%= post.id %>_likes" class="pull-left">
       <%= render partial: 'posts/likes', locals: { post: post } %>
     </div>

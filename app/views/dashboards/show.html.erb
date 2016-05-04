@@ -1,5 +1,5 @@
 <% if user_signed_in? %>  
-  <div class="col-md-6 col-md-offset-1 dashboard-main-content">
+  <div class="col-md-5 col-md-offset-3 dashboard-main-content">
     <% unless @dashboard.top_stories? %>
       <% if current_page?('/') %>
         <div data-animation="fadeInUp-fadeOutDown">
@@ -21,35 +21,16 @@
   </div>
 
   <% content_for :sidebar do %>
-    <aside class="col-md-4 main-sidebar">
-      <h4 class="small-heading border-top">Featured tags</h4>
+    <aside class="col-md-3 col-md-offset-1 main-sidebar">
+      <h4 class="small-heading border-top">Tags destacados</h4>
       <%= react_component('TagList', { tags: @dashboard.featured_tags }, { prerender: true }) %>
 
       <div class="flex-container border-top">
-        <h4 class="small-heading">Tags you follow</h4><%= react_component('AddTagButton') %>
+        <h4 class="small-heading">Tags que sigues</h4><%= react_component('AddTagButton') %>
       </div>
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
-
-      <% unless @dashboard.filtered? %>
-        <h4 class="small-heading border-top">Top stories</h4>
-        <div class="sidebar-top-stories">
-          <ul>
-            <% @dashboard.top_stories.each_with_index do |post, index| %>
-              <li class="top-stories-list-item">
-                <div class="count-button-wrapper">
-                  <span class="count-button"><%= index + 1 %></span>
-                </div>
-                <div class="top-stories-links">
-                  <%= link_to post.title, post, class: 'post-title' %><br/>
-                  <small><%= link_to post.username, post.user, class: 'post-username' %></small>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
     </aside>
   <% end %>
 <% else %>
-  <%= image_link_to "lenguita.png", new_user_session_path, { data: { behavior: 'trigger-overlay' }, size: '200x200', alt: '¡Ingresa a Newdot!' }, { title: 'Newdot', rel: 'tooltip', relative: true } %>
+  <%= image_link_to "lenguita.png", new_user_session_path, { data: { behavior: 'trigger-overlay' }, size: '200x200', alt: '¡Ingresa a Newdot!' }, { class: 'tongue', title: 'Newdot', rel: 'tooltip', relative: true } %>
 <% end %>

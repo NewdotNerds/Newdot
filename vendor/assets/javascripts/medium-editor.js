@@ -3466,7 +3466,7 @@ MediumEditor.extensions = {};
         /* placeholderText: [string]  (previously options.anchorInputPlaceholder)
          * text to be shown as placeholder of the anchor input.
          */
-        placeholderText: 'Paste or type a link',
+        placeholderText: 'Pega o tipea un link',
 
         /* targetCheckbox: [boolean]  (previously options.anchorTarget)
          * enables/disables displaying a "Open in new window" checkbox, which when checked

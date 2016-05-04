@@ -7,7 +7,7 @@ var Editor = {
 
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: "Tell your Story ..."
+        text: "Comparte lo que sabes ..."
       }
     });
 
@@ -26,7 +26,7 @@ var Editor = {
 
     // preload tags if its edit.
     var tag_string = $('[data-behavior="tags"]').data("tags");
-    var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Story', 'Music'];
+    var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Ejemplo'];
 
     var my_taggle = new Taggle('js-taggle', {
       duplicateTagClass: 'bounce',
@@ -48,7 +48,7 @@ var Editor = {
 
     /*** Autosave ***/
     $('[data-behavior="autosave"]').autoSave(function() {
-      $('[data-behavior="editor-message"]').text('Saving...');
+      $('[data-behavior="editor-message"]').text('Guardando...');
       $('#post_all_tags').val(my_taggle.getTagValues());
       Editor.postAutosave($('.editor-form').attr('action'),
                    $('input[name="_method"]').val(),
