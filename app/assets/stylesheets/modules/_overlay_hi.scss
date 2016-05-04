@@ -29,23 +29,63 @@
   transform: translateY(25%) rotateX(-35deg);
 }
 
+.grayed-heading-main {
+  color: $white; //$light-gray;
+  font-weight: bold;
+  font-size: 50px;
+}
+
 /* Overlay style */
-.overlay {
+.overlay-main {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.95);
-  //background-image: url("b10.jpg");
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  //background-position: 50% 10%;
+  //background: rgba(255, 255, 255, 0.95);
+  background-image: url("b10.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 10%;
+  z-index: 10000; // FIXME
+}
+.logo-main {
+  position: absolute;
+  left: 50%;
+  margin-left: -12px;
+  margin-top: 14px;
+}
+
+.overlay-signin {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  //background: rgba(255, 255, 255, 0.95);
+  background-image: url("6.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  z-index: 10000; // FIXME
+}
+
+.overlay-signup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  //background: rgba(255, 255, 255, 0.95);
+  background-image: url("b18.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
   z-index: 10000; // FIXME
 }
 
 /* Overlay closing cross */
-.overlay .overlay-close {
+.overlay .overlay-close-main {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -53,7 +93,7 @@
   top: 20px;
   overflow: hidden;
   border: none;
-  color: $light-font-color; //$white; //$light-gray;
+  color: $white; //$light-gray;
   font-size: 22px;
   background-color: transparent;
   outline: none;
@@ -69,19 +109,22 @@
   transform: translateY(-50%);
 }
 
-.grayed-heading {
-  color: $light-font-color; //$white; //$light-gray;
+.grayed-heading-main {
+  color: $white; //$light-gray;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 50px;
 }
 
+.center-main {
+  text-align: center;
+}
 
-.overlay-title {
+.overlay-title-main {
   margin-top: 80px;
   margin-bottom: 90px;
 }
 
-.overlay-desc {
+.overlay-desc-main {
   display: flex;
   justify-content: space-between;
   flex-flow: nowrap;
@@ -89,10 +132,10 @@
   color: $white;
   padding: 0 130px;
 
-  .desc {
+  .desc-main {
     max-width: 450px;
     text-align: left;
-    .title {
+    .title-main {
       font-size: 30px;
       margin-bottom: 0;
     }

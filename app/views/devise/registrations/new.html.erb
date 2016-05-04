@@ -1,35 +1,37 @@
-<div class="row">
+<div class="row fix-scroll">
   <div class="col-md-6 col-md-offset-3 container">
-    <h2 class="title">¡Regístrate en Newdot!</h2>
+    <div class="overlay-signup">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
+        <%= devise_error_messages! %>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="form-input-wrapper">
-        <%= f.text_field :username, autofocus: true, placeholder: "Usuario", onfocus: "this.value = this.value;" %>
-      </div>
-
-      <div class="form-input-wrapper">
-        <%= f.email_field :email, placeholder: "Correo" %>
-      </div>
-
-      <% if f.object.password_required? %>
-        <div class="form-input-wrapper">
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña (mínimo #{@minimum_password_length} caracteres)" %>
+        <div class="form-input-wrapper-sessions white">
+          <%= f.text_field :username, autofocus: true, placeholder: "Usuario", onfocus: "this.value = this.value;" %>
         </div>
 
-        <div class="form-input-wrapper">
-          <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Reingresa tu contraseña" %>
+        <div class="form-input-wrapper-sessions white">
+          <%= f.email_field :email, placeholder: "Correo" %>
         </div>
+
+        <% if f.object.password_required? %>
+          <div class="form-input-wrapper-sessions white">
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña (mínimo #{@minimum_password_length} caracteres)" %>
+          </div>
+
+          <div class="form-input-wrapper-sessions white">
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Reingresa tu contraseña" %>
+          </div>
+        <% end %>
+
+        <%= f.submit "Crear cuenta", class: "button buttons-session" %>
+        <p class="o">o</p>
+        <%= link_to "Inicia sesión", new_user_session_path, class: "button a-to-button buttons-session pad-top" %>
+
       <% end %>
 
-      <%= f.submit "Crear cuenta", class: "button create-account" %>
-
-    <% end %>
-
-    <!--<%= render "devise/shared/links" %>
-    <div class="devise-links">
-      <%= render "devise/shared/links" %>
-    </div>-->
+      <!--<%= render "devise/shared/links" %>
+      <div class="devise-links">
+        <%= render "devise/shared/links" %>
+      </div>-->
+    </div>
   </div>
 </div>

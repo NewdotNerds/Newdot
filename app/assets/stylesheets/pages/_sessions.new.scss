@@ -17,8 +17,27 @@ body.registrations.new {
     margin-bottom: 5px;
     border-radius: 4px;
   }
+  .form-input-wrapper-sessions {
+    width: 300px;
+    border: 1px solid #333;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 0.2em 0.5em;
+    color: black;
+  }
+  .white {
+    color: $white;
+  }
+  .buttons-session {
+    width: 300px;
+    margin-bottom: 5px;
+    height: 30px;
+  }
+  .pad-top {
+    padding-top: 4px;
+  }
   .remember-me {
-    display: inline-block;
+    //display: inline-block;
     color: $font-black;
   }
   .devise-links {
@@ -27,6 +46,12 @@ body.registrations.new {
       color: $font-black;
     }
   }
+  .o {
+    margin: 0 0 4px;
+    font-size: 11px;
+    font-weight: bold;
+    color: $white;
+  }
   .create-account {
     margin-top: 5px;
     width: 300px;
@@ -34,7 +59,12 @@ body.registrations.new {
     font-size: 15px;  
   }
   form {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20%;
+    //display: inline-block;
   }
   .container {
     text-align: center;
@@ -44,4 +74,8 @@ body.registrations.new {
     margin-bottom: 100px;
     font-size: 40px;
   }
+}
+.fix-scroll {
+  margin-left: 0;
+  margin-right: 0;
 }

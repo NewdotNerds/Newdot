@@ -54,6 +54,14 @@ nav.navbar {
     background-color: #00C9EC;
   }
 
+  .fix-width {
+    padding: 0 0;
+  }
+
+  .left-logo {
+    margin-left: 15px;
+  }
+
   .navbar-brand {
     height: 40px;
   }
@@ -236,7 +244,7 @@ nav.navbar {
 @media (min-width: $screen-md-min) {
   nav.navbar {
     #logo {
-      width: 65px;
+      width: auto;
     }
   }
   .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
