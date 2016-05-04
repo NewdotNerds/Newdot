@@ -10,16 +10,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body class="<%= controller.controller_name %> <%= controller.action_name %>">
+<body class="<%= controller.controller_name %> <%= controller.action_name %>" >
   <%= render 'layouts/overlay' unless user_signed_in? %>
   <%= react_component('UserOverlay', {}) %>
 
   <div data-behavior="progress-bar" class="progress-bar"></div>
 
-  <% if admin_signed_in? %>
-    <%= render 'layouts/admin_header' %>
+  <% unless admin_signed_in? %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/header' %>    
+    <% end %>
   <% else %>
-    <%= render 'layouts/header' %>
+    <%= render 'layouts/admin_header' %>
   <% end %>
   <%= render 'layouts/alert_messages' %>
 
