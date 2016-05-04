@@ -1,12 +1,4 @@
-en:
-  activerecord:
-    attributes:
-      user:
-        Recuérdame: Recuérdame
-  helpers:
-    label:
-      user:
-        Recuérdame: 
+es-PE:
   date:
     abbr_day_names:
     - dom

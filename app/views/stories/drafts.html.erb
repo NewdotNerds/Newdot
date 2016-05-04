@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row fix-scroll">
   <div class="col-md-10 col-md-offset-1">
     <div class="side-padding-5">
       <header class="hero flex-container flex-space-btw">
@@ -21,7 +21,7 @@
             <div class="story-card" id="story_<%= draft.id %>">
               <strong class="sc-title"><%= link_to (draft.title || "Sin título"), edit_post_path(draft) %></strong>
               <small class="sc-metadata">
-                Editado por última vez hace <%= time_ago_in_words(draft.updated_at) %> &#149; 
+                Editado por última vez <%= time_ago_in_words(draft.updated_at) %> &#149; 
                 <% if draft.body.present? %>
                   <%= post_length_in_minutes(draft.body) %> 
                   (<%= pluralize(draft.word_count, 'word') %>) so far &#149;

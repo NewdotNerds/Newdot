@@ -7,7 +7,10 @@
             <%= render 'shared/inline_editor' %>
           </div>
         <% else %>
-          <h1>Anda ahora mismo a DESTACADOS</h1>
+          <div class="block-start">
+            <h1>¿Y el contenido?</h1>
+            <p>Este es tu muro en donde encontrarás las últimas publicaciones de tus amigos. Pero antes debes seguirlos. <br> Así que, ¡pásate por <strong>Destacados</strong> cuanto antes!. Ahí podrás encontrarlos :)</p>  
+          </div>          
         <% end %>
       <% end %>
       <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
@@ -25,8 +28,8 @@
   </div>
 
   <% content_for :sidebar do %>
-    <aside class="col-md-3 col-md-offset-1 main-sidebar">
-      <h4 class="small-heading border-top">Tags destacados</h4>
+    <aside class="col-md-3 main-sidebar">
+      <h4 class="small-heading border-feat-tags">Tags destacados</h4>
       <%= react_component('TagList', { tags: @dashboard.featured_tags }, { prerender: true }) %>
 
       <div class="flex-container border-top">

@@ -21,7 +21,7 @@ class TagFollowButton extends React.Component {
           className="pull-right button green-inner-button unfollow-button" 
           rel="nofollow" 
         >
-          <span className="top content">Following</span><br />
+          <span className="top content">Siguiendo</span><br />
           <span className="bottom content">Unfollow</span>
         </button>
       );
@@ -32,7 +32,7 @@ class TagFollowButton extends React.Component {
           className="pull-right button green-border-button follow-button" 
           rel="nofollow" 
         >
-          Follow
+          Seguir
         </button>
       );
     }

@@ -2,13 +2,14 @@
   position: fixed;
   min-width: 360px;
   text-align: center;
-  background-color: $yellow;
-  @include border-radius(0);
+  background-color: rgba(255, 255, 255, 0.8); //$white;
+  border: none;
+  @include border-radius(4px);
   top: 0;
   left: 50%;
   z-index: $alert;
   transform: translate(-50%, 0);
-  transition: transform 550ms ease-in;
+  transition: transform 550ms ease;
 
   &.slideup {
    transform: translate(-50%, -100%);

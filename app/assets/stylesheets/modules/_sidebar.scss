@@ -1,6 +1,9 @@
 aside.main-sidebar {
-  padding-top: 2em;
-  background-color: $background-gray;
+  margin-left: 50px;
+  margin-top: 2em;
+  padding-left: 12px;
+  padding-rigth: 12px;
+  background-color: $white; //$background-gray;
 
   .sidebar-top-stories {
     ul {
