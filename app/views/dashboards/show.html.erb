@@ -31,6 +31,4 @@
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
     </aside>
   <% end %>
-<% else %>
-  <%= image_link_to "welcome.svg", new_user_session_path, { data: { behavior: 'trigger-overlay' }, size: '200x200', alt: '¡Ingresa a Newdot!' }, { title: '¡Ingresa a Newdot!', rel: 'tooltip', relative: true } %>
 <% end %>
