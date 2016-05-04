@@ -1,10 +1,15 @@
 <div class="overlay-main">
-  <%= image_tag('tongsession.png', class: 'logo-main', height: 30, alt: "Tongue") %>
+  <%= image_tag('tongsession.svg', class: 'logo-main', height: 30, alt: "Tongue") %>
   <h2 class="grayed-heading-main center-main overlay-title-main">Tongue</h2>
   <div class="overlay-desc-main">
     <div class="desc-main">
-      <h1 class="title-main">La mejor extensión del ser humano para aprender</h1>
-      <p>Creamos Newdot para facilitarte compartir lo que mejor sabes. Experiencias, intereses, gustos, ideas, proyectos. Todo es bienvenido si es relevante. Y lo mejor, compartiendo lo que sabes impactas a millones de personas alrededor del mundo. ¡Maravilloso!</p>
+      <h1 class="title-main">La puerta de ingreso hacia un mundo lleno de contenido relevante</h1>
+      <ul class="list-desc">
+        <li>Conoce los temas que más dominan tus amigos. Aprende de ellos.</li>
+        <li>Comparte con todos lo que mejor sabes (intereses, ideas, experiencias).</li>
+        <li>Si te gusta un post, ¡dale un <strong>tong</strong>!.</li>
+        <li><strong>Tongue</strong> lucha por un Internet con contenido de calidad para las personas.</li>
+      </ul>
     </div>
     <ul class="omniauth-button-group">
       <li class="omniauth-button">
@@ -19,15 +24,14 @@
           <%= icon('google') %>Ingresa con Google
         <% end %>
       </li>
-
       <li class="omniauth-button twitter">
         <%= link_to user_omniauth_authorize_path(:twitter), class: 'button social twitter' do %>
           <%= icon('twitter') %>Ingresa con Twitter
         <% end %>
-      </li>
+      </li>-->
 
-      <li>-->
-        <%= link_to "Ingresa o Registrate con tu correo", new_user_session_path, class: "signin-signup-link" %>
+      <li>
+        <%= link_to "Ingresa o Regístrate con tu correo", new_user_session_path, class: "signin-signup-link" %>
       </li>
     </ul>
   </div>

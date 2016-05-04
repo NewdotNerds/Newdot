@@ -1,6 +1,6 @@
 <div style="max-width: 600px; margin: 0 auto;">
   <h2 style="color: rgba(0,0,0,0.8);
-            font-family: 'Open Sans', sans-serif;
+            font-family: helvetica, 'Open Sans', sans-serif;
             font-size; 22px;
             font-weight: normal;
             line-height: 24px;
@@ -8,30 +8,20 @@
             padding-top: 15px;
             padding-bottom: 5px;
             text-align: center;
-            ">Welcome to Stories!</h2>
+            ">¡Bienvenido a Tongue!</h2>
 
   <hr style="max-width: 40px; border: 1px solid rgba(0,0,0, 0.2);"/>
 
-  <p style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 18px;
+  <p style="text-align: center; font-family: helvetica, 'Open Sans', sans-serif;
             color: rgba(0,0,0,0.6); line-height: 1.4;">
-  Hi <strong style="color: #00ab6b;"><%= @user.username %></strong>, thank you for becoming a member of the Stories community!<br/>
-    We've got some suggestions to get you started :)
+  Hola <strong style="color: #ff3a46;"><%= @user.username.split(" ").first %></strong>, hemos esperado con ansias este momento. Estás a punto de entrar a un mundo lleno de contenido relevante.<br/><br/>
+    Haz que todos conozcan lo que te gusta, te apasiona, te mueve, te inspira.  
   </p>
 </div>
 
-
+<%= image_tag "daily.jpg", style: "display: block; max-width: 600px; margin: 0 auto;" %>
 <div style="text-align: center;"> 
-  <h4 style="font-family: 'Open Sans', sans-serif; font-size: 18px;
-            color: rgba(0,0,0,0.6); line-height: 1.4;">Follow other users and tags to customize your feed</h4>
-  <h4 style="font-family: 'Open Sans', sans-serif; font-size: 18px;
-            color: rgba(0,0,0,0.6); line-height: 1.4;">Share your story with the community</h4>
+  <h4 style="font-family: helvetica, 'Open Sans', sans-serif; font-size: 18px;
+            color: rgba(0,0,0,0.6); line-height: 1.4;">¡Nos vemos dentro!</h4>
+<%= image_tag('tongwelcmail.svg', class: 'logo-main', height: 30, alt: "Tongue") %>
 </div>
-
-
-  <%= image_tag "rockies.jpg", alt: "canadian rockies", style: "display: block; max-width: 600px; margin: 0 auto;" %>
-<p style="text-align: center; font-family: 'Open Sans', sans-serif; font-size: 18px;
-            color: rgba(0,0,0,0.6); line-height: 1.4;">
-  Again, thanks for creating an account on Stories, if you are Rails developer,
-  please checkout <a href="https://github.com/kenny-hibino/stories"
-                     style="color: #00ab6b;">github repository</a> of this web app.
-</p>

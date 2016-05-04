@@ -46,7 +46,7 @@ class DashboardsController < ApplicationController
     end
 
     def top_posts
-      Post.published.top_stories(5)
+      Post.published.top_stories(8)
     end
 
     def recent_posts

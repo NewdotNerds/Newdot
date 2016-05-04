@@ -12,7 +12,7 @@
       <h3 class="post-title"><%= link_to post.title, post %></h3>
       <% if post.lead %>
         <div class="post-body"><%= truncate(post.lead, length: 190, separator: ' ', escape: false) %></div>
-        <%= link_to "Leer más", post, class: 'read-more' %>
+        <%= link_to "Sigue leyendo", post, class: 'read-more' %>
       <% end %>
     </div>
 

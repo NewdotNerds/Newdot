@@ -6,6 +6,6 @@ class DigestMailer < ApplicationMailer
   def daily_email(user)
     @user = user
     @recommended = Post.latest(4).published
-    mail to: "torresomar44@gmail.com", subject: "Newdot Daily Digest"
+    mail to: "torresomar44@gmail.com", subject: "¡Lo mejor de Tongue " + @user.username.split(" ").first + "!"
   end
 end

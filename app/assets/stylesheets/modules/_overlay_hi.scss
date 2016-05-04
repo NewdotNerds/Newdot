@@ -122,6 +122,7 @@
 .overlay-title-main {
   margin-top: 80px;
   margin-bottom: 90px;
+  //color: $yellow;
 }
 
 .overlay-desc-main {
@@ -131,10 +132,10 @@
   align-self: center;
   align-items: center;
   color: $white;
-  padding: 0 130px;
+  padding: 0 130px 0 90px;
 
   .desc-main {
-    max-width: 450px;
+    max-width: 500px;
     text-align: left;
     .title-main {
       font-size: 30px;
@@ -143,6 +144,7 @@
     p {
       margin-top: 18px;
       font-size: 15px;
+      max-width: 550px;
     }
   }
 }
@@ -158,6 +160,12 @@
 
 .overlay ul li {
   display: block;
+}
+.list-desc {
+  list-style: none;
+  padding: 0;
+  font-size: 15px;
+  margin-top: 15px;
 }
 
 
