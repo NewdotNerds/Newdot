@@ -15,7 +15,7 @@ body.dashboards.top_stories {
   }
   .posts-wrapper > .post-panel {
     background: $white;
-    ""padding: 20px;
+    //padding: 20px;
     margin-bottom: 10px;
     border: 1px solid rgba(0,0,0, 0.09);
     @include box-shadow;
@@ -42,4 +42,4 @@ body.dashboards.top_stories {
 }
 .content-start {
   color: $light-font-color;
-} 
+}
