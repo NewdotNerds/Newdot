@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
+gem 'pg', '~> 0.15'
 gem 'localeapp', '~> 1.0', '>= 1.0.2'
 gem 'devise', '~> 3.5.3'
 gem 'omniauth-facebook', '~> 3.0'
@@ -70,7 +71,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.15'
+  
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
 end
