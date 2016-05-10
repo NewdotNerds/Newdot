@@ -26,3 +26,5 @@ rails_best_practices_output.html
 # Ignore .byebug_history, .rspec
 .byebug_history
 .rspec
+# Ignore application configuration
+/config/application.yml

@@ -3,6 +3,9 @@ en:
     attributes:
       user:
         Recuérdame: Recuérdame
+        email: Email
+    models:
+      user: User
   helpers:
     select:
       prompt: Por favor selecciona
