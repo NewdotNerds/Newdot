@@ -553,6 +553,7 @@ DEPENDENCIES
   rails_12factor (= 0.0.2)
   rails_best_practices (~> 1.15)
   react-rails (~> 1.6)
+  redis
   rspec-rails (~> 3.4.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

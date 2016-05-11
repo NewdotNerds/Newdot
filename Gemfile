@@ -18,6 +18,7 @@ gem 'figaro'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
+gem 'redis'
 gem 'friendly_id', '~> 5.1'
 gem 'bootstrap-sass', '~> 3.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
