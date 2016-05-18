@@ -10,6 +10,13 @@
           </div>
         <% end %>
       </div>
+      <div class="hero-tongs">
+        <% @user.names_likes.each do |x| %>
+          <% if @user.username == x[0] %>
+            <%= x[1] %> tongs
+          <% end %>
+        <% end %>
+      </div>
       <div class="hero-avatar">
         <%= avatar_for @user, size: 100 %>
       </div>

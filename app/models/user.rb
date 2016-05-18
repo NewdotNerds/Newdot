@@ -84,6 +84,18 @@ class User < ActiveRecord::Base
     send("bookmarked_#{downcased_class_name(bookmarkable_obj)}_ids").include?(bookmarkable_obj.id)
   end
 
+  def all_likes
+    User.includes(:posts).all.map { |u| u.posts.sum(:likes_count) }    
+  end
+
+  def all_names
+    User.includes(:posts).all.map { |u| u.username }
+  end
+
+  def names_likes
+    Hash[all_names.zip(all_likes)]
+  end
+
   private
 
     # Validates the size on an uploaded image.
