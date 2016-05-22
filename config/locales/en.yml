@@ -4,6 +4,7 @@ en:
       user:
         Recuérdame: Recuérdame
         email: Email
+        username: Username
     models:
       user: User
   helpers:
