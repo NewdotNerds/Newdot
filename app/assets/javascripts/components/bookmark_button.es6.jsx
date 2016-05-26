@@ -36,7 +36,7 @@ class BookmarkButton extends React.Component {
     } else {
       return (
         <button className="bookmark-button" onClick={this.onBookmarkClick}>
-          <i className="fa fa-bookmark-o" />
+          <i className="fa fa-bookmark-o" title="Leer después" />
           <span className="hide-text">Bookmark</span>
         </button>
       );

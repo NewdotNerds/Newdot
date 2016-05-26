@@ -34,7 +34,24 @@ body.dashboards.top_stories {
   }
 }
 .block-start {
+  max-width: 700px;
   margin-left: -200px;
+  .tong-start-block {
+    text-align: center;
+    .tong-start {
+      margin-top: -40px;
+      height: 180px;
+      width: 180px;
+    }
+    .hi-start {
+      margin-top: 0px;
+      margin-bottom: 30px;
+    }
+  }
+  .by-start {
+    text-align: center;
+    margin-top: 30px;
+  }
 }
 .title-start {
   font-size: 30px;
