@@ -13,7 +13,7 @@
     </div>
     <% elsif feed.featured?(post) %>
       <div class="feed-metadata">
-        Destacado por el equipo Tong y recomendado por <%= pluralize(post.likes.count, 'other') %>
+        Recomendado por Tong y <%= pluralize(post.likes.count, 'otro') %>
       </div>
     <% end %>
     <%= render partial: 'posts/post', locals: { post: post } %>
