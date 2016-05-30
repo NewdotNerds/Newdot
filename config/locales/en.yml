@@ -5,8 +5,12 @@ en:
         Recuérdame: Recuérdame
         email: Email
         username: Username
+      post:
+        title: Title
+        body: Body
     models:
       user: User
+      post: Post
   helpers:
     select:
       prompt: Por favor selecciona

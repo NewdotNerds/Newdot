@@ -194,5 +194,8 @@ es-PE:
     attributes:
       user:
         email: 
+      post:
+        title: 
+        body: 
     models:
       user: 
