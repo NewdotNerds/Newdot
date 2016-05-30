@@ -51,6 +51,11 @@
         <h4 class="small-heading">Tags que sigues</h4><%= react_component('AddTagButton') %>
       </div>
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
+
+      <div class="follow-suggestion-wrapper">
+        <h4 class="small-heading">Gente en Tong</h4>
+        <%= react_component('FollowSuggestionsContainer', {}) %>
+      </div>
     </aside>
   <% end %>
 <% end %>
