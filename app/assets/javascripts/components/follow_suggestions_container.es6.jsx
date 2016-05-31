@@ -39,8 +39,8 @@ class FollowSuggestionsContainer extends React.Component {
     return (
       <div className="follow-suggestions-container">
         <div className="suggestions-header">
-          <h4 className="small-heading">People to follow</h4>
-          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>Refresh</a>
+          <h4 className="small-heading">¡Ellos ya usan Tong!</h4>
+          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>¿Quién más?</a>
         </div>
         <div>
           {this.renderSuggestions()}
