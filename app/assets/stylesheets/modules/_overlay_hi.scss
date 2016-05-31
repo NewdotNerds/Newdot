@@ -43,10 +43,10 @@
   top: 0;
   left: 0;
   //background: rgba(255, 255, 255, 0.95);
-  background-image: image-url("b10.jpg");
+  background-image: image-url("4.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 10%;
+  background-position: 50% 0%;
   z-index: 10000; // FIXME
 }
 .logo-main {
@@ -131,7 +131,7 @@
   flex-flow: nowrap;
   align-self: center;
   align-items: center;
-  color: $white;
+  color: $black;
   padding: 0 130px 0 90px;
 
   .desc-main {
