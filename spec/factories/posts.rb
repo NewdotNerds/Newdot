@@ -14,6 +14,7 @@
 #  featured     :boolean          default("false")
 #  lead         :text
 #  slug         :string
+#  responses_count :integer          default("0"), not null
 #
 
 FactoryGirl.define do
