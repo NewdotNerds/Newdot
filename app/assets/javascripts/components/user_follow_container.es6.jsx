@@ -73,7 +73,7 @@ class UserFollowContainer extends React.Component {
   }
 
   pluralizeFollower() {
-    return (this.state.followerCount > 1 || this.state.followerCount === 0) ? 'Seguidores' : 'Follower';
+    return (this.state.followerCount > 1 || this.state.followerCount === 0) ? 'Seguidores' : 'Seguidores';
   }
 }
 
