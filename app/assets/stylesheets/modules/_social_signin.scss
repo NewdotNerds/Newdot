@@ -1,17 +1,24 @@
+/* Extra small devices (phones, less than 768px) */
 .signin-up-wrapper {
   margin-top: 25%;
 }
 .omniauth-button-group {
   text-align: center;
   list-style: none;
+  padding-left: 0px;
+  bottom: 0px;
+  margin-left: 8%;
+  position: fixed;
+  margin-bottom: 30px;
 
   .signin-signup-link {
-    color: $black; //$accent-color;
+    color: $white;
   }
 }
 
 .o-s {
   margin-top: -25px;
+  color: $white;
 }
 
 .omniauth-button {
@@ -22,7 +29,6 @@
     display: inline-block;
     width: 232px;
     color: $white;
-    //text-align: left;
     transition: background-color 0.2s;
   }
 
@@ -60,3 +66,33 @@
   }
 }
 
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .omniauth-button-group {
+    padding-left: 40px;
+    margin-bottom: 0px;
+  }
+
+  .o-s {
+    margin-top: -25px;
+    color: #000000;
+  }
+
+  .signin-signup-link {
+    color: $black;
+  }
+
+  .omniauth-button-group {
+    text-align: center;
+    list-style: none;
+    padding-left: 40px;
+    bottom: auto;
+    margin-left: 0%;
+    position: relative;
+    .signin-signup-link {
+      color: $black;
+    }
+  }
+
+  
+}
