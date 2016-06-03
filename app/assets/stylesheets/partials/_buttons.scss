@@ -83,9 +83,9 @@
 }
 .button-dropdown-new-post {
   background-color: transparent;
-  border: 2px solid #fff;
+  border: 2px solid $galileo;
   border-radius: 4px;
-  color: #fff;
+  color: $galileo;
   &:hover {
     border: 2px solid #333;
     color: #333;
@@ -93,6 +93,7 @@
 }
 .a-to-button {
   padding: 1px 6px;
+  cursor: pointer;
 }
 .cancel-edit-user, .edit-delete-post {
   padding: 3px 6px;
