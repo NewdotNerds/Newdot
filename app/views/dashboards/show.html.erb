@@ -61,9 +61,7 @@
       </div>
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
 
-      <div class="follow-suggestion-wrapper">
-        <%= react_component('FollowSuggestionsContainer') %>
-      </div>
+      <%= react_component('FollowSuggestionsContainer') %>
     </aside>
   <% end %>
 <% end %>

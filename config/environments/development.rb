@@ -46,4 +46,5 @@ Rails.application.configure do
 
   # React configurations.
   config.react.variant = :development
+  config.react.addons = true
 end

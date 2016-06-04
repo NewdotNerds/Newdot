@@ -34,3 +34,12 @@
     }
   }
 }
+
+.suggestion-appear {
+  opacity: 0.01;
+}
+
+.suggestion-appear.suggestion-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
