@@ -7,4 +7,8 @@ module PostsHelper
       "#{min} min de lectura"
     end
   end
+
+  def remove_script_tag(html)
+    html.gsub(/<script.*?>[\s\S]*<\/script>/i, "")
+  end
 end
