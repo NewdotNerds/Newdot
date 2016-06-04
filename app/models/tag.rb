@@ -19,7 +19,7 @@ class Tag < ActiveRecord::Base
   has_many :followers, through: :interests, source: :follower
 
   has_many :tag_relationships, -> { order(relevance: :desc) }, dependent: :destroy
-  has_many :related_tags, through: :tag_relationships, source: :related_tags
+  has_many :related_tags, through: :tag_relationships, source: :related_tag
 
   validates :name, presence: true
 
