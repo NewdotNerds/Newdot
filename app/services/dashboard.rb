@@ -21,7 +21,7 @@ class Dashboard
   end
 
   def top_stories
-    Post.published.top_stories(8)
+    Post.published.top_stories(8).includes(:user)
   end
 
   def new_post

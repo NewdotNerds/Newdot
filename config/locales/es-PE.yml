@@ -197,5 +197,6 @@ es-PE:
       post:
         title: 
         body: 
+        user_id: 
     models:
       user: 

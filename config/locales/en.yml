@@ -8,6 +8,7 @@ en:
       post:
         title: Title
         body: Body
+        user_id: User
     models:
       user: User
       post: Post

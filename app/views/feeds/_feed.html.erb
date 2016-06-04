@@ -7,13 +7,13 @@
     <% elsif feed.recommended?(post) %>
     <div class="feed-metadata">
       Recomendado por <%= link_to feed.recommender_for(post).username, feed.recommender_for(post) %>
-      <% if (post.likes.count > 2) %>
+      <% if (post.likes_count > 2) %>
         y <%= pluralize(post.likes.count - 1, 'otro') %>
       <% end %>
     </div>
     <% elsif feed.featured?(post) %>
       <div class="feed-metadata">
-        Recomendado por Tong y <%= pluralize(post.likes.count, 'otro') %>
+        Recomendado por Tong y <%= pluralize(post.likes_count, 'otro') %>
       </div>
     <% end %>
     <%= render partial: 'posts/post', locals: { post: post } %>
