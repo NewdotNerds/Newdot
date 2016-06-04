@@ -46,4 +46,9 @@ Rails.application.configure do
 
   # React configurations.
   config.react.variant = :development
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+  end
 end
