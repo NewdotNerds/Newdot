@@ -22,7 +22,7 @@ class TagFollowButton extends React.Component {
           rel="nofollow" 
         >
           <span className="top content">Siguiendo</span><br />
-          <span className="bottom content">Unfollow</span>
+          <span className="bottom content"></span>
         </button>
       );
     } else {
