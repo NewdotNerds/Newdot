@@ -3,11 +3,18 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg', '~> 0.15'
-gem 'localeapp', '~> 1.0', '>= 1.0.2'
+
+#Auth
+
 gem 'devise', '~> 3.5.3'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
+
+
+gem 'localeapp', '~> 1.0', '>= 1.0.2'
+
+# Fron-end
 gem 'react-rails', '~> 1.6'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-sass', '~> 4.5'
@@ -39,6 +46,7 @@ gem 'slim'
 
 gem 'nokogiri', '~> 1.6'
 
+# Image upload
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.5'
 gem 'fog', '~> 1.37'
