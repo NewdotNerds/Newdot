@@ -50,6 +50,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.4.0'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
+  gem 'bundler-audit', '~> 0.5.0'
 end
 
 group :development do
