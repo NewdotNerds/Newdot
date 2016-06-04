@@ -52,6 +52,23 @@ body.posts.show {
     }
   }
 
+  .main-content .post-stats {
+    .fa {
+      width: 24px;
+      font-size: 22px;
+    }
+    .like-count, .response-count {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(0,0,0,0.3);
+    }
+    .response-icon-wrapper {
+      margin-left: 20px;
+      color: $red;
+      text-decoration: none;
+    }
+  }
+
   .author-info {
     display: flex;
     justify-content: space-around;
