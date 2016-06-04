@@ -25,6 +25,7 @@ class FollowSuggestionsContainer extends React.Component {
       method: 'GET', 
       dataType: 'json',
       success: (data) => {
+        console.log(data);
         const newActives = data.slice(0, 3)
         this.setState({ 
           activeUsers: newActives,
@@ -36,7 +37,7 @@ class FollowSuggestionsContainer extends React.Component {
 
   render () {
     return (
-      <div className="follow-suggestions-container border-top">
+      <div className="follow-suggestions-container">
         <div className="suggestions-header">
           <h4 className="small-heading">¡Ellos ya usan Tong!</h4>
           <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>¿Quién más?</a>
@@ -53,18 +54,7 @@ class FollowSuggestionsContainer extends React.Component {
       return <h5>¡Estás siguiendo a todos!</h5>
     }
     return this.state.activeUsers.map(user => {
-      return (
-        <React.addons.CSSTransitionGroup
-          key={user.id}
-          transitionName="suggestion"
-          transitionAppear={true}
-          transitionAppearTimeout={500}
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-        >
-          <SuggestionItem key={user.id} {...user} />
-        </React.addons.CSSTransitionGroup>
-      )
+      return <SuggestionItem key={user.id} {...user} />
     });
   }
 
