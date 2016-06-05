@@ -5,21 +5,14 @@ class PostsController < ApplicationController
   layout "editor", only: [:new, :edit, :create, :update]
 
   def show
-    if user_signed_in?
-      @post = Post.find(params[:id])
-      @responses = @post.responses.includes(:user)
-      @related_posts = @post.related_posts
-      # If an old id or a numeric id was used to find the record, then
-      # the request path will not match the post_path, and we should do
-      # a 301 redirect that uses the current friendly id.
-      if request.path != post_path(@post)
-        redirect_to @post, status: 301
-      end
-    else
-      redirect_to welcome_hi_path
-      if user_signed_in?
-        redirect_to post_url(post)
-      end
+    @post = Post.find(params[:id])
+    @responses = @post.responses.includes(:user)
+    @related_posts = @post.related_posts
+    # If an old id or a numeric id was used to find the record, then
+    # the request path will not match the post_path, and we should do
+    # a 301 redirect that uses the current friendly id.
+    if request.path != post_path(@post)
+      redirect_to @post, status: 301
     end
   end
 
