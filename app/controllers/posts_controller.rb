@@ -17,6 +17,9 @@ class PostsController < ApplicationController
       end
     else
       redirect_to welcome_hi_path
+      if user_signed_in?
+        redirect_to post_url(post)
+      end
     end
   end
 
