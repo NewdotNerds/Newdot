@@ -59,6 +59,9 @@ $gray: #8a8a8a;
     line-height: 0;
     clear: both;
 }
+.tag-marg {
+    margin: 28px 0 20px;
+}
 
 .taggle_list {
     float: left;
@@ -68,7 +71,7 @@ $gray: #8a8a8a;
 .taggle_input {
     border: none;
     outline: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 300;
 }
 
@@ -82,9 +85,9 @@ $gray: #8a8a8a;
 
 .taggle_list .taggle {
     margin-right: 8px;
-    background: #E2E1DF;
+    background: $yellow;
     padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 4px;
     position: relative;
     cursor: pointer;
     transition: all .3s;
@@ -97,16 +100,16 @@ $gray: #8a8a8a;
 }
 
 .taggle_list .taggle .close {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     position: absolute;
-    top: 5px;
-    right: 3px;
+    top: 9px;
+    right: 2px;
     text-decoration: none;
     padding-left: 2px;
     padding-top: 3px;
     line-height: 0.5;
-    color: #ccc;
-    color: rgba(0, 0, 0, 0.2);
+    color: $black;
+    
     padding-bottom: 4px;
     display: none;
     border: 0;
@@ -117,17 +120,17 @@ $gray: #8a8a8a;
 .taggle_list .taggle:hover {
     padding: 5px;
     padding-right: 15px;
-    background: #ccc;
+    border: 1px solid $black;
     transition: all .3s;
 }
 
 .taggle_list .taggle:hover > .close {
     display: block;
-    color: $white;
+    color: $black;
 }
 
 .taggle_list .taggle .close:hover {
-    color: $project_color;
+    color: $black;
 }
 
 .taggle_placeholder {

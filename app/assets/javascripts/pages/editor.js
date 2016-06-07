@@ -29,7 +29,7 @@ var Editor = {
 
     // preload tags if its edit.
     var tag_string = $('[data-behavior="tags"]').data("tags");
-    var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Ejemplo'];
+    var tags = tag_string.length > 0 ? tag_string.split(', ') : [];
 
     var my_taggle = new Taggle('js-taggle', {
       duplicateTagClass: 'bounce',

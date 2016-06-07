@@ -84,7 +84,7 @@
          * Placeholder string to be placed in an empty taggle field
          * @type {String}
          */
-        placeholder: 'Enter tags...',
+        placeholder: '',
 
         /**
          * Keycodes that will add a tag
@@ -260,6 +260,7 @@
 
         this.list.className = 'taggle_list';
         this.input.type = 'text';
+        this.input.placeholder = 'Agrega tags...';
         this.input.className = 'taggle_input';
         this.input.tabIndex = this.settings.tabIndex;
         this.sizer.className = 'taggle_sizer';
