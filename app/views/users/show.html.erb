@@ -1,7 +1,10 @@
 <div class="banner-container" data-animation="fadeInUp-fadeOutDown-slow">
   <div class="hero-wrapper">
     <header class="hero">
-      <div class="profile-info">
+      <div class="hero-avatar">
+        <%= avatar_for @user, size: 200 %>
+      </div>
+      <div class="profile-info prof-user">
         <h1 class="hero-title"><%= @user.username %></h1>
         <p class="hero-description"><%= @user.description %></p>
         <% if @user.location.present? %>
@@ -9,46 +12,51 @@
             <%= icon('map-marker') %><%= @user.location %>
           </div>
         <% end %>
-      </div>
-      <div class="hero-tongs">
-        <% @user.names_likes.each do |x| %>
-          <% if @user.username == x[0] %>
-            <%= x[1] %> tongs
+        <div class="edit-user">
+          <% if user_signed_in? && current_user?(@user) %>
+            <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-      <div class="hero-avatar">
-        <%= avatar_for @user, size: 100 %>
+      <div class="hero-follow">
+        <% if user_signed_in? %>
+          <%= react_component('UserFollowContainer', 
+          { followerCount: @followers_count, 
+            followingCount: @following_count, 
+            following: current_user.following?(@user), 
+            followed_id: @user.id, 
+            hideButton: current_user?(@user),
+            username: @user.username,
+            overlayTrigger: true },) %>
+        <% else %>
+          <%= react_component('UserFollowContainer', 
+          { followerCount: @user.followers.size, 
+            followingCount: @user.following.size, 
+            following: false, 
+            followed_id: @user.id, 
+            hideButton: false,
+            username: @user.username,
+            overlayTrigger: true },) %>
+        <% end %>
+        
+        <div class="tongs-num">
+          <%= image_tag('minitong.png', type: 'image/png', height: 60) %>
+          <div class="hero-tongs">
+            <% @user.names_likes.each do |x| %>
+              <% if @user.username == x[0] %>
+                <%= x[1] %> tongs
+              <% end %>
+            <% end %>
+          </div>  
+        </div>    
+        
+        
+        
       </div>
     </header>
-
-    <div>
-      <% if user_signed_in? %>
-        <%= react_component('UserFollowContainer', 
-        { followerCount: @followers_count, 
-          followingCount: @following_count, 
-          following: current_user.following?(@user), 
-          followed_id: @user.id, 
-          hideButton: current_user?(@user),
-          username: @user.username,
-          overlayTrigger: true },) %>
-      <% else %>
-        <%= react_component('UserFollowContainer', 
-        { followerCount: @user.followers.size, 
-          followingCount: @user.following.size, 
-          following: false, 
-          followed_id: @user.id, 
-          hideButton: false,
-          username: @user.username,
-          overlayTrigger: true },) %>
-      <% end %>
-
-      <% if user_signed_in? && current_user?(@user) %>
-        <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button pull-right edit-button' %>
-      <% end %>
-    </div>
   </div>
 </div>
+
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
   <div class="flex-container border-top">

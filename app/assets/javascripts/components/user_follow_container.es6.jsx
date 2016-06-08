@@ -15,8 +15,9 @@ class UserFollowContainer extends React.Component {
           <span className="follower-count">
             {this.renderFollowerCount()}
           </span>
+          {this.renderFollowButton()}
         </div>
-        {this.renderFollowButton()}
+        
       </div>
     );
   }
