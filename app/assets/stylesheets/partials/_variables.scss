@@ -1,43 +1,42 @@
 /*** Colors ***/
 $black: #000000;
 $white: #ffffff;
-$green: #00FF82;
-$yellow: #ffff00;
-$red: #ff3a46;
-$galileo: #00C9EC;
+$green: #0ead69;
+$yellow: #ffd23f;
+$red: #ee4266;
+$galileo: #3bceac;
 $accent-color: #333;
 $light-gray: rgba(0,0,0,0.44);
 $super-light-gray: rgba(0,0,0,0.05);
 
-// social colors
+/* social colors */
 $twitter-blue: #00aced;
 $facebook-blue: #3b5998;
 $google-red: #dd4b39;
 
-// border color
+/* border color */
 $border-color: rgba(0, 0, 0, 0.1);
 $light-border-color: #f0f0f0;
 $border-hover-color: rgba(0, 0, 0, 0.3);
 
-// font color
+/* font color */
 $light-font-color: rgba(0, 0, 0, 0.6);
 $font-black: #141823; //rgba(0,0,0, 0.8);
 $super-light-font-color: $border-hover-color;
 
-// button color
+/* button color */
 $button-green: #00FF82;
 
-// background color
+/* background color */
 $background-gray: #fafafa;
 
-// Progress bar (on page change)
-$progress-bar: $yellow;
+/* Progress bar (on page change) */
+$progress-bar: $green;
 
-// border radius
+/* border radius */
 $radius: 3px;
 $popover: 4px;
 $round: 50%;
-//$button: 20px;
 
 /*** Font Stacks ***/
 $main-stack: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;

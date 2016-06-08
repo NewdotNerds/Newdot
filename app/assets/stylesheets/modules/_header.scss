@@ -52,7 +52,7 @@ nav.navbar {
   border-color: $super-light-gray;
   &.navbar-default {
     background-color: $white;
-    border-bottom: 2px solid $yellow;
+    border-bottom: 2px solid $red;
   }
 
   .fix-width {
@@ -71,11 +71,14 @@ nav.navbar {
     li > a {
       text-decoration: none;
       font-size: 14px;
-      color: $galileo; 
+      color: $accent-color; 
       font-weight: 400;
       &.active {
-        color: #333;
+        color: $red;
         font-weight: bold;
+      }
+      &:hover, &:focus {
+        color: $red;
       }
     }
   }
@@ -101,16 +104,14 @@ nav.navbar {
     align-self: auto;
   }
 
-  .new-post-button {
-    display: none;
-  }
+
   .new-post-button a {
     transition: all .1s;
-    color: $galileo;
+    color: $accent-color;
   }
   .new-post-button:hover {
     a {
-      color: #333; //$light-font-color;
+      color: $red; 
       border-color: $border-hover-color;
     }
   }
@@ -157,7 +158,7 @@ nav.navbar {
       color: #555;//$light-font-color;
       &:hover {
         background-color: $white;
-        color: $galileo;
+        color: $red;
       }
     }
     .nd-main {
@@ -248,9 +249,6 @@ nav.navbar {
     #logo {
       width: auto;
     }
-  }
-  .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
-    background-color: transparent;
   }
 }
 

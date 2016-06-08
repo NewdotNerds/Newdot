@@ -17,8 +17,7 @@
     /*color: #333;*/
     background-color: $green;
     border: 1px solid $green;
-    color: #333;/*rgba(0,0,0,0.12);*/
-    /*border: 1px solid #333; /*$border-hover-color;*/
+    color: $white;
   }
 
   &.yellow-border-button {
@@ -83,12 +82,12 @@
 }
 .button-dropdown-new-post {
   background-color: transparent;
-  border: 2px solid $galileo;
+  border: 2px solid $accent-color;
   border-radius: 4px;
-  color: $galileo;
+  color: $accent-color;
   &:hover {
-    border: 2px solid #333;
-    color: #333;
+    border: 2px solid $red;
+    color: $red;
   }
 }
 .a-to-button {

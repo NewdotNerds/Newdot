@@ -40,7 +40,7 @@
       <div style="margin: 0; padding-top: 15px; display: flex;">
         <%= avatar_for post.user, size: 40, style: "border-radius: 50%; margin-right: 12px;" %>
         <div>
-          <%= link_to post.username, user_url(post.user), style: "color: #FF3A46;
+          <%= link_to post.username, user_url(post.user), style: "color: #EE4266;
               text-decoration: none; font-family: helvetica, 'Open Sans', sans-serif;;" %><br/>
               <small style="color: rgba(0,0,0,0.8); font-family: helvetica, 'Open Sans', sans-serif;">
                 <%= time_ago_in_words(post.created_at) %> &#149; <%= post_length_in_minutes(post.body) %>
@@ -55,5 +55,5 @@
   <%= link_to "¡Lee más en Tong!", root_url,
       style: "font-family: helvetica, 'Open Sans', sans-serif; padding: 0.5em 1em; border-radius: 20px;
               text-decoration: none; font-size: 16px; border: none; outline: none;
-              background-color: #FF3A46; color: #ffffff;" %>
+              background-color: #EE4266; color: #ffffff;" %>
 </div>

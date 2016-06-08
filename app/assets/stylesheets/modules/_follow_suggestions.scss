@@ -8,7 +8,7 @@
   }
   .refresh-link {
     cursor: pointer;
-    color: $galileo;
+    color: $red;
   }
   .suggestion-item {
     display: flex;
@@ -23,7 +23,7 @@
       color: #333;
       text-decoration: none;
       &:hover {
-        color: #FF3A46;
+        color: $red;
       }
     }
     .avatar-wrapper {
