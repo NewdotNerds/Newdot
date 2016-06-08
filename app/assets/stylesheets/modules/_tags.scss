@@ -17,8 +17,7 @@ a.tag {
   margin-bottom: 12px;
   font-size: 12px;
   &:hover {
-    background-color: $red;
-    border-color: $red; //$border-hover-color;
-    color: $white;
+    background-color: $yellow;
+    border-color: $yellow;
   }
 }
