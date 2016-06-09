@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get "search" => "search#show", as: :search
   get "search/users" => "search#users", as: :search_users
   post "posts/create_and_edit" => "posts#create_and_edit", as: :post_create_and_edit
+  post "/" => "posts#create", as: :posts_create_dashboard 
 
   namespace :admin do
     resource :dashboard, only: [:show]

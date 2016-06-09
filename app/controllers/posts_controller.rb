@@ -23,7 +23,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.publish
-      redirect_to @post#, notice: "¡Post creado!"
+      redirect_to root_url#, notice: "¡Post creado!"
     else
       @post.unpublish
       flash.now[:alert] = "Algo anda mal. Intenta de nuevo :)"

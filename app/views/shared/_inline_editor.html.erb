@@ -3,11 +3,15 @@
     <%= avatar_for(current_user, size: 40) %>
     <strong class="editor-username"><%= current_user.username %></strong>
   </div>
-  <%= form_for @dashboard.new_post, url: post_create_and_edit_path, html: { multipart: true, class: "editor-form", autocomplete: "off" } do |f| %>
+  <%= form_for Post.create, url: posts_create_dashboard_path, html: { multipart: true, class: "editor-form", autocomplete: "off" } do |f| %>
+    <div class="form-group hide">
+      <%= f.text_field :title, class: 'editor-title', placeholder: 'Título', data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
+    </div>
+
     <div class="form-group">
       <%= f.text_area :body, class: 'medium-editable post-body', id: 'editor-body' %> 
     </div>
-    <%= f.submit "Pantalla completa", class: 'button green-inner-button go-full-screen' %>
+    <button class="button green-border-button pull-right" data-behavior="publish-button">Publicar</button>
     <button class='button green-border-button cancel-button' data-behavior="editor-cancel">Cancelar</button>
   <% end %>
 </div>
