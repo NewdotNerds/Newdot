@@ -7,7 +7,7 @@ body.recommended_posts.index {
   }
   .hero-wrapper {
     width: 50%;
-    max-width: 650px;
+    max-width: 720px;
     margin: auto;
     padding-bottom: 2.5em;
   }
@@ -23,7 +23,7 @@ body.recommended_posts.index {
     margin: 50px 30px;
   }
   .hero-avatar {
-    margin-left: -100px;
+    margin-top: 45px;
   }
   .hero-title {
     font-weight: 700;
@@ -57,13 +57,14 @@ body.recommended_posts.index {
     margin: 50px 0;
     .tongs-num {
       display: inline-flex;
+      margin: 20px 30px;
     }
   }
   .hero-tongs {
     max-height: 80px;
     font-size: 20px;
     font-weight: bold;
-    padding: 17px 0;
+    padding: 12px 0;
     color: $font-black;
   }
   [data-react-class="UserFollowContainer"] {

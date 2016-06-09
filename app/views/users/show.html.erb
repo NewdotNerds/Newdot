@@ -2,7 +2,7 @@
   <div class="hero-wrapper">
     <header class="hero">
       <div class="hero-avatar">
-        <%= avatar_for @user, size: 200 %>
+        <%= avatar_for @user, size: 150 %>
       </div>
       <div class="profile-info prof-user">
         <h1 class="hero-title"><%= @user.username %></h1>
@@ -40,7 +40,7 @@
         <% end %>
         
         <div class="tongs-num">
-          <%= image_tag('minitong.png', type: 'image/png', height: 60) %>
+          <%= image_tag('minitong.png', type: 'image/png', height: 50) %>
           <div class="hero-tongs">
             <% @user.names_likes.each do |x| %>
               <% if @user.username == x[0] %>
