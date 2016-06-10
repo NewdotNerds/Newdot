@@ -1,14 +1,14 @@
-// Control the reading expreience
+/* Control the reading experience */
 @mixin well-read {
   font-family: $reading-stack;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.7;
   font-weight: 300;
   border: none;
   color: $font-black;
 }
 
-// Border Radius with vendor prefixes for older browsers
+/* Border Radius with vendor prefixes for older browsers */
 @mixin border-radius($radius) {
   border-radius: $radius;
 }
