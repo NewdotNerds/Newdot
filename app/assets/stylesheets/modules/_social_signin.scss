@@ -75,7 +75,7 @@
 
   .o-s {
     margin-top: -25px;
-    color: #000000;
+    color: $white;
   }
 
   .signin-signup-link {
@@ -90,7 +90,8 @@
     margin-left: 0%;
     position: relative;
     .signin-signup-link {
-      color: $black;
+      color: $white;
+      font-size: 16px;
     }
   }
 

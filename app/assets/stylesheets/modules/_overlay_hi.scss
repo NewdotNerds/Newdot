@@ -1,11 +1,11 @@
 /* Extra small devices (phones, less than 768px) */
 
 .overlay-desc-main {
-  color: $black;
+  color: $white;
   padding: 0 20px;
 
   .desc-main {
-    max-width: 515px;
+    max-width: 560px;
     text-align: center;
     .title-main {
       font-size: 20px;
@@ -36,11 +36,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-image: image-url("4.jpg");
+  background-image: image-url("9.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 0%;
-  z-index: 10000; // FIXME
+  background-position: 55% 0%;
+  z-index: 10000; 
 }
 
 .overlay-title-main {
@@ -111,7 +111,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-image: image-url("4.jpg");
+    background-image: image-url("9.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 0%;
@@ -216,7 +216,7 @@
   .list-desc {
     list-style: none;
     padding: 0;
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 15px;
   }
 
