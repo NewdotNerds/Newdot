@@ -1,5 +1,20 @@
-<% if user_signed_in? %>  
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="sidebar-nav-fixed affix pos">
+          <div class="well follow">
+            <div>
+              <%= react_component('FollowSuggestionsContainer') %>
+            </div>
+          </div>
+        </div> 
+      </div> 
+    </div> 
+  </div> 
+
   <div class="col-md-5 col-md-offset-3 dashboard-main-content">
+
     <% unless @dashboard.top_stories? %>
       <% if current_page?('/') %>
         <% if @dashboard.posts.any? %>
@@ -52,9 +67,7 @@
       </div>
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
 
-      <div class="follow-suggestion-wrapper">
-        <%= react_component('FollowSuggestionsContainer') %>
-      </div>
+      
     </aside>
   <% end %>
 <% end %>

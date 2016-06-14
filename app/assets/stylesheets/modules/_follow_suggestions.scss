@@ -9,6 +9,7 @@
   .refresh-link {
     cursor: pointer;
     color: $red;
+    font-size: 12px;
   }
   .suggestion-item {
     display: flex;
@@ -27,7 +28,7 @@
       }
     }
     .avatar-wrapper {
-      margin-right: 1.4em;
+      margin-right: 0.5em;
     }
     .button-wrapper {
       margin-left: auto;

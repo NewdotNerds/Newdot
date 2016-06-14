@@ -1,10 +1,23 @@
 .dashboard-main-content {
   padding-top: 2em;
   padding-bottom: 2em;
+  margin-left: 27%;
 }
 
 .fix-text {
   text-align: 0;
+}
+
+.pos {
+  position: absolute;
+}
+
+.follow {
+  margin-left: -48px;
+  margin-top: 7.375em;
+  background-color: #ffffff;
+  width: 280px;
+  padding: 12px;
 }
 
 body.dashboards.show,
@@ -15,16 +28,10 @@ body.dashboards.top_stories {
   }
   .posts-wrapper > .post-panel {
     background: $white;
-    //padding: 20px;
     margin-bottom: 10px;
     border: 1px solid rgba(0,0,0, 0.09);
     @include box-shadow;
     @include border-radius($radius);
-  }
-
-  .follow-suggestion-wrapper {
-    border-top: 1px solid $border-color;
-    padding-top: 22px;
   }
 }
 
