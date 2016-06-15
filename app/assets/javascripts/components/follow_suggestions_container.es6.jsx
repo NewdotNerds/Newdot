@@ -26,10 +26,10 @@ class FollowSuggestionsContainer extends React.Component {
       dataType: 'json',
       success: (data) => {
         console.log(data);
-        const newActives = data.slice(0, 3)
+        const newActives = data.slice(0, 6)
         this.setState({ 
           activeUsers: newActives,
-          users: [ ...data.slice(3), ...newActives ]
+          users: [ ...data.slice(6), ...newActives ]
         });
       }
     });
@@ -59,10 +59,10 @@ class FollowSuggestionsContainer extends React.Component {
   }
 
   refreshActiveUsers() {
-    const newActives = this.state.users.slice(0, 3);
+    const newActives = this.state.users.slice(0, 6);
     this.setState({
       activeUsers: newActives,
-      users: [ ...this.state.users.slice(3), ...newActives ]
+      users: [ ...this.state.users.slice(6), ...newActives ]
     });
   }
   
