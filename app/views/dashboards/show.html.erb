@@ -11,10 +11,9 @@
         </div> 
       </div> 
     </div> 
-  </div> 
+  </div>
 
   <div class="col-md-5 col-md-offset-3 dashboard-main-content">
-
     <% unless @dashboard.top_stories? %>
       <% if current_page?('/') %>
         <% if @dashboard.posts.any? %>
@@ -27,7 +26,7 @@
               <img src="/assets/tongstart.png" class="tong-start" alt="" title="Hola :)" />
               <h1 class="hi-start">¡Hola <strong><%= current_user.username.split(" ").first %></strong>! </h1>
             </div>
-            <p>¡Te estábamos esperando! Este es tu muro en donde encontrarás las últimas publicaciones de tus amigos. Pero antes debes seguirlos. A la <strong>derecha</strong> los verás. También están en <strong>Destacados</strong>.</p>
+            <p>¡Te estábamos esperando! Este es tu muro en donde encontrarás las últimas publicaciones de tus amigos. Pero antes debes seguirlos. A la <strong>izquierda</strong> los verás . También están en <strong>Destacados</strong>.</p>
             <p>En Tong podrás:</p>
             <ul>
               <li>Publicar contenido de los temas que más dominas. Experiencias, intereses, gustos, ideas, proyectos, etc. Todo es bienvenido si es relevante.</li>
