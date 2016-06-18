@@ -1,5 +1,5 @@
 <div class="response-panel">
-  <div class="post-metadata">
+  <div class="post-metadata fix-pad-resp">
     <%= avatar_for response.user, size: 40 %>
     <div class="post-info">
       <%= link_to response.username, response.user %><br/>
@@ -7,11 +7,11 @@
     </div>
   </div>
 
-  <div class="main-body">
+  <div class="main-body resp-body-pad">
     <p class="response-body"><%= remove_javascript(response.body).html_safe %></p>
   </div>
 
-  <div class="response-stats clearfix">
+  <div class="response-stats clearfix resp-t-b-pad">
     <div id="response_<%= response.id %>_likes" class="pull-left">
       <%= render partial: 'responses/likes', locals: { response: response } %>
     </div>

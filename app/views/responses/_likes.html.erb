@@ -7,7 +7,7 @@
       unlikeEndpoint: api_response_likes_path(response),
       likeableType: 'Response',
       likeableId: response.id,
-      disableOverlay: true }) %>
+      disableOverlay: true }, class: 'resp-tong-pad') %>
   <% else %>
     <%= button_to '', method: :get, class: 'like-button', data: { behavior: 'trigger-overlay' } do %>
       <svg version="1.1" id="Capa_1" x="0px" y="0px" width="13.8551px" height="19.1818px" viewBox="0 0 54.25 64.25" enable-background="new 0 0 54.25 64.25">
