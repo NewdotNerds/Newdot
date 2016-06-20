@@ -36,11 +36,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background-image: image-url("9.jpg");
+  background-image: image-url("waimea-canyon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 55% 0%;
-  z-index: 10000; 
+  z-index: 10000;
 }
 
 .overlay-title-main {
@@ -111,11 +111,10 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-image: image-url("9.jpg");
+    background-image: image-url("waimea-canyon.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 50% 0%;
-    z-index: 10000; // FIXME
+    background-position: center center;
   }
   .logo-main {
     margin-top: 25px;
