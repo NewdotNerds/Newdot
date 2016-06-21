@@ -23,13 +23,6 @@
   display: none;
 }
 
-.logo-main {
-  position: absolute;
-  left: 50%;
-  margin-left: -12px;
-  margin-top: 30px;
-}
-
 .overlay-main {
   position: fixed;
   width: 100%;
@@ -39,8 +32,61 @@
   background-image: image-url("waimea-canyon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 55% 0%;
-  z-index: 10000;
+  background-position: center center;
+  text-align: center;
+  color: white;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  .logo-main {
+    margin: 30px 0;
+  }
+  p {
+    font-size: 1.75em;
+    margin-bottom: 30px;
+    padding: 0 15px;
+  }
+  .welcome-desc {
+    text-shadow: 0px 1px 4px rgba(0,0,0,0.65);
+  }
+  .auth {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin: 15px 0;
+    }
+    .omniauth-button {
+      .facebook {
+        font-size: 1.2em;
+        padding: 8px 25px 7px 25px;
+        width: auto;
+      }
+    }
+    .regular-signin {
+      text-shadow: 0px 1px 2px rgba(0,0,0,0.55);
+
+      .signin-signup-link {
+        padding: 5px 15px;
+        border: 1px solid white;
+        color: white;
+        border-radius: 3px;
+
+        &:hover {
+          text-decoration: none;
+          background-color: #333;
+        }
+      }
+    }
+  }
+  .footnote {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5px;
+    font-size: 0.85em;
+    text-shadow: 1px 1px 1px black;
+  }
 }
 
 .overlay-title-main {
@@ -115,9 +161,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-  }
-  .logo-main {
-    margin-top: 25px;
   }
 
   .overlay-signin {

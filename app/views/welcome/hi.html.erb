@@ -1,38 +1,20 @@
-<div class="overlay-main">
-  <%= image_tag('tongsession.svg', class: 'logo-main', height: 30, alt: "", title: "Tong") %>
-  <h2 class="grayed-heading-main center-main overlay-title-main">Tong</h2>
-  <div class="overlay-desc-main">
-    <div class="desc-main">
-      <h1 class="title-main">La puerta de ingreso hacia un mundo lleno de contenido relevante</h1>
-      <ul class="list-desc dis-none">
-        <li>Conoce los temas que más dominan tus amigos. Aprende de ellos.</li>
-        <li>Comparte con todos lo que mejor sabes (intereses, ideas, experiencias, etc).</li>
-        <li>Si aprendiste de un post, ¡dale un <strong>tong</strong>!.</li>
-        <li><strong>Tong</strong> lucha por un Internet con contenido de calidad para las personas.</li>
+    <div class="overlay-main">
+      <%= image_tag('tongsession.svg', class: 'logo-main', height: 150, alt: "", title: "Tong") %>
+      <p class="welcome-desc">Conoce los temas de los que hablan tus amigos. Aprende de ellos.<br>
+      <strong>Comparte todo lo que sepas o te apasione.</strong><br>
+      Si aprendiste o te divirtió algo entonces dale un <strong>tong</strong> 👅</p>
+      <ul class="auth">
+        <li class="omniauth-button">
+          <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
+            <%= icon('facebook-official') %>Entra con Facebook
+          <% end %>
+        </li>
+        <li class="regular-signin">
+          <%= link_to "Entra", new_user_session_path, class: "signin-signup-link" %> o
+          <%= link_to "Regístrate", new_user_registration_path, class: "signin-signup-link" %> con tu correo
+        </li>
       </ul>
+      <div class="footnote">Cañón de Waimea, Kauai</div>
     </div>
-    <ul class="omniauth-button-group">
-      <li class="omniauth-button">
-        <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
-          <%= icon('facebook-official') %>Ingresa con Facebook
-        <% end %>
-      </li>
-      <p class="o o-s">o</p>
-
-      <!--<li class="omniauth-button google">
-        <%= link_to user_omniauth_authorize_path(:google_oauth2), class: 'button social google' do %>
-          <%= icon('google') %>Ingresa con Google
-        <% end %>
-      </li>
-      <li class="omniauth-button twitter">
-        <%= link_to user_omniauth_authorize_path(:twitter), class: 'button social twitter' do %>
-          <%= icon('twitter') %>Ingresa con Twitter
-        <% end %>
-      </li>-->
-
-      <li>
-        <%= link_to "Ingresa o Regístrate con tu correo", new_user_session_path, class: "signin-signup-link" %>
-      </li>
-    </ul>
   </div>
 </div>
