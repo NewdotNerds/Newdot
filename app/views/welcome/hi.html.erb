@@ -1,20 +1,25 @@
-    <div class="overlay-main">
-      <%= image_tag('tongsession.svg', class: 'logo-main', height: 80, alt: "", title: "Tong") %>
-      <p class="welcome-desc">Conoce los temas de los que hablan tus amigos. Aprende de ellos.<br>
-      <strong>Comparte todo lo que sepas o te apasione.</strong><br>
-      Si aprendiste o te divirtió algo entonces dale un <strong>tong</strong> 👅</p>
-      <ul class="auth">
-        <li class="omniauth-button">
-          <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
-            <%= icon('facebook-official') %>Entra con Facebook
-          <% end %>
-        </li>
-        <li class="regular-signin">
-          <%= link_to "Entra", new_user_session_path, class: "signin-signup-link" %> o
-          <%= link_to "Regístrate", new_user_registration_path, class: "signin-signup-link" %> con tu correo
-        </li>
-      </ul>
-      <div class="footnote">Cañón de Waimea, Kauai</div>
-    </div>
-  </div>
+<div class="overlay-main">
+  
+  <style type="text/css">
+    html {
+      background: url(<%= randomized_background_image %>) no-repeat center center fixed; 
+    }
+  </style>
+  
+  <%= image_tag('tongsession.svg', class: 'logo-main', height: 80, alt: "", title: "Tong") %>
+  <p class="welcome-desc">Conoce los temas de los que hablan tus amigos. Aprende de ellos.<br>
+  <strong>Comparte todo lo que sepas o te apasione.</strong><br>
+  Si aprendiste o te divirtió algo entonces dale un <strong>tong</strong> 👅</p>
+  <ul class="auth">
+    <li class="omniauth-button">
+      <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
+        <%= icon('facebook-official') %>Entra con Facebook
+      <% end %>
+    </li>
+    <li class="regular-signin">
+      <%= link_to "Entra", new_user_session_path, class: "signin-signup-link" %> o
+      <%= link_to "Regístrate", new_user_registration_path, class: "signin-signup-link" %> con tu correo
+    </li>
+  </ul>
+  <div class="footnote">Cañón de Waimea, Kauai</div>
 </div>

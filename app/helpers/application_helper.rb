@@ -46,4 +46,10 @@ module ApplicationHelper
       image_tag image_path, image_tag_options
     end
   end
+
+  def randomized_background_image
+    images = [("/assets/waimea-canyon.jpg"), ("/assets/burning-man.jpg")]
+    images[rand(images.size)]
+  end
+
 end
