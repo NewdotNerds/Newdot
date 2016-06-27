@@ -48,7 +48,10 @@ module ApplicationHelper
   end
 
   def randomized_background_image
-    images = [("/assets/waimea-canyon.jpg"), ("/assets/burning-man.jpg")]
+    images = [("/assets/background/waimea-canyon.jpg"), ("/assets/background/burning-man.jpg"), 
+              ("/assets/background/lima-peru.jpg"), ("/assets/background/bridge.jpg"), 
+              ("/assets/background/landscape.jpg"), ("/assets/background/volcano.jpg"),
+              ("/assets/background/malecon-lima.jpg"), ("/assets/background/sierra-peru.jpg")]
     images[rand(images.size)]
   end
 
