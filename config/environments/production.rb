@@ -73,12 +73,12 @@ Rails.application.configure do
   host = 'tongs.co'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :address        => 'smtp.gmail.com',
+    :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
-    :user_name      => ENV['GMAIL_USERNAME'],
-    :password       => ENV['GMAIL_PASSWORD'],
-    :domain         => 'gmail.com',
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_PASSWORD'],
+    :domain         => 'tongs.co',
     :enable_starttls_auto => true
   }
 
