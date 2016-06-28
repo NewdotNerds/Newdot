@@ -194,6 +194,8 @@ es-PE:
     attributes:
       user:
         email: 
+        password: 
+        password_confirmation: 
       post:
         title: 
         body: 
