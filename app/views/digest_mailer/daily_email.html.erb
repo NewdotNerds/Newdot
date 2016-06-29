@@ -1,31 +1,39 @@
-<div style="max-width: 600px; margin: 0 auto; text-align: center;">
-  <strong style="color: rgba(0,0,0,0.8);
-            font-family: helvetica, 'Open Sans', sans-serif;
-            font-size; 22px;
-            font-weight: bold;
-            line-height: 24px;
-            margin: 0;
-            padding-top: 15px;
-            padding-bottom: 5px;
-            ">Lo mejor de hoy</strong>
+<div style="max-width: 600px; margin: 50px 50px 20px 50px;">
+  <div style="display: inline-flex;">
+    <div style="padding-top: 12px;
+                padding-bottom: 5px;
+                margin-right: 10px;">
+      <%= image_tag('tongsession.svg', height: 30, alt: "", title: "Tong") %>  
+    </div>
+    
+    <h2 style="color: rgba(0,0,0,0.8);
+              font-family: helvetica, 'Open Sans', sans-serif;
+              font-size; 22px;
+              font-weight: normal;
+              line-height: 24px;
+              margin: 0;
+              padding-top: 15px;
+              padding-bottom: 5px;
+              ">Lo mejor de hoy</h2>
+  </div>
 
-    <hr style="max-width: 40px; border: 1px solid rgba(0,0,0, 0.2);"/>
+    <hr style="max-width: 600px;"/>
 </div>
 
-<div style="max-width: 600px; margin: 0 auto;">
-  <div style="text-align: center; padding-top: 5px; padding-bottom: 3px;">
+<div style="max-width: 600px;">
+  <div style="margin: 0 50px;padding-top: 5px; padding-bottom: 3px;">
     <small style="color: rgba(0,0,0,0.3); font-family: helvetica, 'Open Sans', sans-serif;
     font-size: 14px; font-weight: 100px; text-transform: uppercase; 
-    letter-spacing: 0.1px;" >Recomendado por</small>
+    letter-spacing: 0.1px;" >Recomendado por el equipo de Tong</small>
   </div>
-  <div style="text-align: center;">
+  <!--<div>
     <small style="color: rgba(0,0,0,0.8); font-family: helvetica, 'Open Sans', sans-serif;
     font-size: 16px; font-weight: bold; text-transform: uppercase; 
     letter-spacing: 0.9px;" >El equipo de Tong</small>
-  </div>
+  </div>-->
   
   <% @recommended.each do |post| %>
-    <div style="max-width: 400px; margin: 0 auto; padding: 30px 0;
+    <div style="margin: 0 50px;max-width: 500px; padding: 30px 0;
                 border-bottom: 1px solid rgba(0,0,0,0.05);">
       <% if post.picture? %>
         <%= image_tag post.picture.url(:thumb), style: "display: block;
@@ -51,9 +59,7 @@
   <% end %>
 </div>
 
-<div style="margin: 0; padding: 30px 0; text-align: center;">
+<div style="margin: 0 50px; padding: 30px 0;">
   <%= link_to "¡Lee más en Tong!", root_url,
-      style: "font-family: helvetica, 'Open Sans', sans-serif; padding: 0.5em 1em; border-radius: 20px;
-              text-decoration: none; font-size: 16px; border: none; outline: none;
-              background-color: #EE4266; color: #ffffff;" %>
+      style: 'font-family: helvetica, Open Sans, sans-serif;padding: 0.2em 0.5em;cursor: pointer;background-color:#0ead69;text-decoration: none;color: white;border-radius:4px' %>
 </div>

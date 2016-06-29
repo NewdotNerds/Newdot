@@ -11,7 +11,7 @@ module OmniauthableUser
         user.remote_avatar_url = auth.info.image.gsub('http://','https://') + '?type=large'
       end
       user.update(
-        email: "#{SecureRandom.hex}#{auth.info.email}",
+        email: "#{auth.info.email}",
         password: Devise.friendly_token[0,20],
         username: auth.info.name
       )

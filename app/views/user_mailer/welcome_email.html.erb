@@ -1,27 +1,40 @@
-<div style="max-width: 600px; margin: 0 auto;">
-  <h2 style="color: rgba(0,0,0,0.8);
-            font-family: helvetica, 'Open Sans', sans-serif;
-            font-size; 22px;
-            font-weight: normal;
-            line-height: 24px;
-            margin: 0;
-            padding-top: 15px;
-            padding-bottom: 5px;
-            text-align: center;
-            ">¡Bienvenido a Tong!</h2>
+<div style="max-width: 600px; margin: 0 30px 0 60px;">
+  <div style="display: inline-flex;margin-top: 50px;">
+    <div style="padding-top: 12px;
+                padding-bottom: 5px;
+                margin-right: 10px;">
+      <%= image_tag('tongsession.svg', height: 30, alt: "", title: "Tong") %>  
+    </div>
+    
+    <h2 style="color: rgba(0,0,0,0.8);
+              font-family: helvetica, 'Open Sans', sans-serif;
+              font-size; 22px;
+              font-weight: normal;
+              line-height: 24px;
+              margin: 0;
+              padding-top: 15px;
+              padding-bottom: 5px;
+              ">Tong</h2>
+  </div>
 
-  <hr style="max-width: 40px; border: 1px solid rgba(0,0,0, 0.2);"/>
+  <hr style="max-width: 600px;margin-bottom: 40px;"/>
 
-  <p style="text-align: center; font-family: helvetica, 'Open Sans', sans-serif;
-            color: rgba(0,0,0,0.6); line-height: 1.4;">
-  Hola <strong style="color: #ee4266;"><%= @user.username.split(" ").first %></strong>, hemos esperado con ansias este momento. Estás a punto de entrar a un mundo lleno de contenido relevante.<br/><br/>
-    Haz que todos conozcan lo que te gusta, te apasiona, te mueve, te inspira.  
+  <p style="font-family: helvetica, 'Open Sans', sans-serif;
+            color: rgba(0,0,0,0.8); line-height: 2.0;    margin-bottom: -16px;">
+    Hola <%= @user.username.split(" ").first %>, a partir de ahora ya puedes compartir y consumir contenido de calidad.<br/>
+    <strong>Empieza con estas opciones para sacarle el máximo provecho a Tong:</strong>
+    <ul style="list-style: none;padding: 15px;">
+      <li style="margin-bottom: 5px;"><%= link_to "Edita tu perfil", @user, style: 'text-decoration: none;color:#ee4266' %></li>
+      <li style="margin-bottom: 5px;"><%= link_to "Busca amigos y síguelos", root_path, style: 'text-decoration: none;color:#ee4266' %></li>
+      <li><%= link_to "Comparte algo que sabes", new_post_path, style: 'text-decoration: none;color:#ee4266' %></li>
+    </ul>
   </p>
 </div>
 
-<%= image_tag "daily.jpg", style: "display: block; max-width: 600px; margin: 0 auto;" %>
-<div style="text-align: center;"> 
+<%= image_tag "welcome-email.jpg", style: "display: block; max-width: 600px; margin: 0 30px 0 60px;" %>
+<div style="margin: 0 30px 0 60px;"> 
   <h4 style="font-family: helvetica, 'Open Sans', sans-serif; font-size: 18px;
-            color: rgba(0,0,0,0.6); line-height: 1.4;">¡Nos vemos dentro!</h4>
-<%= image_tag('tongwelcmail.svg', class: 'logo-main', height: 30, alt: "", title: "Tong") %>
+            color: rgba(0,0,0,0.8); line-height: 1.4;"><strong>¡Empieza ya a ganar tongs!</strong></h4>
+  <%= link_to "Empezar", root_path, style: 'font-family: helvetica, Open Sans, sans-serif;padding: 0.2em 0.5em;cursor: pointer;background-color:#0ead69;text-decoration: none;color: white;border-radius:4px' %>
+
 </div>
