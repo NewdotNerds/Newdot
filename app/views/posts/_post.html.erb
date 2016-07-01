@@ -19,6 +19,10 @@
     <div class="pull-left">
       <%= render partial: 'posts/likes', locals: { post: post } %>
     </div>
+    <div class="pull-left">
+      <i class="fa fa-eye eye-icon-wrapper"></i>
+      <%= "#{post.impressionist_count}" %>
+    </div>
 
     <div class="pull-right">
       <%= render partial: 'posts/bookmarks', locals: { post: post } %>

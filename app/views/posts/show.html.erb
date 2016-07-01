@@ -37,6 +37,10 @@
           <span class="response-count" data-behavior="response-count"><%= @post.responses_count %></span>
         <% end %>
       </div>
+      <div class="pull-left">
+        <i class="fa fa-eye eye-icon-wrapper"></i>
+        <%= "#{@post.impressionist_count} vistas" %>
+      </div>
 
       <div class="pull-right">
         <%= render partial: 'posts/bookmarks', locals: { post: @post } %>

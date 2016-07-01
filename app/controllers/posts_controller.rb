@@ -2,12 +2,15 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
+  impressionist actions: [:show], unique: [:session_hash]
+
   layout "editor", only: [:new, :edit, :create, :update]
 
   def show
     @post = Post.find(params[:id])
     @responses = @post.responses.includes(:user)
     @related_posts = @post.related_posts
+    impressionist(@post)
     # If an old id or a numeric id was used to find the record, then
     # the request path will not match the post_path, and we should do
     # a 301 redirect that uses the current friendly id.

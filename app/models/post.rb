@@ -41,6 +41,8 @@ class Post < ActiveRecord::Base
   scope :drafts, -> { where(published_at: nil) }
   scope :featured, -> { where(featured: true) }
 
+  is_impressionable
+
   mount_uploader :picture, PictureUploader
 
   before_save :generate_lead!
