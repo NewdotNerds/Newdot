@@ -5,6 +5,7 @@
 class API::LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_likeable
+  after_action :send_email, on: [:create]
 
   def create
     current_user.add_like_to(@likeable)
@@ -29,5 +30,9 @@ class API::LikesController < ApplicationController
       unless current_user?(@likeable.user)
         Notification.create(recipient: @likeable.user, actor: current_user, action: "le dio tong a tu", notifiable: @likeable, is_new: true)
       end
+    end
+
+    def send_email
+      LikeNotificationJob.perform_later(self.id)
     end
 end
