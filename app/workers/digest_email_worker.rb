@@ -3,7 +3,8 @@ class DigestEmailWorker
   include Sidetiq::Schedulable
   sidekiq_options :queue => :mailer
 
-  recurrence { daily.hour_of_day(6) }
+  recurrence { weekly.day(:wednesday).hour_of_day(6) }
+
 
   def perform
     User.find_each do |user|
