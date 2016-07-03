@@ -3,7 +3,7 @@ class LikeNotificationJob < ActiveJob::Base
 
   def perform(user_id)
     user = User.find_by(id: user_id)
-    liker = current_user
+    liker = current_user?(@user)
     post = @post
     LikeMailer.like_notification(liker, post).deliver_now if user
   end
