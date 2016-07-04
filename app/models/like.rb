@@ -13,11 +13,4 @@
 class Like < ActiveRecord::Base
   belongs_to :likeable, polymorphic: true, counter_cache: true
   belongs_to :user
-
-  #after_commit :send_email, on: [:create]
-
-  #private
-  #  def send_email
-  #    LikeNotificationJob.perform_later(self.id)
-  #  end
 end
