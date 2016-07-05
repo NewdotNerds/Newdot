@@ -20,6 +20,13 @@
         <%= f.submit "Inicia sesión", class: "button buttons-session" %>
         <p class="o">o</p>        
         <%= link_to "Regístrate", new_user_registration_path, class: 'button a-to-button buttons-session pad-top' %>
+        <ul class="auth">
+          <li class="omniauth-button">
+            <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
+              <%= icon('facebook-official') %>Entra con Facebook
+            <% end %>
+          </li>
+        </ul>
         
       <% end %>
     </div>
