@@ -81,15 +81,15 @@ $loader-dot--size: 20px;
 }
 
 @-webkit-keyframes loadingtext {
-  0%  { content: "Loading"; }
-  25% { content: "Loading."; }
-  50% { content: "Loading.."; }
-  75% { content: "Loading..."; }
+  0%  { content: "Cargando"; }
+  25% { content: "Cargando."; }
+  50% { content: "Cargando.."; }
+  75% { content: "Cargando..."; }
 }
 
 @keyframes loadingtext {
-  0%  { content: "Loading"; }
-  25% { content: "Loading."; }
-  50% { content: "Loading.."; }
-  75% { content: "Loading..."; }
+  0%  { content: "Cargando"; }
+  25% { content: "Cargando."; }
+  50% { content: "Cargando.."; }
+  75% { content: "Cargando..."; }
 }

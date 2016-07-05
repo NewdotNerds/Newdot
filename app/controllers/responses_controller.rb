@@ -23,7 +23,7 @@ class ResponsesController < ApplicationController
         Notification.create(recipient: user, actor: current_user, action: "también comentó en un", notifiable: @post, is_new: true)
       end
       unless current_user?(@post.user) || @post.responders.include?(@post.user)
-        Notification.create(recipient: @post.user, actor: current_user, action: "respondió a tu", notifiable: @post, is_new: true)
+        Notification.create(recipient: @post.user, actor: current_user, action: "respondió tu", notifiable: @post, is_new: true)
       end
     end
 end
