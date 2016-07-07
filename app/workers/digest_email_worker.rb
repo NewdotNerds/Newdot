@@ -1,14 +1,14 @@
-class DigestEmailWorker
-  include Sidekiq::Worker
-  include Sidetiq::Schedulable
-  sidekiq_options :queue => :mailer
+#class DigestEmailWorker
+#  include Sidekiq::Worker
+#  include Sidetiq::Schedulable
+#  sidekiq_options :queue => :mailer
 
-  recurrence { weekly.day(:wednesday).hour_of_day(6) }
+#  recurrence { weekly.day(:wednesday).hour_of_day(6) }
 
 
-  def perform
-    User.find_each do |user|
-      DigestMailer.daily_email(user).deliver_now
-    end
-  end
-end
+#  def perform
+#    User.find_each do |user|
+#      DigestMailer.daily_email(user).deliver_now
+#    end
+#  end
+#end
