@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html ng-app="Tong"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#">
+<html ng-app="Tong">
 <head>
   <title>Tong</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <% if content_for?(:meta_og) %>
+    <%= yield :meta_og %>
+  <% else %>
+    <meta property="og:title" content="Tong" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://tongs.co" />
+    <%= tag :meta, property: 'og:image', content: image_url('tongstart.png') %>
+  <% end %>
+
   <%= csrf_meta_tags %>
 
   <%= favicon_link_tag 'favicon.png', type: 'image/png' %>

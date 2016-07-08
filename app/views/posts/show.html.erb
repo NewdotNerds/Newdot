@@ -1,9 +1,12 @@
-<% content_for :head do %>
-  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_API_ID"] %>
-  <%= tag :meta, property: "og:site_name", content: "Tong" %>
-  <%= tag :meta, property: "og:title", content: @post.title %>
-  <%= tag :meta, property: "og:url", content: post_url(@post) %>
-  <%= tag :meta, property: "og:image", content: "" %>
+<%= content_for(:meta_og) do %>
+  <meta property="og:title" content="<%= @post.title %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:published_time" content="<%= @post.created_at.strftime('%Y-%m-%d %H:%M') %>" />
+  <meta property="og:author" content="<%= @post.user.username if @post.user && @post.user.username %>" />
+  <meta property="og:description" content="<%= truncate(strip_tags( markdown(@post.body) ), length: 50) %>" />
+  <% if @post.picture %>
+    <%= tag :meta, property: 'og:image', content: "http://#{request.host}#{@post.picture.url}" %>
+  <% end %>
 <% end %>
 
 <div class="row fix-scroll" data-animation="fadeInUp-fadeOutDown">
