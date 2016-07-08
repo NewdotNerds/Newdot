@@ -1,3 +1,11 @@
+<% content_for :head do %>
+  <%= tag :meta, property: "fb:app_id", content: ENV["FACEBOOK_API_ID"] %>
+  <%= tag :meta, property: "og:site_name", content: "Tong" %>
+  <%= tag :meta, property: "og:title", content: @post.title %>
+  <%= tag :meta, property: "og:url", content: post_url(@post) %>
+  <%= tag :meta, property: "og:image", content: "" %>
+<% end %>
+
 <div class="row fix-scroll" data-animation="fadeInUp-fadeOutDown">
   <div id="main-post" class="col-xs-10 col-md-8 col-md-offset-2 col-xs-offset-1 main-content">
     <% if admin_signed_in? %>
