@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
   impressionist actions: [:show], unique: [:session_hash]
