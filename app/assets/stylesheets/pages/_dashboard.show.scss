@@ -54,9 +54,9 @@ body.dashboards.top_stories {
   .tong-start-block {
     text-align: center;
     .tong-start {
-      margin-top: -40px;
-      height: 150px;
-      width: 150px;
+      margin-bottom: 25px;
+      height: 100px;
+      width: 100px;
     }
     .hi-start {
       margin-top: 0px;
@@ -66,6 +66,9 @@ body.dashboards.top_stories {
   .by-start {
     text-align: center;
     margin-top: 30px;
+  }
+  p, ul {
+    font-size: 16px;
   }
 }
 .title-start {

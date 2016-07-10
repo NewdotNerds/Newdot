@@ -30,13 +30,4 @@ class ApplicationController < ActionController::Base
     end
 
     helper_method :current_user?
-
-
-  #  def authenticate_user!
-  #    if user_signed_in?
-  #      super
-  #    else
-  #      redirect_to welcome_hi_url, alert: "¡Primero loggeate! :)"
-  #    end
-  #  end
 end
