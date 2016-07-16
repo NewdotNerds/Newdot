@@ -1,97 +1,101 @@
-<div class="banner-container" data-animation="fadeInUp-fadeOutDown-slow">
-  <div class="hero-wrapper">
-    <header class="hero">
-      <div class="hero-avatar">
-        <%= avatar_for @user, size: 150 %>
-      </div>
-      <div class="profile-info prof-user">
-        <h1 class="hero-title"><%= @user.username %></h1>
-        <p class="hero-description"><%= @user.description %></p>
-        <% if @user.location.present? %>
-          <div class="hero-location">
-            <%= icon('map-marker') %><%= @user.location %>
+<% if user_signed_in? %>
+  <div class="banner-container" data-animation="fadeInUp-fadeOutDown-slow">
+    <div class="hero-wrapper">
+      <header class="hero">
+        <div class="hero-avatar">
+          <%= avatar_for @user, size: 150 %>
+        </div>
+        <div class="profile-info prof-user">
+          <h1 class="hero-title"><%= @user.username %></h1>
+          <p class="hero-description"><%= @user.description %></p>
+          <% if @user.location.present? %>
+            <div class="hero-location">
+              <%= icon('map-marker') %><%= @user.location %>
+            </div>
+          <% end %>
+          <div class="edit-user">
+            <% if user_signed_in? && current_user?(@user) %>
+              <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
+            <% end %>
           </div>
-        <% end %>
-        <div class="edit-user">
-          <% if user_signed_in? && current_user?(@user) %>
-            <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
+        </div>
+        <div class="hero-follow">
+          <% if user_signed_in? %>
+            <%= react_component('UserFollowContainer', 
+            { followerCount: @followers_count, 
+              followingCount: @following_count, 
+              following: current_user.following?(@user), 
+              followed_id: @user.id, 
+              hideButton: current_user?(@user),
+              username: @user.username,
+              overlayTrigger: true },) %>
+          <% else %>
+            <%= react_component('UserFollowContainer', 
+            { followerCount: @user.followers.size, 
+              followingCount: @user.following.size, 
+              following: false, 
+              followed_id: @user.id, 
+              hideButton: false,
+              username: @user.username,
+              overlayTrigger: true },) %>
+          <% end %>
+          
+          <div class="tongs-num">
+            <%= image_tag('minitong.png', type: 'image/png', height: 50) %>
+            <div class="hero-tongs">
+              <% @user.names_likes.each do |x| %>
+                <% if @user.username == x[0] %>
+                  <%= x[1] %> tongs
+                <% end %>
+              <% end %>
+            </div>  
+          </div>    
+          
+          
+          
+        </div>
+      </header>
+    </div>
+  </div>
+
+
+  <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
+    <div class="flex-container border-top">
+      <h4 class="small-heading">Intereses</h4>
+      <% if user_signed_in? && current_user?(@user) %>
+        <%= react_component('AddTagButton') %>
+      <% end %>
+    </div>
+    <% if user_signed_in? && current_user?(@user) %>
+      <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
+    <% else %>
+      <%= react_component('TagList', { tags: @user.following_tags }, { prerender: true }) %>
+    <% end %>
+
+    <% if @latest_posts.any? %>
+      <h4 class="small-heading border-top">Últimos Posts</h4>
+      <%= render @latest_posts %>
+    <% end %>
+  </div>
+
+
+  <% if @recommended_posts.any? %>
+    <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
+      <div class="posts-wrapper">
+        <h4 class="heading-border-b">Recomendado por <%= @user.username %> &#149; 
+          <%= link_to "Ver todos", user_recommended_posts_path(@user) %>
+        </h4>
+        <div class="flex-container f-wrap">
+          <% @recommended_posts.each do |post| %>
+          <div class="recommended-post-card">
+            <%= link_to post.title, post, class: "rpc-title" %><br/>
+            <small class="rpc-username"><%= post.username %></small>
+          </div>
           <% end %>
         </div>
       </div>
-      <div class="hero-follow">
-        <% if user_signed_in? %>
-          <%= react_component('UserFollowContainer', 
-          { followerCount: @followers_count, 
-            followingCount: @following_count, 
-            following: current_user.following?(@user), 
-            followed_id: @user.id, 
-            hideButton: current_user?(@user),
-            username: @user.username,
-            overlayTrigger: true },) %>
-        <% else %>
-          <%= react_component('UserFollowContainer', 
-          { followerCount: @user.followers.size, 
-            followingCount: @user.following.size, 
-            following: false, 
-            followed_id: @user.id, 
-            hideButton: false,
-            username: @user.username,
-            overlayTrigger: true },) %>
-        <% end %>
-        
-        <div class="tongs-num">
-          <%= image_tag('minitong.png', type: 'image/png', height: 50) %>
-          <div class="hero-tongs">
-            <% @user.names_likes.each do |x| %>
-              <% if @user.username == x[0] %>
-                <%= x[1] %> tongs
-              <% end %>
-            <% end %>
-          </div>  
-        </div>    
-        
-        
-        
-      </div>
-    </header>
-  </div>
-</div>
-
-
-<div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
-  <div class="flex-container border-top">
-    <h4 class="small-heading">Intereses</h4>
-    <% if user_signed_in? && current_user?(@user) %>
-      <%= react_component('AddTagButton') %>
-    <% end %>
-  </div>
-  <% if user_signed_in? && current_user?(@user) %>
-    <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
-  <% else %>
-    <%= react_component('TagList', { tags: @user.following_tags }, { prerender: true }) %>
-  <% end %>
-
-  <% if @latest_posts.any? %>
-    <h4 class="small-heading border-top">Últimos Posts</h4>
-    <%= render @latest_posts %>
-  <% end %>
-</div>
-
-
-<% if @recommended_posts.any? %>
-  <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
-    <div class="posts-wrapper">
-      <h4 class="heading-border-b">Recomendado por <%= @user.username %> &#149; 
-        <%= link_to "Ver todos", user_recommended_posts_path(@user) %>
-      </h4>
-      <div class="flex-container f-wrap">
-        <% @recommended_posts.each do |post| %>
-        <div class="recommended-post-card">
-          <%= link_to post.title, post, class: "rpc-title" %><br/>
-          <small class="rpc-username"><%= post.username %></small>
-        </div>
-        <% end %>
-      </div>
     </div>
-  </div>
+  <% end %>
+<% else %>
+  <%= render 'layouts/overlay_main' %>
 <% end %>
