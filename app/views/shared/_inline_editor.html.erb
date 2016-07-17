@@ -4,7 +4,7 @@
     <strong class="editor-username"><%= current_user.username %></strong>
   </div>
   <%= form_for Post.create, url: posts_create_dashboard_path, html: { multipart: true, class: "editor-form", autocomplete: "off" } do |f| %>
-    <div class="form-group hide">
+    <div class="form-group hide" id="title-dash">
       <%= f.text_field :title, class: 'editor-title', placeholder: 'Título', data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
     </div>
 

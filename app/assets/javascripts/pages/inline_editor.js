@@ -12,11 +12,13 @@ var InlineEditor = {
 
     editor.subscribe('focus', function() {
       $('#inline-editor').addClass('active');
+      $('#title-dash').removeClass('hide');
     });
 
     $('[data-behavior="editor-cancel"]').click(function(e) {
       e.preventDefault();
       $('#inline-editor').removeClass('active');
+      $('#title-dash').addClass('hide');
       InlineEditor.clearEditor(editor);
     });
   },
@@ -27,6 +29,7 @@ var InlineEditor = {
     editor.setup();
     editor.subscribe('focus', function() {
       $('#inline-editor').addClass('active');
+      $('#title-dash').removeClass('hide');
     });
   }
 };
