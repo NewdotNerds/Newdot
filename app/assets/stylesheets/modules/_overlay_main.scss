@@ -44,7 +44,7 @@
   }
   .welcome-desc-main {
     text-shadow: 0px 1px 4px rgba(0,0,0,0.65);
-    padding: 0 100px;
+    padding: 0 25px;
     font-size: 1.65em;
     margin-bottom: 10px;
     p {
@@ -89,7 +89,7 @@
   .footdesc {
     bottom: 0;
     margin-top: 35px;
-    padding: 0 100px;
+    padding: 0 25px;
     text-shadow: 0px 1px 4px rgba(0,0,0,0.65);
     font-size: 1.55em;
   }
@@ -167,6 +167,12 @@
     background-size: cover;
     background-position: center center;
     font-size: 1em;
+    .welcome-desc-main {
+      padding: 0 100px;
+    }
+    .footdesc {
+      padding: 0 100px;
+    }
   }
 
   .over-signin {
