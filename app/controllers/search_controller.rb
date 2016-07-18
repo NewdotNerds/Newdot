@@ -1,6 +1,5 @@
 class SearchController < ApplicationController
   before_action :beautify_url
-  layout "simple"
 
   def show
     @post_records = Post.search(query_term).paginate(page: params[:page]).records
