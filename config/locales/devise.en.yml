@@ -35,7 +35,7 @@ en:
       updated: "Tu contraseña ha sido cambiada. Ahora has iniciado sesión" #"Your password has been changed successfully. You are now signed in."
       updated_not_active: "Tu contraseña ha sido cambiada." #"Your password has been changed successfully."
     registrations:
-      destroyed: "Adios :(. Tu cuenta se canceló. Tong te esperará siempre" #"Bye! Your account has been successfully cancelled. We hope to see you again soon."
+      destroyed: "Adios :(. Tu cuenta se canceló. Tongs te esperará siempre" #"Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "" #"Welcome! You have signed up successfully."
       signed_up_but_inactive: "Te acabas de registrar. Sin embargo, no podemos identificarte porque tu cuenta no está activa aún" #"You have signed up successfully. However, we could not sign you in because your account is not yet activated."
       signed_up_but_locked: "Te acabas de registrar. Sin embargo, no podemos identificarte porque tu cuenta está bloqueada" #"You have signed up successfully. However, we could not sign you in because your account is locked."
@@ -48,7 +48,7 @@ en:
       already_signed_out: ""
     unlocks:
       send_instructions: "Recibirás un correo con instrucciones para desbloquear tu cuenta" #"You will receive an email with instructions for how to unlock your account in a few minutes."
-      send_paranoid_instructions: "Si tu cuenta existe en Tong, recibirás un correo con instrucciones para desbloquear tu cuenta" #"If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+      send_paranoid_instructions: "Si tu cuenta existe en Tongs, recibirás un correo con instrucciones para desbloquear tu cuenta" #"If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Tu cuenta se desbloqueó satisfactoriamente. Inicia sesión de nuevo" #"Your account has been unlocked successfully. Please sign in to continue."
   errors:
     messages:

@@ -1,5 +1,5 @@
-# Tong
-Tong lucha por un internet con contenido de calidad para las personas.
+# Tongs
+Tongs lucha por un internet con contenido de calidad para las personas.
 
 ## Dependencias
 
@@ -24,11 +24,11 @@ No olvides correr PostgreSQL, Elasticsearch y Redis en el momento o como backgro
 
 ## Este repositorio
 
-1. Clona Tong:
-`git clone git@github.com:omartorresrios/Tong.git`
+1. Clona Tongs:
+`git clone git@github.com:omartorresrios/Tongs.git`
 
 2. Installa todas las gemas:
-`cd Tong` y luego `bundle install`
+`cd Tongs` y luego `bundle install`
 
 3. Ejecuta Sidekiq, Elasticsearch y Mailer:
 `bundle exec sidekiq -q elasticsearch -q mailer -c 3`

@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-<html ng-app="Tong">
+<html ng-app="Tongs">
 <head>
-  <title>Tong</title>
+  <title>Tongs
+    <% if @post %>
+      • <%= @post.title %>
+    <% end %>
+    <% if @user %>
+      • <%= @user.username %>
+    <% end %>
+  </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <% if content_for?(:meta_og) %>
     <%= yield :meta_og %>
   <% else %>
-    <meta property="og:title" content="Tong" />
+    <meta property="og:title" content="Tongs" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://tongs.co" />
     <%= tag :meta, property: 'og:image', content: image_url('tongsession.svg') %>
@@ -28,7 +35,7 @@
 
   <% unless admin_signed_in? %>
     <% if user_signed_in? %>
-      <%= render 'layouts/header' %>    
+      <%= render 'layouts/header' %>
     <% end %>
   <% else %>
     <%= render 'layouts/admin_header' %>
