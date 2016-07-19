@@ -25,10 +25,10 @@
 
 .over-main {
   position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  width: 274px;
+  height: 520px;
+  top: 3%;
+  left: 5%;
   background-image: image-url("waimea-canyon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -44,7 +44,7 @@
   }
   .welcome-desc-main {
     text-shadow: 0px 1px 4px rgba(0,0,0,0.65);
-    padding: 0 25px;
+    padding: 0;
     font-size: 1.85em;
     margin-bottom: 10px;
     p {
@@ -157,10 +157,10 @@
   /* over style */
   .over-main {
     position: fixed;
-    width: 716px;
-    height: 431px;
-    top: 24%;
-    left: 24%;
+    width: 830px;
+    height: 580px;
+    top: 15%;
+    left: 21%;
     border-radius: 6px;
     /*background-image: image-url("waimea-canyon.jpg");*/
     background-repeat: no-repeat;
