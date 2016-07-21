@@ -18,7 +18,7 @@
     <meta property="og:title" content="Tongs" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://tongs.co" />
-    <%= tag :meta, property: 'og:image', content: image_url('tongsession.svg') %>
+    <%= tag :meta, property: 'og:image', content: image_url('tongs.svg') %>
   <% end %>
 
   <%= csrf_meta_tags %>
@@ -46,5 +46,8 @@
 </body>
 <script type="text/javascript">
   window.userSignedIn = <%= user_signed_in? %>;
+  $(document).on('page:fetch', function() { NProgress.start(); })
+  $(document).on('page:change', function() { NProgress.done(); })
+  $(document).on('page:restore', function() { NProgress.remove(); })
 </script>
 </html>
