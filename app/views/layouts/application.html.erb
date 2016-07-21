@@ -29,9 +29,6 @@
 </head>
 
 <body class="<%= controller.controller_name %> <%= controller.action_name %>" >
-  <%= react_component('UserOverlay', {}) %>
-
-  <div data-behavior="progress-bar" class="progress-bar"></div>
 
   <% unless admin_signed_in? %>
     <% if user_signed_in? %>
@@ -42,7 +39,7 @@
   <% end %>
   <%= render 'layouts/alert_messages' %>
 
-  <div class="container-fluid main-container">
+  <div class="main-container">
     <%= yield %>
     <%= yield :sidebar %>
   </div>

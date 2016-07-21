@@ -11,65 +11,58 @@
  * file per style scope.
  *
  */
-
 // Use @import to import all Sass files, instead of using sprocket require.
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-@import "partials/assets";
-@import "partials/variables";
-@import "partials/mixins";
-@import 'partials/miscellaneous';
-
-@import "partials/base";
-@import "partials/buttons";
-@import "partials/headings";
-
+// @import "partials/assets";
+// @import "partials/variables";
+// @import "partials/mixins";
+// @import 'partials/miscellaneous';
+// @import "partials/base";
+// @import "partials/buttons";
+// @import "partials/headings";
 // Pages (page specific styles)
-@import 'pages/posts.show';
-@import 'pages/tags.show';
-@import 'pages/users.show';
-@import 'pages/dashboard.show';
-@import 'pages/posts.new';
-@import 'pages/sessions.new';
-@import 'pages/stories.drafts';
-@import 'pages/search.show';
-
+// @import 'pages/posts.show';
+// @import 'pages/tags.show';
+// @import 'pages/users.show';
+// @import 'pages/dashboard.show';
+// @import 'pages/posts.new';
+// @import 'pages/sessions.new';
+// @import 'pages/stories.drafts';
+// @import 'pages/search.show';
 // Modules
-@import 'modules/header';
-@import 'modules/post_panel';
-@import 'modules/avatar';
-@import 'modules/post_metadata';
-@import 'modules/sidebar';
-@import 'modules/like_buttons';
-@import 'modules/feed';
-@import 'modules/user_card';
-@import 'modules/searchbar';
-@import 'modules/editor_form';
-@import 'modules/loader';
-@import 'modules/hero';
-@import 'modules/nav_tabs';
-@import 'modules/popover';
-@import 'modules/social_signin';
-@import 'modules/overlay';
-@import 'modules/overlay_main';
-@import 'modules/overlay_hi';
-@import 'modules/alert_message';
-@import 'modules/notifications';
-@import 'modules/tags';
-@import 'modules/progress_bar';
-@import 'modules/page_load_animations';
-@import 'modules/add_tag_button';
-@import 'modules/inline_editor';
-@import 'modules/follow_suggestions';
-@import 'modules/social_share';
-
+// @import 'modules/header';
+// @import 'modules/post_panel';
+// @import 'modules/avatar';
+// @import 'modules/post_metadata';
+// @import 'modules/sidebar';
+// @import 'modules/like_buttons';
+// @import 'modules/feed';
+// @import 'modules/user_card';
+// @import 'modules/searchbar';
+// @import 'modules/editor_form';
+// @import 'modules/loader';
+// @import 'modules/hero';
+// @import 'modules/nav_tabs';
+// @import 'modules/popover';
+// @import 'modules/social_signin';
+// @import 'modules/overlay';
+// @import 'modules/overlay_main';
+// @import 'modules/overlay_hi';
+// @import 'modules/alert_message';
+// @import 'modules/notifications';
+// @import 'modules/tags';
+// @import 'modules/progress_bar';
+// @import 'modules/page_load_animations';
+// @import 'modules/add_tag_button';
+// @import 'modules/inline_editor';
+// @import 'modules/follow_suggestions';
+// @import 'modules/social_share';
 // Vendor
 @import 'vendor/medium-editor';
 @import 'vendor/medium-editor-insert-plugin';
 @import 'vendor/medium-editor-insert-plugin-frontend';
 @import 'vendor/flat';
-@import 'vendor/taggle';
+// @import 'vendor/taggle';

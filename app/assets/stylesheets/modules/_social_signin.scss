@@ -65,35 +65,3 @@
     border: none;
   }
 }
-
-/* Medium devices (desktops, 992px and up) */
-@media (min-width: $screen-md-min) {
-  .omniauth-button-group {
-    padding-left: 40px;
-    margin-bottom: 0px;
-  }
-
-  .o-s {
-    margin-top: -25px;
-    color: $white;
-  }
-
-  .signin-signup-link {
-    color: $black;
-  }
-
-  .omniauth-button-group {
-    text-align: center;
-    list-style: none;
-    padding-left: 40px;
-    bottom: auto;
-    margin-left: 0%;
-    position: relative;
-    .signin-signup-link {
-      color: $white;
-      font-size: 16px;
-    }
-  }
-
-  
-}

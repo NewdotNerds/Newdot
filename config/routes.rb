@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  get 'hi' => "welcome#hi", as: :welcome_hi
+  get "hola" => "welcome#hello", as: :welcome_hello
 
   root "dashboards#show"
   devise_for :admins, controllers: { sessions: 'admin/sessions' }
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get "search" => "search#show", as: :search
   get "search/users" => "search#users", as: :search_users
   post "posts/create_and_edit" => "posts#create_and_edit", as: :post_create_and_edit
-  post "/" => "posts#create", as: :posts_create_dashboard 
+  post "/" => "posts#create", as: :posts_create_dashboard
 
   namespace :admin do
     resource :dashboard, only: [:show]
@@ -68,6 +68,6 @@ Rails.application.routes.draw do
   end
 
   authenticate :admin do
-    mount Sidekiq::Web => '/sidekiq' 
+    mount Sidekiq::Web => '/sidekiq'
   end
 end

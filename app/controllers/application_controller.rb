@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     if user_signed_in?
       redirect_to root_path
     else
-      redirect_to welcome_hi_path
+      redirect_to welcome_hello_path
     end
   end
 

@@ -27,10 +27,15 @@ gem 'jquery-ui-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'friendly_id', '~> 5.1'
-gem 'bootstrap-sass', '~> 3.3'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'impressionist'
 gem "redcarpet"
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
 
 # Load will_paginate before elasticsearch gems.
 gem 'will_paginate', '~> 3.1'
@@ -69,7 +74,7 @@ group :development do
   gem 'spring'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec', '~> 1.0'
-  gem 'rack-mini-profiler', '~> 0.9.8', require: false
+  # gem 'rack-mini-profiler', '~> 0.9.8', require: false
   gem 'annotate'
   gem 'bullet', '~> 5.0'
   gem 'quiet_assets', '~> 1.1'
@@ -86,7 +91,7 @@ group :test do
 end
 
 group :production do
-  
+
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
 end

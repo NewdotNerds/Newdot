@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
     if user_signed_in?
       @dashboard = Dashboard.new(user: current_user, posts: feed)
     else
-      redirect_to welcome_hi_path
+      redirect_to welcome_hello_path
       #@dashboard = Dashboard.new(posts: featured_posts)
     end
   end

@@ -1,5 +1,5 @@
 // This is a manifest file that'll be compiled into application.js
-// 
+//
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
 // or any plugin's vendor/assets/javascripts directory can be referenced here using a relative path.
 //
@@ -28,6 +28,7 @@
 //= require taggle
 //= require jquery.autoSave
 //= require pubsub
+//= require tether
 //= require bootstrap-sprockets
 //= require react
 //= require react_ujs

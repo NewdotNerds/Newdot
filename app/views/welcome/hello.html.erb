@@ -1,0 +1,12 @@
+<div class="tongs-hello-wrapper container text-xs-center">
+  <%= image_tag('tongsession.svg', height: 80, alt: "Tongs", title: "Tongs", class: "m-a-2") %>
+  <p class="h3">Comparte todo lo que<br> sepas o te apasione.</p>
+  <p>Conoce los temas de los que hablan<br> tus amigos y aprende de ellos.</p>
+  <p>Si aprendiste o te divirtió algo<br> entonces dale un <strong>tong</strong> 👅</p>
+  <div class="auth">
+    <p><%= link_to "Entra con Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-lg" %></p>
+    <p><%= link_to "Entra con tu correo", new_user_session_path, class: "btn btn-primary-outline" %> o
+    <%= link_to "Regístrate", new_user_registration_path %></p>
+  </div>
+  <!-- div class="footnote">Cañón de Waimea, Kauai</div-->
+</div>
