@@ -3,9 +3,9 @@ en:
     attributes:
       user:
         Recuérdame: Recuérdame
-        email: Email
-        username: Username
-        password: Password
+        email: Tu @correo
+        username: Tu nombre
+        password: Tu contraseña
         password_confirmation: Password confirmation
       post:
         title: Title
@@ -124,7 +124,7 @@ en:
     format: "%{attribute} %{message}"
     messages:
       accepted: Debe ser aceptado
-      blank: No puede estar en blanco
+      blank: no puede estar en blanco.
       confirmation: No coincide con la confirmación
       empty: No puede estar vacío
       equal_to: Debe ser igual a %{count}

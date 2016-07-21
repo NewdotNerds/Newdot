@@ -1,26 +1,34 @@
-<div class="row fix-scroll">
-  <div class="col-md-6 col-md-offset-3 container">
-    <div class="overlay-signin">
-      <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
-        <div class="form-input-wrapper-sessions">
-          <%= f.email_field :email, autofocus: true, placeholder: "Correo", autocomplete: 'off', onfocus: "this.value = this.value;" %>
-        </div>
+<style>
+input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+</style>
 
-        <div class="form-input-wrapper-sessions">
-          <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña" %>
-        </div>
-
-        <% if devise_mapping.rememberable? -%>
-          <div class="field remember-me">
-            <%= f.check_box :remember_me %>
-            <%= f.label :Recuérdame %>
-          </div>
-        <% end -%>
-
-        <%= f.submit "Inicia sesión", class: "button buttons-session" %>
-        <p class="o">o</p>
-        <%= link_to "Regístrate", new_user_registration_path, class: 'button a-to-button buttons-session pad-top' %>
-      <% end %>
-    </div>
+<div class="container text-xs-center">
+  <a href="<%= root_path %>"><%= image_tag('tongs.svg', height: 80, alt: "Tongs", title: "Tongs", class: "m-a-2") %></a>
+  <p class="h3 m-b-3">Comparte todo lo que<br> sepas o te apasione.</p>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
+  <div class="form-group">
+      <label class="sr-only" for="email">Email address</label>
+      <%= f.email_field :email, autofocus: true, placeholder: "Escribe tu @correo", autocomplete: 'off', onfocus: "this.value = this.value;", class: "form-control" %>
+      <label class="sr-only" for="password">Password</label>
+      <%= f.password_field :password, autocomplete: "off", placeholder: "Aquí tu contraseña", class: "form-control" %>
   </div>
+  <% if devise_mapping.rememberable? %>
+  <div class="checkbox hidden-xs-up">
+      <label>
+      <%= f.check_box :remember_me, {:checked=>true} %> Acuérdate de mí
+      </label>
+  </div>
+  <% end %>
+
+  <%= f.submit "Entra", class: "btn btn-primary btn-block" %>
+  o <%= link_to "Regístrate", new_user_registration_path %>
+  <% end %>
 </div>
