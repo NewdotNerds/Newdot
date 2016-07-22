@@ -29,9 +29,18 @@ body.search.users {
   }
 
   a.tag {
+    color: $light-font-color;
     background-color: $background-gray;
+    padding: 0.2em 0.5em;
+    border: 1px solid $light-border-color;
+    @include border-radius($radius);
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 12px;
+    font-size: 12px;
     &:hover {
-      background-color: $red;
+      background-color: $yellow;
+      border-color: $yellow;
     }
   }
 }
