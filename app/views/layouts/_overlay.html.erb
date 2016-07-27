@@ -1,9 +1,8 @@
-<div data-behavior="overlay" class="overlay overlay-hugeinc">
-  <div class="overlay-main" style="background: url(<%= randomized_background_image %>) no-repeat center center fixed;">
-    <%= image_tag('tongsession.svg', class: 'logo-main', height: 80, alt: "", title: "Tongs") %>
-    <p class="welcome-desc">Conoce los temas de los que hablan tus amigos. Aprende de ellos.<br>
-    <strong>Comparte todo lo que sepas o te apasione.</strong><br>
-    Si aprendiste o te divirtió algo entonces dale un <strong>tong</strong> 👅</p>
+<div data-behavior="overlay" class="overlay overlay-huge">
+  <button data-behavior="close-overlay" type="button" class="overlay-close"><span class="glyphicon glyphicon-remove"></span></button>
+  <div class="overlay" style="background-image: url(/assets/overlay-main.jpg);">
+    <%= image_tag('tongsession.svg', class: 'logo-overlay', height: 55, alt: "", title: "Tongs") %>
+    <p class="welcome-desc"><strong>Tongs, un espacio de la comunidad UP para compartir ideas, intereses, experiencias, etc. <br><br>Todos ya están aquí, ¡qué esperas!</strong></p>
     <ul class="auth">
       <li class="omniauth-button">
         <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>

@@ -31,6 +31,7 @@ gem 'bootstrap-sass', '~> 3.3'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'impressionist'
 gem "redcarpet"
+gem 'sprockets', '3.6.3'
 
 # Load will_paginate before elasticsearch gems.
 gem 'will_paginate', '~> 3.1'

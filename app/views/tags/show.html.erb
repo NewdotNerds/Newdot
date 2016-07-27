@@ -1,67 +1,63 @@
-<% if user_signed_in? %>
-  <div class="col-md-6 col-md-offset-1 da-ma-co">
+<div class="col-md-6 col-md-offset-1 da-ma-co">
 
-    <div data-animation="fadeInUp-fadeOutDown">
-      <div class="heading-container">
-        <% if admin_signed_in? %>
-          <%= feature_tag_button_for(@dashboard.tag) %>
-        <% else %>
-          <%= follow_tag_button_for(@dashboard.tag) %>
-        <% end %>
-        <small class="heading-prefix">Tageado en</small>
-        <h3 class="heading-title"><%= @dashboard.tag.name %></h3>
+  <div data-animation="fadeInUp-fadeOutDown">
+    <div class="heading-container">
+      <% if admin_signed_in? %>
+        <%= feature_tag_button_for(@dashboard.tag) %>
+      <% else %>
+        <%= follow_tag_button_for(@dashboard.tag) %>
+      <% end %>
+      <small class="heading-prefix">Tageado en</small>
+      <h3 class="heading-title"><%= @dashboard.tag.name %></h3>
 
-      </div>
-
-      <div class="tag-followers-list">
-        <small class="heading-prefix">Gente interesada en <%= @dashboard.tag.name %></small>
-        <%= react_component('TagFollowersList', { tagId: @dashboard.tag.id }) %>
-      </div>
     </div>
 
-    <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
-      <%= render @dashboard.posts %>
+    <div class="tag-followers-list">
+      <small class="heading-prefix">Gente interesada en <%= @dashboard.tag.name %></small>
+      <%= react_component('TagFollowersList', { tagId: @dashboard.tag.id }) %>
     </div>
-
-    <%= will_paginate @dashboard.posts %>
-
   </div>
 
-  <% content_for :sidebar do %>
-    <aside class="col-md-3 col-md-offset-2 main-sidebar">
-      <% if @related_tags.any? %>
-        <h4 class="small-heading border-top">Tags relacionados</h4>
-        <%= react_component('TagList', { tags: @related_tags }) %>
-      <% end %>  
+  <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
+    <%= render @dashboard.posts %>
+  </div>
 
-      <!--<% if user_signed_in? %>-->
-      <div class="flex-container border-top">
-        <h4 class="small-heading">Tags que sigues</h4>
-        <%= react_component('AddTagButton') %>
+  <%= will_paginate @dashboard.posts %>
+
+</div>
+
+<% content_for :sidebar do %>
+  <aside class="col-md-3 col-md-offset-2 main-sidebar">
+    <% if @related_tags.any? %>
+      <h4 class="small-heading border-top">Tags relacionados</h4>
+      <%= react_component('TagList', { tags: @related_tags }) %>
+    <% end %>  
+
+    <!--<% if user_signed_in? %>-->
+    <div class="flex-container border-top">
+      <h4 class="small-heading">Tags que sigues</h4>
+      <%= react_component('AddTagButton') %>
+    </div>
+    <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
+    <!--<% end %>-->
+
+    <!--<% unless @dashboard.filtered? %>
+      <h4 class="small-heading border-top">Top stories</h4>
+      <div class="sidebar-top-stories">
+        <ul>
+          <% @dashboard.top_stories.each_with_index do |post, index| %>
+            <li class="top-stories-list-item">
+              <div class="count-button-wrapper">
+                <span class="count-button"><%= index + 1 %></span>
+              </div>
+              <div class="top-stories-links">
+                <%= link_to post.title, post, class: 'post-title' %><br/>
+                <small><%= link_to post.username, post.user, class: 'post-username' %></small>
+              </div>
+            </li>
+          <% end %>
+        </ul>
       </div>
-      <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
-      <!--<% end %>-->
-
-      <!--<% unless @dashboard.filtered? %>
-        <h4 class="small-heading border-top">Top stories</h4>
-        <div class="sidebar-top-stories">
-          <ul>
-            <% @dashboard.top_stories.each_with_index do |post, index| %>
-              <li class="top-stories-list-item">
-                <div class="count-button-wrapper">
-                  <span class="count-button"><%= index + 1 %></span>
-                </div>
-                <div class="top-stories-links">
-                  <%= link_to post.title, post, class: 'post-title' %><br/>
-                  <small><%= link_to post.username, post.user, class: 'post-username' %></small>
-                </div>
-              </li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>-->
-    </aside>
-  <% end %>
-<% else %>
-  <%= render 'layouts/overlay_main' %>
+    <% end %>-->
+  </aside>
 <% end %>
