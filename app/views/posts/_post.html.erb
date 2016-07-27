@@ -11,7 +11,7 @@
     <h3 class="post-title"><%= link_to post.title, post %></h3>
     <% if post.lead %>
       <div class="post-body"><%= truncate(remove_javascript(post.lead), length: 400, separator: ' ', escape: false) %></div>
-      <%= link_to "Sigue leyendo", post, class: 'read-more' if post.lead.length > 400 %>
+      <%= link_to "Sigue leyendo", post, class: 'read-more' if post.characters > 400 %>
     <% end %>
   </div>
 

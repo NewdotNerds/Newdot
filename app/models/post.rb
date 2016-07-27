@@ -104,6 +104,10 @@ class Post < ActiveRecord::Base
     body.split(' ')
   end
 
+  def characters
+    body.length
+  end
+
   def word_count
     words.size
   end
