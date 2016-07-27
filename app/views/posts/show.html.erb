@@ -74,7 +74,7 @@
     <% if user_signed_in? && current_user?(@post.user) %>
       <div class="edit-delete-button-wrapper">
         <%= link_to "Editar", edit_post_path(@post), class: 'button edit-delete-post' %>
-        <%= link_to "Eliminar", post_path(@post), method: :delete, class: 'button edit-delete-post', data: { confirm: "¿Estás seguro?"} %>
+        <%= link_to "Eliminar", post_path(@post), method: :delete, class: 'button edit-delete-post', data: { confirm: "¿Deseas eliminar el post?"} %>
       </div>
     <% end %>
   </div>
