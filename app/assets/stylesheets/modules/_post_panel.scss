@@ -46,11 +46,11 @@
     .read-more {
       display: block;
       text-decoration: none;
-      color: $super-light-font-color;
+      color: $red;
       font-size: 12px;
       margin-top: 16px;
       &:hover {
-        color: $light-font-color;
+        text-decoration: underline;
       }
     }
   }
