@@ -4,12 +4,12 @@
   <title>
     <% if @post %>
       <%= @post.title %> | Tongs
-    <% end %>
-    <% if @user %>
+    <% elsif @user %>
       <%= @user.username %> | Tongs
-    <% end %>
-    <% if @tag %>
+    <% elsif @tag %>
       <%= @tag.name %> | Tongs
+    <% elsif root_url %>
+      Tongs  
     <% end %>
   </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
