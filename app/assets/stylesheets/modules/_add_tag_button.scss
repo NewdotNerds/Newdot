@@ -20,8 +20,8 @@
   display: block;
   &:active,
   &:hover {
-    border: 1px solid $red;
-    color: $red;
+    border: 1px solid $yellow;
+    color: $yellow;
     transform: rotate(45deg);
   }
 }

@@ -20,9 +20,12 @@
   position: relative;
   top: -2.5px;
   left: -3px;
-  color: rgba(0,0,0,0.3);
+  color: #898f9c;
   font-weight: 600;
   margin-left: 3px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .bookmark-button-wrapper {
