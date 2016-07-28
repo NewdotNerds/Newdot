@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html ng-app="Tongs">
 <head>
-  <title>Tongs
+  <title>
     <% if @post %>
-      • <%= @post.title %>
+      <%= @post.title %> | Tongs
     <% end %>
     <% if @user %>
-      • <%= @user.username %>
+      <%= @user.username %> | Tongs
+    <% end %>
+    <% if @tag %>
+      <%= @tag.name %> | Tongs
     <% end %>
   </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
