@@ -3,9 +3,9 @@ module PostsHelper
   def post_length_in_minutes(body)
     min = body.split(" ").size / 250
     if min == 0
-      'less than a minute read'
+      'menos de 1 min'
     else
-      "#{min} min read"
+      "#{min} min lectura"
     end
   end
 
