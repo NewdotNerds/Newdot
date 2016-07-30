@@ -3,7 +3,7 @@
 
   <% if post.picture? %>
     <div class="post-picture-wrapper">
-      <%= link_to ( image_tag post.picture.url(:thumb) ) %>
+      <%= link_to ( image_tag post.picture.url(:thumb) ), post %>
     </div>
   <% end %>
 
@@ -16,7 +16,7 @@
   </div>
 
   <div class="post-stats stats clearfix">
-    <div class="pull-left" style="margin-left: 180px;">
+    <div class="pull-left">
       <%= render partial: 'posts/likes', locals: { post: post } %>
     </div>
 
