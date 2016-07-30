@@ -8,8 +8,8 @@
       <%= @user.username %> | Tongs
     <% elsif @tag %>
       <%= @tag.name %> | Tongs
-    <% elsif root_url %>
-      Tongs  
+    <% else %>
+      Tongs
     <% end %>
   </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
