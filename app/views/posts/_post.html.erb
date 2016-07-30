@@ -3,7 +3,7 @@
 
   <% if post.picture? %>
     <div class="post-picture-wrapper">
-      <%= image_tag post.picture.url(:thumb) %>
+      <%= link_to ( image_tag post.picture.url(:thumb) ) %>
     </div>
   <% end %>
 
@@ -16,9 +16,10 @@
   </div>
 
   <div class="post-stats stats clearfix">
-    <div class="pull-left">
+    <div class="pull-left" style="margin-left: 180px;">
       <%= render partial: 'posts/likes', locals: { post: post } %>
     </div>
+
     <div class="pull-left">
       <i class="fa fa-eye eye-icon-wrapper" style="height: 18px;width: 18px;color: #ee4266;font-size: 18px;padding: 3px 0 0 6px;margin-right: 8px;"></i>
       <%= "#{post.impressionist_count}" %>
