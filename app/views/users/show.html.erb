@@ -6,7 +6,7 @@
       </div>
       <div class="profile-info prof-user">
         <h1 class="hero-title"><%= @user.username %></h1>
-        <p class="hero-description"><%= markdown(@user.description) %></p>
+        <h1 class="hero-description"><%= markdown(@user.description) %></h1>
         <% if @user.location.present? %>
           <div class="hero-location">
             <%= icon('map-marker') %><%= @user.location %>

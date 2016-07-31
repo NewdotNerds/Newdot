@@ -79,6 +79,9 @@ body.recommended_posts.index {
       color: $light-font-color;
       font-size: 16px;
       cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .following-count {
