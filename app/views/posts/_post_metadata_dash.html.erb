@@ -1,0 +1,23 @@
+<div class="post-metadata" style="justify-content: space-between;">
+  <div style="display: flex;">
+  <%= avatar_for post.user, size: 40 %>
+    <div class="post-info">
+      <%= react_component("PopoverLink", { user_id: post.user.id, url: user_path(post.user), children: post.username }) %>
+      <small><!--<%= time_ago_in_words(post.published_at) %> &#149;--> <%= post_length_in_minutes(post.body) %></small>
+    </div>
+  </div>
+  <% if user_signed_in? && current_user?(post.user) %>
+    <small class="sc-metadata" style="align-self: center;">
+	  <div class="btn-group">
+        <button type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border: none;outline: none;background-color: #ffffff;">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <!--<%= link_to "Editar", url_for(post) %>-->
+          <%= link_to 'Editar', [:edit, post] %></td>
+          <%= link_to "Eliminar", post, method: :delete, data: { confirm: "¿Deseas eliminar el post?"} %>
+        </ul>  
+      </div>
+    </small>
+  <% end %>
+</div>

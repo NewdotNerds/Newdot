@@ -41,7 +41,7 @@ class Post < ActiveRecord::Base
   scope :drafts, -> { where(published_at: nil) }
   scope :featured, -> { where(featured: true) }
 
-  is_impressionable
+  is_impressionable :counter_cache => true, :unique => :all
 
   mount_uploader :picture, PictureUploader
 

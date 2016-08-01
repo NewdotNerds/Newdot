@@ -96,6 +96,14 @@ class User < ActiveRecord::Base
     Hash[all_names.zip(all_likes)]
   end
 
+  def update_total_post_views
+    User.includes(:posts).all.map { |u| u.posts.sum(:impressions_count) }
+  end
+
+  def names_views
+    Hash[all_names.zip(update_total_post_views)]
+  end
+
   private
 
     # Validates the size on an uploaded image.

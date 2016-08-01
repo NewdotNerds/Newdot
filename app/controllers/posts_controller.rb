@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
   before_action :authorize_user, only: [:edit, :update, :destroy]
+  before_action :update_total_post_views, only: :show
 
   impressionist actions: [:show], unique: [:session_hash]
 
@@ -73,4 +74,10 @@ class PostsController < ApplicationController
         redirect_to root_url
       end
     end
+
+    def update_total_post_views
+      @post = Post.find(params[:id])
+      @post.user.update_total_post_views
+    end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160630220819) do
+ActiveRecord::Schema.define(version: 20160731183205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,16 +114,19 @@ ActiveRecord::Schema.define(version: 20160630220819) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
     t.integer  "user_id"
     t.string   "picture"
-    t.integer  "likes_count",     default: 0
+    t.integer  "likes_count",       default: 0
     t.datetime "published_at"
-    t.boolean  "featured",        default: false
+    t.boolean  "featured",          default: false
     t.text     "lead"
     t.string   "slug"
-    t.integer  "responses_count", default: 0,     null: false
+    t.integer  "responses_count",   default: 0,     null: false
+    t.integer  "impressions_count"
+    t.integer  "counter_cache"
+    t.integer  "view_count"
   end
 
   add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true, using: :btree
@@ -207,6 +210,8 @@ ActiveRecord::Schema.define(version: 20160630220819) do
     t.string   "uid"
     t.string   "slug"
     t.string   "location"
+    t.integer  "total_view_count"
+    t.integer  "counter_cache"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

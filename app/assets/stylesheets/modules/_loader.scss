@@ -57,7 +57,7 @@ $loader-dot--size: 20px;
     color: $font-black;
     padding-bottom: 20px;
     &:after {
-      content: "Loading";
+      content: "Cargando";
       font-weight: bold;
       animation-name: loadingtext;
       animation-duration: 3s;

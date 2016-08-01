@@ -1,6 +1,6 @@
 <% posts.each_with_index do |post| %>
   <div class="post-panel">
-    <%= render partial: 'posts/post_metadata', locals: { post: post } %>
+    <%= render partial: 'posts/post_metadata_dash', locals: { post: post } %>
 
     <% if post.picture? %>
       <div class="post-picture-wrapper">
