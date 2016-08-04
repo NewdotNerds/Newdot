@@ -31,7 +31,7 @@
 
     <h3 class="title"><%= @post.title %></h3>
     <div class="body">
-      <p><%= remove_javascript(@post.body).html_safe %></p>
+      <p><%= markdown(remove_javascript(@post.body).html_safe) %></p>
     </div>
 
     <div class="post-tags">
