@@ -104,9 +104,9 @@ class User < ActiveRecord::Base
     Hash[all_names.zip(update_total_post_views)]
   end
 
-  def facebook_friends
-    @facebook ||= Koala::Facebook::API.new(oauth_token).get_connections("me", "friends", api_version: 'v2.0')
-  end 
+  #def facebook_friends
+  #  @facebook ||= Koala::Facebook::API.new(oauth_token).get_connections("me", "friends", api_version: 'v2.0')
+  #end 
 
   private
 
