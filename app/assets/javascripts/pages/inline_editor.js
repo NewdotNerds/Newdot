@@ -6,7 +6,7 @@ var InlineEditor = {
     }
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: "¡Cuéntanos qué sabes! ..."
+        text: "¡Cuéntanos qué sabes!..."
       }
     });
 

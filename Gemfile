@@ -11,6 +11,7 @@ gem 'devise', '~> 3.5.3'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
+#gem "koala", "~> 2.2"
 
 
 gem 'localeapp', '~> 1.0', '>= 1.0.2'

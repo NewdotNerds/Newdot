@@ -16,11 +16,10 @@
   <div class="col-md-5 col-md-offset-3 dashboard-main-content">
     <% unless @dashboard.top_stories? %>
       <% if current_page?('/') %>
-        <% if @dashboard.posts.any? %>
-          <div data-animation="fadeInUp-fadeOutDown">
-            <%= render 'shared/inline_editor' %>
-          </div>
-        <% else %>
+        <div data-animation="fadeInUp-fadeOutDown">
+          <%= render 'shared/inline_editor' %>
+        </div>
+        <% unless @dashboard.posts.any? %>
           <div class="block-start">
             <div class="tong-start-block">
               <img src="/assets/tongstart.png" class="tong-start" alt="" title="Hola :)" />
@@ -32,14 +31,14 @@
               <p> • Si aprendiste o te divirtió una publicación entonces dale un tong. <br>¿Qué es?: es un reconocimiento a alguien por compartir <strong>contenido relevante</strong>.</p>
               <p> • Mientras más tongs tengas significa que 1) conoces los temas en los que posteas y 2) que estás compartiendo contenido de valor con otras personas.</p>
             </ul>
-            <h4 class="by-start">Olvídanos por ahora y ¡empieza a usar Tongs! 😉</h4>
+            <h4 class="by-start"><strong>¡Empieza a usar Tongs compartiendo algo! 👆</strong></h4>
             </p>
           </div>
         <% end %>
       <% end %>
       <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
         <%= render @dashboard.posts %>
-      </div>      
+      </div>
     <% else %>
       <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
         <%= render 'posts/top_stories', posts: @dashboard.posts %>

@@ -72,6 +72,7 @@
   <% else %>
     <%= react_component('TagList', { tags: @user.following_tags }, { prerender: true }) %>
   <% end %>
+  <!--Facebook friends: <% @user.facebook_friends %>-->
 
   <% if @latest_posts.any? %>
     <h4 class="small-heading border-top">Últimos Posts</h4>
