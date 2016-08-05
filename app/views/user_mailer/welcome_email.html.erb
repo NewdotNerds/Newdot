@@ -1,39 +1,67 @@
-<div style="max-width: 600px; margin: 0 30px 0 60px;">
-  <div style="display: inline-flex;margin-top: 50px;font-size: 17px;">
+<div style="max-width: 600px; margin: 0 30px 0 50px;">
+  <div style="display: inline-flex;margin-top: 20px;font-size: 17px;">
     <div style="margin-left: -12px;">
       <%= image_tag "tongstart.png", height: 50, alt: "", title: "Tongs" %>
     </div>
-    
-    <h2 style="color: rgba(0,0,0,0.8);
-              font-family: helvetica, 'Open Sans', sans-serif;
-              font-size; 22px;
-              font-weight: normal;
-              line-height: 24px;
-              padding-top: 15px;
-              padding-bottom: 5px;
-              margin-bottom: 0px;
-              margin-top: 11px;
-              ">Tongs</h2>
+    <ul style="list-style: none;margin-left: 328px;display: inline-flex;font-size: 14px;font-family: helvetica, 'Open Sans', sans-serif;">
+      <li style="margin-bottom: 5px;"><%= link_to "Edita tu perfil", @user, style: 'text-decoration: none;color:#ee4266' %></li>
+      <li style="margin-left: 20px;"><%= link_to "Comparte algo", new_post_url, style: 'text-decoration: none;color:#ee4266' %></li>
+    </ul>
   </div>
 
-  <hr style="max-width: 600px;margin-bottom: 40px;"/>
+  <hr style="max-width: 600px;margin-bottom: 20px;"/>
 
   <p style="font-family: helvetica, 'Open Sans', sans-serif;
             color: rgba(0,0,0,0.8);line-height: 2.0;margin-bottom: -16px;font-size: 14px;">
-    Hola <%= @user.username.split(" ").first %>, a partir de ahora ya puedes compartir y consumir contenido de calidad.<br/>
-    <strong>Empieza con estas opciones para sacarle el máximo provecho a Tongs:</strong>
-    <ul style="list-style: none;padding: 15px;font-size: 14px;">
-      <li style="margin-bottom: 5px;"><%= link_to "Edita tu perfil", @user, style: 'text-decoration: none;color:#ee4266' %></li>
-      <li style="margin-bottom: 5px;"><%= link_to "Busca amigos y síguelos", root_url, style: 'text-decoration: none;color:#ee4266' %></li>
-      <li><%= link_to "Comparte algo que sabes", new_post_url, style: 'text-decoration: none;color:#ee4266' %></li>
+    ¡Hola <%= @user.username.split(" ").first %>!<br/> Ahora ya puedes crear y consumir contenido relevante y aumentar tu valor profesional.<br/>
+    <strong>Te dejamos una pequeña guía para que saques el máximo provecho de Tongs:</strong>
+    <ul style="font-family: helvetica, 'Open Sans', sans-serif;list-style: none;padding: 1px 15px 15px;font-size: 14px;">
+      <h4 style="margin-bottom: -9px;">Contenido:</h4>
+      <p>Comparte contenido sobre los temas que sabes (ideas, intereses, experiencias). Lee posts interesantes de gente que sigues.</p>
+      <h4 style="margin-bottom: -9px;">Busca:</h4>
+      <p>¿Con ganas de explorar? Empieza a buscar gente, posts y temas. Seguro que más de un amigo ya está aquí compartiendo contenido sobre diversos temas.</p>
+      <h4 style="margin-bottom: -9px;">Tongs:</h4>
+      <p>Sí, adivinaste, es lo más importante. Si ves un post interesante, ¡dale tong!. Todos tienen un contador de tongs en su perfil.</p>
     </ul>
   </p>
 </div>
 
-<%= image_tag "welcome-email.jpg", style: "display: block; max-width: 600px; margin: 0 30px 0 60px;" %>
-<div style="margin: 0 30px 0 60px;"> 
+<div style="max-width: 600px;">
+  <div style="margin: 0 50px;padding-top: 5px; padding-bottom: 3px;text-align: center;">
+    <small style="color: #898f9c; font-family: helvetica, 'Open Sans', sans-serif;
+    font-size: 14px; font-weight: 100px; text-transform: uppercase; 
+    letter-spacing: 0.1px;">Estos son los posts con más <strong>tongs</strong></small>
+  </div>
+  
+  <% @topstories.each do |post| %>
+    <div style="margin: 0 50px;max-width: 500px; padding: 30px 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);">     
+      <div style="margin: 0; padding-top: 15px; display: flex;">
+        <%= avatar_for post.user, size: 40, style: "border-radius: 50%; margin-right: 12px;" %>
+        <div>
+          <%= link_to post.username, user_url(post.user), style: "color: #EE4266;text-decoration: none; font-family: helvetica, 'Open Sans', sans-serif;" %><br/>
+          <small style="color: rgba(0,0,0,0.8); font-family: helvetica, 'Open Sans', sans-serif;">
+            <%= time_ago_in_words(post.created_at) %> &#149; <%= post_length_in_minutes(post.body) %>
+          </small>
+        </div>
+      </div>
+      <% if post.picture? %>
+        <%= image_tag post.picture.url(:thumb), style: "display: block;
+            max-width: 400px; margin: 0 auto;" %>
+      <% end %>
+      <h4 style="margin: 0; padding: 5px 0;">
+        <%= link_to post.title, post_url(post), style: "color: rgba(0,0,0,0.8);
+              text-decoration: none; font-size: 24px; font-family: helvetica, 'Open Sans', sans-serif;" %></h4>
+      <p style="margin: 0; padding: 0; font-family: helvetica, 'Open Sans', sans-serif;">
+        <%= truncate(post.body, length: 120, escape: false) %>
+      </p>    
+    </div>
+  <% end %>
+</div>
+
+<div style="margin: 0 30px 0 50px;"> 
   <h4 style="font-family: helvetica, 'Open Sans', sans-serif; font-size: 18px;
-            color: rgba(0,0,0,0.8); line-height: 1.4;"><strong>¡Empieza ya a ganar tongs!</strong></h4>
-  <%= link_to "Empezar", root_path, style: 'font-size: 14px;font-family: helvetica, Open Sans, sans-serif;padding: 0.2em 0.5em;cursor: pointer;background-color:#0ead69;text-decoration: none;color: white;border-radius:4px' %>
+            color: rgba(0,0,0,0.8); line-height: 1.4;"><strong>¡Qué esperas, empieza a compartir algo ya!</strong></h4>
+  <%= link_to "¡Vamos!", root_path, style: 'font-size: 14px;font-family: helvetica, Open Sans, sans-serif;padding: 0.2em 0.5em;cursor: pointer;background-color:#0ead69;text-decoration: none;color: white;border-radius:4px' %>
 
 </div>
