@@ -13,15 +13,15 @@ class AlertMessage extends React.Component {
   render () {
     if (this.state.slideUp) {
       return (
-        <div className={`alert alert-message slideup alert-${this.props.type}`}>
+        <div className={`container m-t-1`}><div className={`alert alert-message slideup alert-${this.props.type}`}>
           {this.props.message}
-        </div>
+        </div></div>
       );
     } else {
       return (
-        <div className={`alert alert-message alert-${this.props.type}`}>
+        <div className={`container m-t-1`}><div className={`alert alert-message alert-${this.props.type}`}>
           {this.props.message}
-        </div>
+        </div></div>
       );
     }
   }
