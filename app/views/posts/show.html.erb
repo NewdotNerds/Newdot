@@ -4,7 +4,7 @@
   <meta property="og:title" content="<%= @post.title %>" />
   <meta property="og:type" content="article" />
   <meta property="og:published_time" content="<%= @post.published_at.strftime('%Y-%m-%d %H:%M') %>" />
-  <meta property="article:author" content="<%= @post.user.username if @post.user && @post.user.username %>" />
+  <meta property="article:author" content="https://www.facebook.com/<%= @post.user.uid %>" />
   <meta property="og:description" content="<%= truncate(sanitize( markdown(@post.body) ), length: 100) %>" />
   <% if @post.picture %>
     <%= tag :meta, property: 'og:image:url', content: "#{@post.picture.url}" %>
