@@ -6,7 +6,7 @@
   <meta property="og:author" content="<%= @post.user.username if @post.user && @post.user.username %>" />
   <meta property="og:description" content="<%= truncate(sanitize( markdown(@post.body) ), length: 100) %>" />
   <% if @post.picture %>
-    <%= tag :meta, property: 'og:image:url', content: "{@post.picture.url}" %>
+    <%= tag :meta, property: 'og:image:url', content: "#{@post.picture.url}" %>
   <% end %>
 <% end %>
 
