@@ -1,4 +1,5 @@
 <%= content_for(:meta_og) do %>
+  <meta property="fb:app_id" content="<%= ENV["FACEBOOK_API_ID"] %>" />
   <meta property="og:url" content="<%= post_url(@post) %>" />
   <meta property="og:title" content="<%= @post.title %>" />
   <meta property="og:type" content="article" />
