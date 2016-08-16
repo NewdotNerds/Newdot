@@ -1,7 +1,7 @@
 <%= content_for(:meta_og) do %>
   <meta property="og:url" content="<%= post_url(@post) %>" />
   <meta property="og:title" content="<%= @post.title %>" />
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="post" />
   <meta property="og:published_time" content="<%= @post.published_at.strftime('%Y-%m-%d %H:%M') %>" />
   <meta property="og:author" content="<%= @post.user.username if @post.user && @post.user.username %>" />
   <meta property="og:description" content="<%= truncate(sanitize( markdown(@post.body) ), length: 100) %>" />
