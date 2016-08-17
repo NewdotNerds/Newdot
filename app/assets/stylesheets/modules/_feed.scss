@@ -1,6 +1,6 @@
 .feed-panel {
   background: $white;
-  padding: 0; //0 20px;
+  padding: 0;
   margin-bottom: 10px;
   border: 1px solid rgba(0,0,0, 0.09);
   @include box-shadow;
@@ -8,7 +8,6 @@
 }
 .feed-metadata {
   padding: 1.4em 20px 0;
-  //padding-top: 1.4em 20px 0;
   color: $light-gray;
   .fa-tag {
     margin-right: 5px;

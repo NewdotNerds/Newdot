@@ -37,12 +37,10 @@
 
   <div data-behavior="progress-bar" class="progress-bar"></div>
 
-  <% unless admin_signed_in? %>
-    <% if user_signed_in? %>
-      <%= render 'layouts/header' %>
-    <% end %>
-  <% else %>
+  <% if admin_signed_in? %>
     <%= render 'layouts/admin_header' %>
+  <% else %>
+    <%= render 'layouts/header' %>
   <% end %>
   <%= render 'layouts/alert_messages' %>
 

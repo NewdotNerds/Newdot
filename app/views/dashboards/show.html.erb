@@ -19,22 +19,6 @@
         <div data-animation="fadeInUp-fadeOutDown">
           <%= render 'shared/inline_editor' %>
         </div>
-        <% unless @dashboard.posts.any? %>
-          <div class="block-start">
-            <div class="tong-start-block">
-              <img src="/assets/tongstart.png" class="tong-start" alt="" title="Hola :)" />
-              <h1 class="hi-start">¡Hola <strong><%= current_user.username.split(" ").first %></strong>! </h1>
-            </div>
-            <p class="desc-welc">¡Te estábamos esperando! Este es tu muro donde encontrarás todas las publicaciones de la gente que sigues. A la <strong>izquierda 👈</strong>  están todos los que ya usan Tongs, ¿conoces a alguien? 🙂 . No olvides darte una vuelta por <strong>Destacados 👆 </strong>  para ver los posts que tienen más <strong>tongs</strong>.</p>
-            <p>Algunos tips:</p>
-            <ul style="padding-left: 5px">
-              <p> • Si aprendiste o te divirtió una publicación entonces dale un tong. <br>¿Qué es?: es un reconocimiento a alguien por compartir <strong>contenido relevante</strong>.</p>
-              <p> • Mientras más tongs tengas significa que 1) conoces los temas en los que posteas y 2) que estás compartiendo contenido de valor con otras personas.</p>
-            </ul>
-            <h4 class="by-start"><strong>¡Empieza a usar Tongs compartiendo algo! 👆</strong></h4>
-            </p>
-          </div>
-        <% end %>
       <% end %>
       <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
         <%= render @dashboard.posts %>
@@ -59,8 +43,7 @@
         <h4 class="small-heading">Tags que sigues</h4><%= react_component('AddTagButton') %>
       </div>
       <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
-
-      
+            
     </aside>
   <% end %>
 <% end %>

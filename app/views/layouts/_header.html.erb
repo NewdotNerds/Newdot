@@ -1,7 +1,7 @@
 <nav data-behavior="animated-navbar" class="tongs-nav navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to root_path, class: "navbar-brand fix-width", id: "logo" do %>
+      <%= link_to root_path, class: "navbar-brand fix-width", id: "logo", data: { behavior: 'trigger-overlay' } do %>
         <%= image_tag('tong.png', height: 40, class: 'left-logo', alt: "", title: "Tong") %>
       <% end %>
     </div>
@@ -33,8 +33,8 @@
           </li>
           <%= render 'layouts/avatar_dropdown' %>
         <% else %>
-          <li class="new-post-button"><%= link_to "Nuevo Post", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-          <li class="sign-in-button"><%= link_to "Ingresa / Regístrate", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
+          <li class="new-post-button" style="display: inline;border: 2px solid #ee4266;border-radius: 4px;"><%= link_to "Nuevo Post", new_post_path, data: { behavior: 'trigger-overlay' } %></li>
+          <li class="new-post-button" style="display: inline;border: 2px solid #ee4266;border-radius: 4px;"><%= link_to "Ingresa", new_user_session_path, data: { behavior: 'trigger-overlay' } %></li>
         <% end %>
       </ul>
     </div>
