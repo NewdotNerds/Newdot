@@ -7,17 +7,13 @@
     </div>
     <ul class="nav navbar-nav filter-links">
       <li>
-        <% if user_signed_in? %>
-          <%= nav_link_to "Inicio", root_path %>
-        <% else %>
-          <%= nav_link_to "Staff pick", root_path %>
-        <% end %>
+        <%= nav_link_to "Inicio", root_path if user_signed_in? %>
       </li>
-      <li><%= nav_link_to "Destacados", top_stories_path %></li>
+      <li>
+        <%= nav_link_to "Destacados", top_stories_path if user_signed_in? %>
+      </li>
       <% if user_signed_in? %>
         <li><%= nav_link_to "Leer después", dashboard_bookmarks_path %></li>
-      <% else %>
-        <li><a href='' data-behavior="trigger-overlay">Leer después</a></li>
       <% end %>
     </ul>
 

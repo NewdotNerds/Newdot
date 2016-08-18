@@ -29,9 +29,11 @@ class UserFollowButton extends React.Component {
 
     if (window.userSignedIn === false) {
       return (
-        <a href="" className="button green-border-button follow-button" onClick={this.openOverlay}>
+        <button onClick={this.openOverlay}
+          className="button green-border-button follow-button" 
+        >
           Seguir
-        </a>
+        </button>
       );
     }
 
