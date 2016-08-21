@@ -3,19 +3,19 @@
     <header class="hero">
       <div class="profile-info">
         <h1 class="hero-title"><%= @user.username %></h1>
-        <p class="hero-description"><%= @user.description %></p>
+        <p class="hero-description"><%= markdown(@user.description) %></p>
       </div>
       <div class="hero-avatar">
         <%= avatar_for @user, size: 100 %>
       </div>
     </header>
     <div class="following-metadata">
-      <span class="following-count"><b><%= @user.following.size %></b> Following</span>
+      <span class="following-count"><b><%= @user.following.size %></b> Siguiendo</span>
       <span class="follower-count"><%= highlight(pluralize(@user.followers.size, "Seguidores"), /\d+/, highlighter: '<b>\1</b>') %>
     </div>
 
     <% if user_signed_in? && current_user?(@user) %>
-      <%= link_to "Edit", edit_user_path(@user), class: 'button green-border-button' %>
+      <%= button_to "Editar", edit_user_path(@user), class: 'button green-border-button' %>
     <% end %>
 
     <%= follow_button_for(@user) %>
@@ -24,7 +24,7 @@
 
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
-  <h4 class="heading-border-b">Recommended by <%= @user.username %></h4>
+  <h4 class="heading-border-b">Recomenando por <%= @user.username %></h4>
   <div data-behavior="endless-scroll">
     <%= render @recommended_posts %>
   </div>
