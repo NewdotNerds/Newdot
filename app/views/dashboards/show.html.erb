@@ -16,15 +16,15 @@
   <div class="col-md-5 col-md-offset-3 dashboard-main-content">
     <% unless @dashboard.top_stories? %>
       <% if current_page?('/') %>
-        <div data-animation="fadeInUp-fadeOutDown">
+        <div>
           <%= render 'shared/inline_editor' %>
         </div>
       <% end %>
-      <div class="posts-wrapper" data-behavior="endless-scroll" data-animation="fadeInUp-fadeOutDown">
+      <div class="posts-wrapper" data-behavior="endless-scroll">
         <%= render @dashboard.posts %>
       </div>
     <% else %>
-      <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
+      <div class="posts-wrapper">
         <%= render 'posts/top_stories', posts: @dashboard.posts %>
       </div>
     <% end %>

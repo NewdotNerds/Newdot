@@ -15,7 +15,7 @@
         </ul>
       </nav>
 
-      <div data-animation="fadeInUp-fadeOutDown">
+      <div>
         <% if @drafts.any? %>
           <% @drafts.each do |draft| %>
             <div class="story-card" id="story_<%= draft.id %>">

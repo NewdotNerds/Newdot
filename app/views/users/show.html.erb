@@ -1,4 +1,4 @@
-<div class="banner-container" data-animation="fadeInUp-fadeOutDown-slow">
+<div class="banner-container">
   <div class="hero-wrapper">
     <header class="hero">
       <div class="hero-avatar">
@@ -60,7 +60,7 @@
 </div>
 
 
-<div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
+<div class="posts-wrapper">
   <div class="flex-container border-top">
     <h4 class="small-heading">Intereses</h4>
     <% if user_signed_in? && current_user?(@user) %>
@@ -81,7 +81,7 @@
 
 
 <% if @recommended_posts.any? %>
-  <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
+  <div class="banner-container">
     <div class="posts-wrapper">
       <h4 class="heading-border-b">Recomendado por <%= @user.username %> &#149; 
         <%= link_to "Ver todos", user_recommended_posts_path(@user) %>
