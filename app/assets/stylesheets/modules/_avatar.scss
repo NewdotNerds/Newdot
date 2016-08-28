@@ -1,3 +1,26 @@
+/* Extra small devices (phones, less than 768px) */
+
 img.avatar-image {
   @include border-radius($round);
+  height: 30px;
+  width: 30px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  img.avatar-image {
+    @include border-radius($round);
+    height: 40px;
+    width: 40px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

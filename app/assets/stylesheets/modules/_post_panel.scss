@@ -1,3 +1,5 @@
+/* Extra small devices (phones, less than 768px) */
+
 .post-panel {
   border-bottom: 1px solid $border-color;
   padding: 20px 0 20px;
@@ -21,7 +23,7 @@
       color: $font-black;
       text-decoration: none;
       font-weight: 700;
-      font-size: 27px;
+      font-size: 24px;
       letter-spacing: -.022em;
       line-height: 1.12;
     }
@@ -33,7 +35,7 @@
 
       p {
         @include well-read;
-        font-size: 17px;
+        font-size: 15px;
       }
 
       h2, h3 {
@@ -67,4 +69,30 @@
     display: inline-block;
     cursor: pointer;
   }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .post-panel {
+    .main-body {
+      .post-title a {
+        font-size: 27px;
+      }
+      .post-body {
+        p {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

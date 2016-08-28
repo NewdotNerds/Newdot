@@ -1,7 +1,9 @@
+/* Extra small devices (phones, less than 768px) */
+
 .dashboard-main-content {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  margin-left: 27%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 0;
 }
 .da-ma-co {
   padding-top: 2em;
@@ -14,6 +16,10 @@
 
 .pos {
   position: absolute;
+}
+
+.hid-resp {
+  visibility: hidden;
 }
 
 .follow {
@@ -79,3 +85,26 @@ body.dashboards.top_stories {
 .content-start {
   color: $light-font-color;
 }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .dashboard-main-content {
+    padding-top: 2em;
+    padding-bottom: 2em;
+    margin-left: 27%;
+  }
+  .hid-resp {
+    visibility: visible;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+

@@ -1,15 +1,11 @@
 <% if user_signed_in? %>
   <div class="container">
-    <div class="row">
-      <div class="col-md-3">
-        <div class="sidebar-nav-fixed affix pos">
-          <div class="well follow">
-            <div>
-              <%= react_component('FollowSuggestionsContainer') %>
-            </div>
-          </div>
-        </div> 
-      </div> 
+    <div class="affix pos hid-resp">
+      <div class="well follow">
+        <div>
+          <%= react_component('FollowSuggestionsContainer') %>
+        </div>
+      </div>
     </div> 
   </div>
 

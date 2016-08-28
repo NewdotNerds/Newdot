@@ -1,42 +1,44 @@
 /* Mobile First Search - Icon */
-  .main-searchbar form {
-    padding: 0;
-    margin-top: 8px;
-    margin-right: 10px;
-    border: none;
-    //@include border-radius($button);
+.main-searchbar form {
+  padding: 0;
+  margin-top: 3px;
+  margin-right: 10px;
+  border: none;
 
-    button[type="submit"] {
-      border: 1px solid $border-color;
-      @include border-radius($round);
-      width:40px;
-      height: 34px;
-      outline: none;
-      background: transparent;
-      .fa-search {
-        color: $light-font-color;
-      }
-    }
-    button[type="submit"]:hover {
-      border: 1px solid $border-hover-color;
-    }
-    input[type="search"] {
-      padding: 0.2em 0.8em 0.2em 2.5em;
-      border-radius: 4px;//@include border-radius($button);
-      border: 1px solid $border-color;
-      outline: none;
-      //background-color: transparent;
-      display: none;
-      width: 150px;
+  button[type="submit"] {
+    border: 1px solid $border-color;
+    @include border-radius($round);
+    width: 30px;
+    height: 30px;
+    outline: none;
+    background: transparent;
+    .fa-search {
+      color: $light-font-color;
     }
   }
+  button[type="submit"]:hover {
+    border: 1px solid $border-hover-color;
+  }
+  input[type="search"] {
+    padding: 0.2em 0.8em 0.2em 2.5em;
+    border-radius: 4px;//@include border-radius($button);
+    border: 1px solid $border-color;
+    outline: none;
+    //background-color: transparent;
+    display: none;
+    width: 150px;
+  }
+}
 
 /* Small devices (tablets, 768px and up) */
 /* Search - full width input */
 @media (min-width: $screen-sm-min) {
 
   .main-searchbar form {
+    margin-top: 7px;
     button[type="submit"] {
+      width:40px;
+      height: 34px;
       border: none;
       position: absolute;
       top: 5px;

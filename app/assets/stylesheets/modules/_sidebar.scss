@@ -1,5 +1,8 @@
+/* Extra small devices (phones, less than 768px) */
+
 aside.main-sidebar {
-  margin-left: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
   margin-top: 2em;
   padding-left: 12px;
   padding-rigth: 12px;
@@ -39,4 +42,21 @@ aside.main-sidebar {
       }
     }
   }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  aside.main-sidebar {
+    margin-left: 25px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

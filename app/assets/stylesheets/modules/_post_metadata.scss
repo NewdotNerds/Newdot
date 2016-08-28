@@ -1,8 +1,11 @@
+/* Extra small devices (phones, less than 768px) */
+
 .post-metadata {
   display: flex;
   padding: 0 20px;
   .post-info {
     padding-left: 10px;
+    font-size: 13px;
     a {
       color: $accent-color;
       text-decoration: none;
@@ -31,4 +34,23 @@
 }
 .resp-t-b-pad {
   padding: 0 44px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .post-metadata {
+    .post-info {
+      font-size: 14px;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

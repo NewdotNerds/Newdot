@@ -60,14 +60,16 @@ nav.navbar {
   }
 
   .left-logo {
-    margin-left: 15px;
+    margin-left: 10px;
+    height: 30px;
   }
 
   .navbar-brand {
     height: 40px;
   }
   .filter-links {
-    margin-left: 9px;
+    margin-left: 30px;
+    margin-right: 30px;
     li > a {
       text-decoration: none;
       font-size: 14px;
@@ -118,7 +120,7 @@ nav.navbar {
   .new-post-button,
   .sign-in-button  {
     margin-top: 5px;
-    margin-right: 10px;
+    margin-right: 0px;
     .button {
       margin-top: 7px;
       padding: 0.04em 0.5em;
@@ -131,14 +133,16 @@ nav.navbar {
   }
 
   .account {
-    padding-top: 4px;
+    padding-top: 2px;
   }
   a.avatar-wrapper {
     padding: 0;
     display: inline;
-    margin: 3px 15px 0 10px;
+    margin: 3px 10px 0 10px;
   }
   a.avatar-wrapper img.avatar-image {
+    height: 30px;
+    width: 30px;
     border: 1.5px solid $border-color;
     transition: all .1s;
   }
@@ -199,7 +203,7 @@ nav.navbar {
     }
     img {
       top: 7px;
-      height: 33px;
+      height: 30px;
     }
     span {
       right: 0;
@@ -224,17 +228,33 @@ nav.navbar {
     position: fixed;
   }
   nav.navbar {
-    //padding: 5px 0;
+    .left-logo {
+      margin-left: 15px;
+    }
     .filter-links {
       margin-top: 10px;
       margin-left: 100px;
     }
-    .folding-nav {
-      //top: 8px;
+    .new-post-button,
+    .sign-in-button  {
+      margin-right: 10px;
+    }
+    .account {
+      padding-top: 4px;
+    }
+    a.avatar-wrapper {
+      margin: 3px 15px 0 10px;
+    }
+    a.avatar-wrapper img.avatar-image {
+      height: 35px;
+      width: 35px;
     }
     #logo {
       width: 138px;
       margin-left: 0;
+      img {
+        height: 33px;
+      }
     }
     .new-post-button {
       display: inline-flex;
@@ -245,6 +265,7 @@ nav.navbar {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
+
   nav.navbar {
     #logo {
       width: auto;

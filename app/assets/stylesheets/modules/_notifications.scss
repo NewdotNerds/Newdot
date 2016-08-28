@@ -1,9 +1,11 @@
+/* Extra small devices (phones, less than 768px) */
+
 #notifications {
   a.dropdown-toggle.active {
     background-color: $red; //rgba($accent-color, 0.8);
     border-radius: 50%;
     border: 1px solid $red;
-    margin-top: 12px;
+    margin-top: 8px;
     width: 20px;
     height: 20px;
     font-size: 1em;
@@ -214,3 +216,23 @@
       opacity: 0.2;
     }
   }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  #notifications {
+    a.dropdown-toggle.active {
+      margin-top: 12px;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+
