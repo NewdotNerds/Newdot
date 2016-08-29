@@ -1,3 +1,5 @@
+/* Extra small devices (phones, less than 768px) */
+
 body.users.show,
 body.users.edit,
 body.recommended_posts.index {
@@ -24,6 +26,10 @@ body.recommended_posts.index {
   }
   .hero-avatar {
     margin-top: 45px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
   }
   .hero-title {
     font-weight: 700;
@@ -181,3 +187,28 @@ form.edit_user {
     width: 100%;
   }
 }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  body.users.show,
+  body.users.edit,
+  body.recommended_posts.index {
+    .hero-avatar {
+      img {
+        width: 150px;
+        height: 150px;
+      }
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+
