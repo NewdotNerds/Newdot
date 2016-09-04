@@ -114,14 +114,12 @@
     display: none;
     cursor: pointer;
     padding: 10px 5px 5px;
-    &:hover {
-      text-decoration: underline;
-    }
   }
   .back-options {
     background-color: $red;
     font-weight: bold;
     border-radius: 4px;
+    color: $white;
   }
   #large {
     margin-left: 15px;
