@@ -103,6 +103,38 @@
       font-size: 17px;
     } 
   }
+  .cont-main {
+   display: inline-flex;
+  }
+  .cont-choose {
+    display: flex;
+    justify-content: space-between;
+  }
+  .options-form {
+    display: none;
+    cursor: pointer;
+    padding: 10px 5px 5px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .back-options {
+    background-color: $red;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+  #large {
+    margin-left: 15px;
+  }
+  #choose {
+    margin-bottom: 12px;
+  }
+  .choose-form {
+    display: flex;
+  }
+  .dis-largeform {
+    display: inline;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
