@@ -17,8 +17,6 @@
 
   <div class="post-stats stats clearfix">
     <div style="display: flex;justify-content: space-around;">
-      
-    
       <div style="margin-top: 11px;">
         <i class="fa fa-eye eye-icon-wrapper" style="height: 18px;width: 18px;color: #ee4266;font-size: 18px;padding: 3px 0 0 6px;margin-right: 8px;"></i>
         <%= "#{post.impressionist_count}" %>
@@ -32,7 +30,6 @@
         <%= render partial: 'posts/bookmarks', locals: { post: post } %>
       </div>
     </div>
-
     <div class="response-count pull-right">
       <% if post.responses_count > 0 %>
         <%= link_to (pluralize(post.responses_count, "respuesta")), post_path(post, anchor: 'responses'), class: 'response-count' %>
