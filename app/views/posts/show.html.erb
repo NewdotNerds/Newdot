@@ -42,23 +42,28 @@
     </div>
 
     <div class="post-stats clearfix">
-      <div class="pull-left">
-        <%= render partial: 'posts/likes', locals: { post: @post } %>
-      </div>
-      <div class="pull-left">
-        <%= link_to post_path(@post, anchor: 'responses'), class: "response-icon-wrapper" do %>
-          <i class="fa fa-comment-o"></i>
-          <span class="response-count" data-behavior="response-count"><%= @post.responses_count %></span>
-        <% end %>
-      </div>
-      <div class="pull-left">
-        <i class="fa fa-eye eye-icon-wrapper"></i>
-        <%= "#{@post.impressionist_count}" %>
+      <div style="display: flex;justify-content: center;">
+
+        <div style="margin-top: 11px;margin-right: 80px;">
+          <i class="fa fa-eye eye-icon-wrapper"></i>
+          <%= "#{@post.impressionist_count}" %>
+        </div>
+
+        <div style="margin-top: 11px;text-align: center;margin-left: 80px;margin-right: 80px;">
+          <%= render partial: 'posts/likes', locals: { post: @post } %>
+        </div>
+
+        <div style="margin-top: 11px;margin-left: 80px;"">
+          <%= link_to post_path(@post, anchor: 'responses'), class: "response-icon-wrapper" do %>
+            <i class="fa fa-comment-o"></i>
+            <span class="response-count" data-behavior="response-count"><%= @post.responses_count %></span>
+          <% end %>
+        </div>
+        <div style="margin-top: 11px;>
+          <%= render partial: 'posts/bookmarks', locals: { post: @post } %>
+        </div>
       </div>
 
-      <div class="pull-right">
-        <%= render partial: 'posts/bookmarks', locals: { post: @post } %>
-      </div>
     </div>
 
     <!--<div class="author-info">
