@@ -1,23 +1,26 @@
 <div class="banner-container">
   <div class="hero-wrapper">
     <header class="hero">
-      <div class="hero-avatar">
-        <%= avatar_for @user, size: 150 %>
-      </div>
-      <div class="profile-info prof-user">
-        <h1 class="hero-title"><%= @user.username %></h1>
-        <h1 class="hero-description"><%= markdown(@user.description) %></h1>
-        <% if @user.location.present? %>
-          <div class="hero-location">
-            <%= icon('map-marker') %><%= @user.location %>
-          </div>
-        <% end %>
-        <div class="edit-user">
-          <% if user_signed_in? && current_user?(@user) %>
-            <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
+      <div class="just-flex">
+        <div class="hero-avatar">
+          <%= avatar_for @user, size: 150 %>
+        </div>
+        <div class="profile-info prof-user">
+          <h1 class="hero-title"><%= @user.username %></h1>
+          <h1 class="hero-description"><%= markdown(@user.description) %></h1>
+          <% if @user.location.present? %>
+            <div class="hero-location">
+              <%= icon('map-marker') %><%= @user.location %>
+            </div>
           <% end %>
+          <div class="edit-user">
+            <% if user_signed_in? && current_user?(@user) %>
+              <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
+            <% end %>
+          </div>
         </div>
       </div>
+
       <div class="hero-follow">
         <% if user_signed_in? %>
           <%= react_component('UserFollowContainer', 

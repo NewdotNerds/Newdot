@@ -1,6 +1,9 @@
+/* Extra small devices (phones, less than 768px) */
+
 .hero {
-  padding-top: 45px;
-  padding-bottom: 35px;
+  padding-top: 0;
+  padding-bottom: 0;
+  
 }
 .hero-title {
   color: $font-black;
@@ -9,3 +12,22 @@
   margin: 0;
   letter-spacing: -1.5px;
 }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  .hero {
+    padding-top: 45px;
+    padding-bottom: 35px;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
+}
+

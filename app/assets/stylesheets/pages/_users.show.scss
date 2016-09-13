@@ -8,24 +8,28 @@ body.recommended_posts.index {
     width: 100%;
   }
   .hero-wrapper {
-    width: 50%;
+    width: inherit;
     max-width: 720px;
-    margin: auto;
-    padding-bottom: 2.5em;
+    margin: auto 20px;
+    padding-bottom: 0;
   }
   .hero {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-bottom: 10px;
   }
+  .just-flex {
+    display: flex;
+  }
   .profile-info {
-    min-width: 40%;
+    min-width: 60%;
   }
   .prof-user {
-    margin: 50px 30px;
+    margin: 20px 10px 0px;
   }
   .hero-avatar {
-    margin-top: 45px;
+    margin-top: 20px;
     img {
       width: 40px;
       height: 40px;
@@ -33,12 +37,12 @@ body.recommended_posts.index {
   }
   .hero-title {
     font-weight: 700;
-    font-size: 32px;
+    font-size: 17px;
     cursor: default;
   }
   .hero-description {
     width: 85%;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
     line-height: 1.2;
     margin-top: 4px;
@@ -57,25 +61,28 @@ body.recommended_posts.index {
     }
   }
   .edit-user {
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .hero-follow {
-    margin: 50px 0;
+    margin: 0;
     .tongs-num {
       display: inline-flex;
-      margin: 20px 30px;
+      justify-content: center;
+      margin: 0;
+      width: 280px;
     }
   }
   .hero-tongs {
     max-height: 80px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     padding: 12px 0;
     color: $font-black;
   }
   [data-react-class="UserFollowContainer"] {
     display: inline-block;
-    width: 320px;
+    width: 280px;
+    text-align: center;
   }
 
   .following-metadata {
@@ -83,7 +90,7 @@ body.recommended_posts.index {
     display: inline-flex;
     > span {
       color: $light-font-color;
-      font-size: 16px;
+      font-size: 14px;
       cursor: pointer;
       &:hover {
         text-decoration: underline;
@@ -193,11 +200,56 @@ form.edit_user {
   body.users.show,
   body.users.edit,
   body.recommended_posts.index {
+    .hero {
+      flex-direction: initial;
+    }
+    .hero-wrapper {
+      width: 50%;
+      margin: auto;
+      padding-bottom: 2.5em;
+    }
+    .profile-info {
+      min-width: 100%;
+    }
+    .prof-user {
+      margin: 50px 30px;
+    }
     .hero-avatar {
+      margin-top: 45px;
       img {
         width: 150px;
         height: 150px;
       }
+    }
+    .hero-title {
+      font-size: 32px;
+    }
+    .hero-description {
+      font-size: 16px;
+    }
+    .edit-user {
+      margin-top: 30px;
+    }
+    .hero-follow {
+      margin: 50px 0;
+      .tongs-num {
+        display: inline-flex;
+        margin: 10px;
+      }
+    }
+    .hero-tongs {
+      font-size: 20px;
+    }
+    [data-react-class="UserFollowContainer"] {
+      width: 320px;
+    }
+    .following-metadata {
+      > span {
+        font-size: 16px;
+      }
+    }
+    .hero-follow {
+      margin: 50px 0 0 160px;
     }
   }
 }
