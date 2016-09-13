@@ -17,7 +17,6 @@
   }
   .editor-username {
     color: $accent-color;
-    margin-left: 12px;
     font-weight: normal;
   }
   .medium-editable {
@@ -60,7 +59,32 @@
     display: none;
   }
 }
+.cont-choose {
+  display: flex;
+  justify-content: space-between;
+}
 
+.cont-main {
+  display: inline-flex;
+}
+.options-form {
+  display: none;
+  cursor: pointer;
+  padding: 10px 5px 5px;
+}
+.back-options {
+  background-color: $red;
+  font-weight: bold;
+  border-radius: 4px;
+  color: $white;
+  font-size: 12px;
+}
+.choose-form {
+  display: flex;
+}
+#choose {
+  margin-bottom: 12px;
+}
 .inline-editor.active {
   .editor-metadata,
   .editor-form {
@@ -99,6 +123,9 @@
       height: 40px;
       width: 40px;
     }
+    .editor-username {
+      margin-left: 12px;
+    }
     .medium-editable {
       font-size: 17px;
     } 
@@ -116,10 +143,7 @@
     padding: 10px 5px 5px;
   }
   .back-options {
-    background-color: $red;
-    font-weight: bold;
-    border-radius: 4px;
-    color: $white;
+    font-size: 14px;
   }
   #large {
     margin-left: 15px;
