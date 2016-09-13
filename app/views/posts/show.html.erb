@@ -78,7 +78,7 @@
     </div>-->
 
     <% if user_signed_in? && current_user?(@post.user) %>
-      <div class="edit-delete-button-wrapper">
+      <div class="edit-delete-button-wrapper col-xs-10 col-md-8 col-md-offset-2 col-xs-offset-1" style="padding-top: 2em;padding-bottom: 2em;padding-left: 3%;padding-right: 3%;">
         <%= link_to "Editar", edit_post_path(@post), class: 'button edit-delete-post' %>
         <%= link_to "Eliminar", post_path(@post), method: :delete, class: 'button edit-delete-post', data: { confirm: "¿Deseas eliminar el post?"} %>
       </div>
