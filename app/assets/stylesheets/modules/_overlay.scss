@@ -1,3 +1,5 @@
+/* Extra small devices (phones, less than 768px) */
+
 .overlay-hugeinc {
   opacity: 0;
   visibility: hidden;
@@ -39,7 +41,7 @@
   background: rgba(255, 255, 255, 0.96);
   z-index: 10000; // FIXME
   .logo {
-    margin: 200px 0 50px 0;
+    margin: 100px 0 50px 0;
   }
 }
 
@@ -174,4 +176,24 @@
     display: flex;
     justify-content: space-around;
   }
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  /* Overlay style */
+  .overlay {
+    .logo {
+      margin: 200px 0 50px 0;
+    }
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }
