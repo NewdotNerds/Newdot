@@ -2,7 +2,7 @@
 
 .post-metadata {
   display: flex;
-  padding: 0 20px;
+  padding: 0;
   .post-info {
     padding-left: 10px;
     font-size: 13px;
@@ -19,8 +19,8 @@
   }
 }
 .main-content .post-metadata {
-  margin-top: 20px;
-  padding-bottom: 20px;
+  margin-top: 10px;
+  padding-bottom: 0;
 }
 .stats {
   padding: 0 20px;
@@ -39,9 +39,14 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
   .post-metadata {
+    padding: 0 20px;
     .post-info {
       font-size: 14px;
     }
+  }
+  .post-metadata {
+    margin-top: 20px;
+    padding-bottom: 20px;
   }
 }
 
