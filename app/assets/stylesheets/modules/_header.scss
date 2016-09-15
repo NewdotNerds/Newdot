@@ -1,6 +1,5 @@
 /* Extra small devices (phones, less than 768px) */
 
-
 body {
   padding-top: 0;
 }
@@ -105,8 +104,6 @@ nav.navbar {
     flex: 0 1 auto;
     align-self: auto;
   }
-
-
   .new-post-button a {
     transition: all .1s;
     color: $accent-color;
@@ -133,7 +130,7 @@ nav.navbar {
   }
 
   .account {
-    padding-top: 2px;
+    padding-top: 9px;
   }
   a.avatar-wrapper {
     padding: 0;
@@ -211,7 +208,17 @@ nav.navbar {
       font-weight: bold;
     }
   }
-
+}
+.header-dis {
+  display: inline;
+  margin-right: 0 !important;
+  padding-right: 0;
+}
+.contai-fluid {
+  display: flex;
+}
+.filter-hid {
+  display: none;
 }
 
 
@@ -259,6 +266,16 @@ nav.navbar {
     .new-post-button {
       display: inline-flex;
     }
+  }
+  .header-dis {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  .contai-fluid {
+    display: block;
+  }
+  .filter-hid {
+    display: flex;
   }
 }
 

@@ -1,3 +1,5 @@
+/* Extra small devices (phones, less than 768px) */
+
 body.posts.new,
 body.posts.edit,
 body.posts.update,
@@ -6,8 +8,8 @@ body.posts.create {
     border: none;
   }*/
   .post-metadata {
-    padding: 30px 0 15px;
-    margin-top: 20px;
+    padding: 30px 0 0;
+    margin-top: 0;
   }
   .publish-button {
     margin-top: 9px;
@@ -32,4 +34,36 @@ body.posts.create {
       flex-wrap: wrap !important;
     }
   }
+}
+.del-pad {
+  padding: 0;
+  margin-right: 8.33333333%;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  body.posts.new,
+  body.posts.edit,
+  body.posts.update,
+  body.posts.create {
+    .post-metadata {
+      padding: 30px 0 15px;
+      margin-top: 20px;
+    }
+  }
+  .del-pad {
+    padding: 0 15px;
+    margin-right: 0;
+  }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }

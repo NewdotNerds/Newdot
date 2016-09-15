@@ -5,7 +5,7 @@
         <%= image_tag('tong.png', class: 'left-logo', alt: "", title: "Tongs") %>
       <% end %>
     </div>
-    <div class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse header-dis">
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
           <li class="new-post-button"><%= link_to "Nuevo Post", new_post_path, class: "button button-dropdown-new-post" %></li>
