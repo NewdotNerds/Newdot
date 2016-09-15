@@ -4,20 +4,20 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { autocomplete: 'off' }) do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="form-input-wrapper-sessions white">
+        <div class="form-input-wrapper-sessions white-black">
           <%= f.text_field :username, autofocus: true, placeholder: "Nombre Completo", onfocus: "this.value = this.value;" %>
         </div>
 
-        <div class="form-input-wrapper-sessions white">
+        <div class="form-input-wrapper-sessions white-black">
           <%= f.email_field :email, placeholder: "Correo" %>
         </div>
 
         <% if f.object.password_required? %>
-          <div class="form-input-wrapper-sessions white">
+          <div class="form-input-wrapper-sessions white-black">
             <%= f.password_field :password, autocomplete: "off", placeholder: "Contraseña (mínimo #{@minimum_password_length} caracteres)" %>
           </div>
 
-          <div class="form-input-wrapper-sessions white">
+          <div class="form-input-wrapper-sessions white-black">
             <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Reingresa tu contraseña" %>
           </div>
         <% end %>

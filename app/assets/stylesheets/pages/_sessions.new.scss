@@ -1,14 +1,15 @@
+/* Extra small devices (phones, less than 768px) */
+
 body.sessions.new,
 body.registrations.new {
   input[type="text"],
   input[type="password"],
   input[type="email"] {
     font-size: 16px;
-    //font-weight: 100;
     width: 100%;
     border: none;
     outline: none;
-    background-color: transparent; //rgb(250, 255, 189);
+    background-color: $white;
   }
   .form-input-wrapper {
     width: 300px;
@@ -25,8 +26,9 @@ body.registrations.new {
     padding: 0.2em 0.5em;
     color: black;
   }
-  .white {
-    color: $white;
+  .white-black {
+    color: $black;
+    background-color: $white;
   }
   .buttons-session {
     width: 300px;
@@ -82,4 +84,19 @@ body.registrations.new {
 .signin-auth {
   padding-left: 0px;
   padding: 6px 25px 6px 25px;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+  
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+
 }
