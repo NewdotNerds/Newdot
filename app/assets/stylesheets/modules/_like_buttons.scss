@@ -20,7 +20,7 @@
 .like-count {
   font-size: 14px;
   position: relative;
-  top: 3.5px;
+  top: -13.5px;
   left: -3px;
   color: #898f9c;
   font-weight: 600;
@@ -92,7 +92,7 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
   .like-count {
-    top: -14.5px;
+    top: -13.5px;
   }   
 }
 
