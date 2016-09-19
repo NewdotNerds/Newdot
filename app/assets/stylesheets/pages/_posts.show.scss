@@ -325,6 +325,14 @@ body.posts.show {
     margin-left: 0;
     padding-left: 3%;
   }
+  .just-desktop {
+    display: flex;
+    justify-content: center;
+  }
+  .just-desktop-resp {
+    width: 50% !important;
+    margin-right: 16.66666667% !important;
+  }
 }
 
 /* Medium devices (desktops, 992px and up) */
