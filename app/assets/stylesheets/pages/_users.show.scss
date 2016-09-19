@@ -16,7 +16,7 @@ body.recommended_posts.index {
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding-bottom: 10px;
   }
   .just-flex {
@@ -251,6 +251,9 @@ form.edit_user {
     .hero-follow {
       margin: 50px 0 0 160px;
     }
+  }
+  .mrg-rgt-hero {
+    margin-right: 100px;
   }
 }
 
