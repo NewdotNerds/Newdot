@@ -47,8 +47,8 @@
 
 /* Overlay closing cross */
 .overlay .overlay-close {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   right: 20px;
   top: 20px;
@@ -59,6 +59,7 @@
   background-color: transparent;
   outline: none;
   z-index: 100;
+  margin-bottom: 20px;
 }
 
 /* Menu style */
@@ -71,11 +72,11 @@
 }
 
 .grayed-heading {
-  color: $light-font-color; //$white; //$light-gray;
+  color: $light-font-color;
   font-weight: bold;
   font-size: 20px;
+  margin: 0 20px;
 }
-
 
 .overlay-title {
   margin-top: 80px;
@@ -117,7 +118,6 @@
   display: block;
 }
 
-
 /* Effects */
 .overlay-hugeinc {
   opacity: 0;
@@ -152,12 +152,12 @@
 
 /*** Overlay for displaying users ***/
 .overlay-hugeinc nav.users-overlay {
-  top: 35%;
+  top: 45%;
   ul > li {
     display: flex;
     justify-content: flex-start;
     width: 420px;
-    margin: 35px 0;
+    margin: 35px 25px;
     position: relative;
     text-align: left;
     button {
@@ -185,6 +185,24 @@
     .logo {
       margin: 200px 0 50px 0;
     }
+  }
+  .overlay .overlay-close {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+  }
+  .grayed-heading {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .overlay-hugeinc nav.users-overlay {
+    top: 35%;
+    ul > li {
+      margin: 35px 0;
+    }
+  }
+  .margin-top-over {
+    margin-top: 60px;
   }
 }
 

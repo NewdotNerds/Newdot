@@ -53,7 +53,7 @@ class UserOverlay extends React.Component {
         <button className="overlay-close" onClick={this.handleCloseClick}>
           <span className="glyphicon glyphicon-remove"></span>
         </button>
-        <nav className="users-overlay">
+        <nav className="users-overlay margin-top-over">
           <h2 className="grayed-heading center">{this.state.overlayHeading}</h2>
           <ul>
             {this.renderUsers()}
