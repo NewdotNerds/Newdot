@@ -64,7 +64,7 @@
     display: block;
     text-align: center;
     margin: 10px 0;
-    color: #ccc;
+    color: $black;
     font-size: 0.8em;
     font-style: italic;
     outline: 0 solid transparent; }
