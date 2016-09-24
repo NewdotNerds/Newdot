@@ -4,7 +4,7 @@
         <header class="hero">
 
           <div class="profile-info">
-            <h1 class="hero-title"><%= @user.username %></h1>
+            <h1 class="hero-title"><%= f.text_field :username %></h1>
             <p class="hero-description"><%= f.text_area :description, rows: 3, autofocus: true, placeholder: "¡Cuéntale al mundo sobre tí!" %></p>
             <div class="hero-location">
               <%= icon('map-marker') %>
