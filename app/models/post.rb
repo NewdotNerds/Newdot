@@ -117,12 +117,12 @@ class Post < ActiveRecord::Base
   def generate_lead!
     if self.published?
       post_body = Nokogiri::HTML::Document.parse(self.body)
-      if post_body.css('h2').size > 0
+      if post_body.css('p').size > 0
+        self.lead = post_body.css('p')[0].to_s
+      elsif post_body.css('h2').size > 0
         self.lead = post_body.css('h2')[0].to_s
       elsif post_body.css('h3').size > 0
         self.lead = post_body.css('h3')[0].to_s
-      elsif post_body.css('p').size > 0
-        self.lead = post_body.css('p')[0].to_s
       end
     end
   end
