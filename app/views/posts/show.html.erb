@@ -5,7 +5,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:published_time" content="<%= @post.published_at.strftime('%Y-%m-%d %H:%M') %>" />
   <meta property="article:author" content="https://www.facebook.com/<%= @post.user.uid %>" />
-  <meta property="og:description" content="<%= sanitize(markdown(@post.body), length: 100) %>" />
+  <meta property="og:description" content="<%= truncate(markdown(@post.body), length: 100) %>" />
   <% if @post.picture %>
     <%= tag :meta, property: 'og:image:url', content: "#{@post.picture.url}" %>
   <% end %>
