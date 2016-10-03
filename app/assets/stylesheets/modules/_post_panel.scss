@@ -32,7 +32,7 @@
       font-size: 21px;
       line-height: 1.18;
       letter-spacing: -.022em;
-
+      word-wrap: break-word;
       p {
         @include well-read;
         font-size: 15px;

@@ -32,6 +32,7 @@ body.posts.show {
 
   .body {
     @include well-read;
+    word-wrap: break-word;
   }
 
   .post-tags {
