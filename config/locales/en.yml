@@ -24,6 +24,7 @@ en:
     label:
       user:
         Recuérdame: 
+        email: 
   date:
     abbr_day_names:
     - dom
