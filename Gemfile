@@ -92,7 +92,7 @@ group :production do
   
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
-  gem 'pry', '~> 0.10.4'
+  gem 'pry-rails', '~> 0.3.4'
 end
 
 
