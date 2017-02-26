@@ -30,10 +30,6 @@
     </div>
 
     <aside class="col-md-4">
-      <% if @tags.any? %>
-        <h4 class="small-heading border-top">Tags</h4>
-        <%= react_component('TagList', { tags: @tags }, { prerender: true }) %>
-      <% end %>
       <% if @users.any? %>
         <h4 class="small-heading border-top">Gente</h4>
         <% @users.each do |user| %>
