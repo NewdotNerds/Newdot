@@ -134,6 +134,9 @@ es-PE:
     label:
       user:
         email: 
+        remember_me: 
+      post:
+        attachment: 
   number:
     currency:
       format:
@@ -199,9 +202,16 @@ es-PE:
         email: 
         password: 
         password_confirmation: 
+        remember_me: 
       post:
         title: 
         body: 
         user_id: 
+        attachment: 
+      response:
+        body: 
+        post_id: 
+        user_id: 
     models:
       user: 
+      response: 

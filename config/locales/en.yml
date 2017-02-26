@@ -7,13 +7,20 @@ en:
         username: Username
         password: Password
         password_confirmation: Password confirmation
+        remember_me: Remember me
       post:
         title: Title
         body: Body
         user_id: User
+        attachment: Attachment
+      response:
+        body: Body
+        post_id: Post
+        user_id: User
     models:
       user: User
       post: Post
+      response: Response
   helpers:
     select:
       prompt: Por favor selecciona
@@ -25,6 +32,9 @@ en:
       user:
         Recuérdame: 
         email: 
+        remember_me: 
+      post:
+        attachment: 
   date:
     abbr_day_names:
     - dom
