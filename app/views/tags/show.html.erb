@@ -10,7 +10,7 @@
       <small class="heading-prefix">Tageado en</small>
       <h3 class="heading-title"><%= @dashboard.tag.name %></h3>
       
-      <% if user_signed_in? %>
+      <% if admin_signed_in? %>
         <%= link_to "Editar", edit_tag_path(@dashboard.tag), class: 'button a-to-button edit-button' %>
       <% end %>
     </div>
