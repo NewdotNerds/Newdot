@@ -23,6 +23,8 @@ class Tag < ActiveRecord::Base
 
   validates :name, presence: true
 
+  mount_uploader :course_image, CourseImageUploader
+  
   include SearchableTag
 
   extend FriendlyId

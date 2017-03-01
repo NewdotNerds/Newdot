@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :responses, only: [:create]
   end
 
-  resources :tags, only: [:show]
+  resources :tags, only: [:show, :edit, :update]
 
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
   get "top-stories" => "dashboards#top_stories", as: :top_stories

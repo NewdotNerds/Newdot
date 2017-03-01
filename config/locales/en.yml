@@ -8,6 +8,7 @@ en:
         password: Password
         password_confirmation: Password confirmation
         remember_me: Remember me
+        invitation_token: Invitation token
       post:
         title: Title
         body: Body
@@ -33,6 +34,8 @@ en:
         Recuérdame: 
         email: 
         remember_me: 
+        password: 
+        password_confirmation: 
       post:
         attachment: 
   date:
@@ -219,3 +222,7 @@ en:
       long: "%d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm
+  devise:
+    mailer:
+      invitation_instructions:
+        user_subject: Invitation instructions

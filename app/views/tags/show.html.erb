@@ -1,5 +1,5 @@
 <div class="col-md-6 col-md-offset-1 da-ma-co">
-
+  <%= image_tag @dashboard.tag.course_image.url(:thumb) if @dashboard.tag.course_image? %>
   <div>
     <div class="heading-container">
       <% if admin_signed_in? %>
@@ -9,7 +9,10 @@
       <% end %>
       <small class="heading-prefix">Tageado en</small>
       <h3 class="heading-title"><%= @dashboard.tag.name %></h3>
-
+      
+      <% if user_signed_in? %>
+        <%= link_to "Editar", edit_tag_path(@dashboard.tag), class: 'button a-to-button edit-button' %>
+      <% end %>
     </div>
 
     <div class="tag-followers-list">
