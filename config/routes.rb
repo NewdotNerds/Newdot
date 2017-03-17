@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   get 'hi' => "welcome#hi", as: :welcome_hi
+  get 'comunidad' => "comunidad#show", as: :comunidad_show
 
   root "dashboards#show"
   devise_for :admins, controllers: { sessions: 'admin/sessions' }
