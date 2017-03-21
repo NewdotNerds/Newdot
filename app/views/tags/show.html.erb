@@ -32,13 +32,13 @@
 <% content_for :sidebar do %>
   <aside class="col-md-3 col-md-offset-2 main-sidebar">
     <% if @related_tags.any? %>
-      <h4 class="small-heading border-top">Tags relacionados</h4>
+      <h4 class="small-heading border-top">Temas relacionados</h4>
       <%= react_component('TagList', { tags: @related_tags }) %>
     <% end %>  
 
     <!--<% if user_signed_in? %>-->
     <div class="flex-container border-top">
-      <h4 class="small-heading">Tags que sigues</h4>
+      <h4 class="small-heading">Temas que sigues</h4>
       <%= react_component('AddTagButton') %>
     </div>
     <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>

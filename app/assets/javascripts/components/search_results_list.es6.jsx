@@ -53,7 +53,7 @@ class SearchResultsList extends React.Component {
   renderTagHeading() {
     if (this.props.tags.length === 0) { return; }
 
-    return <li className="autocomplete-heading"><h4>Tags</h4></li>
+    return <li className="autocomplete-heading"><h4>Temas</h4></li>
   }
 }
 
