@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
   def welcome_email(user)
     @user = user
     @topstories = Post.top_stories(3).published
-    mail to: @user.email, subject: "Tongs"
+    mail to: @user.email, subject: "Comunidad Newdot"
   end
 end

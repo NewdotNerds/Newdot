@@ -6,7 +6,7 @@ RSpec.describe UserMailer, type: :mailer do
     let(:mail) { UserMailer.welcome_email(user) }
 
     it "renders the headers" do
-      expect(mail.subject).to eq("Bienvenido a Tongs")
+      expect(mail.subject).to eq("Bienvenido a Newdot")
       expect(mail.to).to eq([user.email])
       expect(mail.from).to eq(["tong@example.com"])
     end

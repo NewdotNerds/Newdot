@@ -7,7 +7,7 @@
       unlikeEndpoint: api_post_likes_path(post),
       likeableType: 'Post',
       likeableId: post.id,
-      overlayHeading: "Tongs de #{post.title}",
+      overlayHeading: "Likes de #{post.title}",
       overlayEndpoint: api_likers_path(post_id: post.id)}) %>
   <% else %>
     <%= button_to '', method: :get, class: 'like-button', data: { behavior: 'trigger-overlay' } do %>

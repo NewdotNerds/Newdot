@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html ng-app="Tongs">
+<html ng-app="Newdot">
 <head>
   <title>  
     <% if @post %>
-      <%= @post.title %> | Tongs
+      <%= @post.title %> | Newdot
     <% elsif @user %>
-      <%= @user.username %> | Tongs
+      <%= @user.username %> | Newdot
     <% elsif @tag %>
-      <%= @tag.name %> | Tongs
+      <%= @tag.name %> | Newdot
     <% else %>
-      Tongs
+      Newdot
     <% end %>
   </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -18,9 +18,9 @@
   <% if content_for?(:meta_og) %>
     <%= yield :meta_og %>
   <% else %>
-    <meta property="og:title" content="Tongs" />
+    <meta property="og:title" content="Newdot" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://tongs.co" />
+    <meta property="og:url" content="http://newdot.us" />
     <%= tag :meta, property: 'og:image', content: image_url('tongsession.svg') %>
   <% end %>
 

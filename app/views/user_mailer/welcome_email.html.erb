@@ -1,7 +1,7 @@
 <div style="max-width: 600px; margin: 0 30px 0 50px;">
   <div style="display: inline-flex;margin-top: 20px;font-size: 17px;">
     <div style="margin-left: -12px;">
-      <%= image_tag "tongstart.png", height: 50, alt: "", title: "Tongs" %>
+      <%= image_tag "tongstart.png", height: 50, alt: "", title: "Newdot" %>
     </div>
     <ul style="list-style: none;margin-left: 328px;display: inline-flex;font-size: 14px;font-family: helvetica, 'Open Sans', sans-serif;">
       <li style="margin-bottom: 5px;"><%= link_to "Edita tu perfil", @user, style: 'text-decoration: none;color:#ee4266' %></li>
@@ -14,14 +14,14 @@
   <p style="font-family: helvetica, 'Open Sans', sans-serif;
             color: rgba(0,0,0,0.8);line-height: 2.0;margin-bottom: -16px;font-size: 14px;">
     ¡Hola <%= @user.username.split(" ").first %>!<br/> Ahora ya puedes crear y consumir contenido relevante y aumentar tu valor profesional.<br/>
-    <strong>Te dejamos una pequeña guía para que saques el máximo provecho de Tongs:</strong>
+    <strong>Te dejamos una pequeña guía para que saques el máximo provecho de Newdot:</strong>
     <ul style="font-family: helvetica, 'Open Sans', sans-serif;list-style: none;padding: 1px 15px 15px;font-size: 14px;">
       <h4 style="margin-bottom: -9px;">Contenido:</h4>
       <p>Comparte contenido sobre los temas que sabes (ideas, intereses, experiencias). Lee posts interesantes de gente que sigues.</p>
       <h4 style="margin-bottom: -9px;">Busca:</h4>
       <p>¿Con ganas de explorar? Empieza a buscar gente, posts y temas. Seguro que más de un amigo ya está aquí compartiendo contenido sobre diversos temas.</p>
-      <h4 style="margin-bottom: -9px;">Tongs:</h4>
-      <p>Sí, adivinaste, es lo más importante. Si ves un post interesante, ¡dale tong!. Todos tienen un contador de tongs en su perfil.</p>
+      <h4 style="margin-bottom: -9px;">Newdot:</h4>
+      <p>Sí, adivinaste, es lo más importante. Si ves un post interesante, ¡dale like!. Todos tienen un contador de tongs en su perfil.</p>
     </ul>
   </p>
 </div>
@@ -30,7 +30,7 @@
   <div style="margin: 0 50px;padding-top: 5px; padding-bottom: 3px;text-align: center;">
     <small style="color: #898f9c; font-family: helvetica, 'Open Sans', sans-serif;
     font-size: 14px; font-weight: 100px; text-transform: uppercase; 
-    letter-spacing: 0.1px;">Estos son los posts con más <strong>tongs</strong></small>
+    letter-spacing: 0.1px;">Estos son los posts con más <strong>likes</strong></small>
   </div>
   
   <% @topstories.each do |post| %>
