@@ -21,7 +21,7 @@
     <meta property="og:title" content="Newdot" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://newdot.us" />
-    <%= tag :meta, property: 'og:image', content: image_url('tongsession.svg') %>
+    <%= tag :meta, property: 'og:image', content: image_url('newdot-logo.svg') %>
   <% end %>
 
   <%= csrf_meta_tags %>
@@ -39,8 +39,12 @@
 
   <% if admin_signed_in? %>
     <%= render 'layouts/admin_header' %>
+  
   <% else %>
-    <%= render 'layouts/header' %>
+    <% unless request.path == comunidad_show_path %>
+      <%= render 'layouts/header' %>
+    <% end %>
+    
   <% end %>
   <%= render 'layouts/alert_messages' %>
 

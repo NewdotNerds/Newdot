@@ -1,3 +1,156 @@
-<div class="overlay-main" style="background: url(<%= randomized_background_image %>) no-repeat center center fixed;z-index: 10000;">
-  <div style="margin-top: 300px;font-size: 30px;color: black;font-weight: bold;">Ey! estamos haciendo esta vista justo ahorita.</br>En un rato ya está, vuelve pronto! 😅</div>
-</div>
+<DOCTYPE html>
+<html>
+  <head>
+    
+    <!-- css files -->
+    <link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700' rel='stylesheet' type='text/css'> 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
+
+    <script>
+    	
+      $(document).ready(function(){
+  
+		  // variables
+		  var $header_top = $('.header-top');
+		  var $nav = $('nav');
+
+
+
+		  // toggle menu 
+		  $header_top.find('a').on('click', function() {
+		    $(this).parent().toggleClass('open-menu');
+		  });
+
+
+
+		  // fullpage customization
+		  $('#fullpage').fullpage({
+		    sectionsColor: ['#B8AE9C', '#348899', '#F2AE72', '#5C832F', '#B8B89F'],
+		    sectionSelector: '.vertical-scrolling',
+		    slideSelector: '.horizontal-scrolling',
+		    navigation: true,
+		    slidesNavigation: true,
+		    css3: true,
+		    controlArrows: false,
+		    anchors: ['firstSection', 'secondSection', 'thirdSection', 'fourthSection', 'fifthSection'],
+		    menu: '#menu',
+
+		    afterLoad: function(anchorLink, index) {
+		      $header_top.css('background', 'rgba(0, 47, 77, .3)');
+		      $nav.css('background', 'rgba(0, 47, 77, .25)');
+		      if (index == 5) {
+		          $('#fp-nav').hide();
+		        }
+		    },
+
+		    onLeave: function(index, nextIndex, direction) {
+		      if(index == 5) {
+		        $('#fp-nav').show();
+		      }
+		    },
+
+		    afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+		      if(anchorLink == 'fifthSection' && slideIndex == 1) {
+		        $.fn.fullpage.setAllowScrolling(false, 'up');
+		        $header_top.css('background', 'transparent');
+		        $nav.css('background', 'transparent');
+		        $(this).css('background', '#374140');
+		        $(this).find('h2').css('color', 'white');
+		        $(this).find('h3').css('color', 'white');
+		        $(this).find('p').css(
+		          {
+		            'color': '#DC3522',
+		            'opacity': 1,
+		            'transform': 'translateY(0)'
+		          }
+		        );
+		      }
+		    },
+
+		    onSlideLeave: function( anchorLink, index, slideIndex, direction) {
+		      if(anchorLink == 'fifthSection' && slideIndex == 1) {
+		        $.fn.fullpage.setAllowScrolling(true, 'up');
+		        $header_top.css('background', 'rgba(0, 47, 77, .3)');
+		        $nav.css('background', 'rgba(0, 47, 77, .25)');
+		      }
+		    } 
+		  }); 
+		});
+
+    </script>
+
+  </head>
+
+  <body>
+
+    <header>
+      <div class="header-top clearfix">
+        <h1 class="newdot-word-logo">Newdot</h1>
+        <h1 class="comunidad-link">
+          <%= nav_link_to "Ve a la comunidad online", root_path, class: 'logo-left' %>
+        </h1>
+        
+      </div>
+
+      <nav class="hide">
+        <ul id="menu">
+          <li data-menuanchor="firstSection">
+            <a href="#firstSection" title="First Section">First Section</a>
+          </li>
+          <li data-menuanchor="secondSection">
+            <a href="#secondSection" title="Second Section">Second Section</a>
+          </li>
+          <li data-menuanchor="thirdSection">
+            <a href="#thirdSection" title="Second Section">Third Section</a>
+          </li>
+          <li data-menuanchor="fourthSection">
+            <a href="#fourthSection" title="Fourth Section">Fourth Section</a>
+          </li>
+          <li data-menuanchor="fifthSection">
+            <a href="#fifthSection" title="First Slide">First Slide</a>
+          </li>
+          <li data-menuanchor="fifthSection/1">
+            <a href="#fifthSection/1" title="Second Slide">Second Slide</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="fullpage">
+      <section class="vertical-scrolling background-image-1era">
+        <h2><strong>El mejor futuro</strong></h2>
+        <h3 class="h3-content">Estamos construyendo una comunidad global de pensadores y creadores para inventar la mejor versión del planeta. Únete a nosotros en esta gran aventura.</br> <strong>El futuro es nuestro.</strong></h3>
+        <object data="assets/newdotlogo.svg" type="image/svg+xml" style="height: 150px;"></object>
+        <div class="scroll-icon">
+          <a href="#secondSection" class="fa fa-chevron-down arrow-down" aria-hidden="true"></a>
+        </div>
+      </section>
+
+      <section class="vertical-scrolling">
+        <h2><strong>Reuniones Newdot</strong></h2>
+        <h3 class="h3-content">Todos los meses tenemos reuniones donde cualquier persona puede compartir un tema de interés con la comunidad, para luego trabajar en equipos y desarrollar proyectos tangibles.</h3>
+      </section>
+
+      <section class="vertical-scrolling background-image-2da">
+        <h2 class="convocatoria-title"><strong>¡Convocatorias abiertas!</strong></h2>
+        <div class="convocatorias">
+          <div class="speakers">
+            <h3 class="speakers-title"><strong>Speakers</strong></h3>
+            <p class="speakers-title" style="font-size: 16px;">Todos tenemos temas que nos interesan, gustan, apasionan, entretienen. Cuando pienses en compartirlos, Newdot es el mejor lugar para hacerlo. Haz que el mundo sepa lo que sabes. Las reuniones de Newdot son el momento perfecto para imaginarnos y sobretodo empezar a crear ese futuro que queremos para el mundo.</p>
+          </div>
+          <div class="equipo">
+            <h3 class="equipo-title"><strong>Equipo Newdot</strong></h3>  
+            <p class="equipo-title" style="font-size: 16px;"><strong>¡Estamos reclutando!</strong>, siempre estamos abiertos a conocer gente nueva que quiera unirse a nuestro crew. Aquí estamos imaginando y creando el mejor futuro para el planeta. ¿Crees que puedes aportar con tu talento?, escríbenos: hola@newdot.us</p>  
+          </div>
+        </div>
+      </section>
+      
+    </div>
+ 
+    <!-- js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
+    <script src="js/main.js"></script>
+
+  </body> 
+</html>
