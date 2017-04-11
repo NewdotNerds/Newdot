@@ -6,7 +6,7 @@ gem 'puma', '~> 2.15'
 gem 'pg', '~> 0.15'
 
 #Auth
-gem 'devise', '~> 4.2', '>= 4.2.1'
+gem 'devise', '~> 4.2'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
