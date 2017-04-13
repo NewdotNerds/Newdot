@@ -3,7 +3,7 @@
   <%= avatar_for post.user, size: 40 %>
     <div class="post-info">
       <%= react_component("PopoverLink", { user_id: post.user.id, url: user_path(post.user), children: post.username }) %>
-      <small><%= time_ago_in_words(post.published_at) %> &#149; <%= post_length_in_minutes(post.body) %></small>
+      <small><%= post_length_in_minutes(post.body) %></small> <!--  <%= time_ago_in_words(post.published_at) %> &#149;  -->
     </div>
   </div>
   <% if user_signed_in? && current_user?(post.user) %>
