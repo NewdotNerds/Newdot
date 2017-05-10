@@ -51,7 +51,7 @@ nav.navbar {
   border-color: $super-light-gray;
   &.navbar-default {
     background-color: $white;
-    border-bottom: 2px solid $red;
+    border-bottom: 2px solid $green;
   }
 
   .fix-width {
@@ -75,11 +75,11 @@ nav.navbar {
       color: $accent-color; 
       font-weight: 400;
       &.active {
-        color: $red;
+        color: $green;
         font-weight: bold;
       }
       &:hover, &:focus {
-        color: $red;
+        color: $green;
       }
     }
   }
