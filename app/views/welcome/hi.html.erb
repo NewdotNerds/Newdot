@@ -1,13 +1,14 @@
 <div class="overlay-main" style="background: url(<%= randomized_background_image %>) no-repeat center center fixed;z-index: 10000;">
   <object data="assets/newdotlogo.svg" type="image/svg+xml" height="200"></object>
   <div class="welcome-desc">
-    <p class="desc-first hidden-xs">Esto es Newdot. Jajaja</p>
-    
+    <p class="desc-first hidden-xs">Conoce los temas de los que hablan tus amigos y aprende de ellos.</p>
+    <p class="desc-second"><strong>Comparte todo lo que sepas o te apasione.</strong></p>
+    <p class="desc-third">Aumenta tu valor profesional</p>
   </div>
   <ul class="auth">
     <li class="omniauth-button">
       <%= link_to user_omniauth_authorize_path(:facebook), class: 'button social facebook' do %>
-        <%= icon('facebook-official') %>¡Únete a la comunidad!
+        <%= icon('facebook-official') %>Continúa con Facebook!
       <% end %>
     </li>
     <li class="regular-signin">
