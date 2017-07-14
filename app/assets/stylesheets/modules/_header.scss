@@ -110,7 +110,7 @@ nav.navbar {
   }
   .new-post-button:hover {
     a {
-      color: $red; 
+      color: $green; 
       border-color: $border-hover-color;
     }
   }
@@ -159,7 +159,7 @@ nav.navbar {
       color: #555;//$light-font-color;
       &:hover {
         background-color: $white;
-        color: $red;
+        color: $green;
       }
     }
     .nd-main {

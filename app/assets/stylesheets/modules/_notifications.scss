@@ -2,9 +2,9 @@
 
 #notifications {
   a.dropdown-toggle.active {
-    background-color: $red; //rgba($accent-color, 0.8);
+    background-color: $green; //rgba($accent-color, 0.8);
     border-radius: 50%;
-    border: 1px solid $red;
+    border: 1px solid $green;
     margin-top: 8px;
     width: 20px;
     height: 20px;
@@ -31,7 +31,7 @@
     #bell {
       color: $accent-color;
       &:hover {
-        color: $red;
+        color: $green;
       }
     }
     span#new-notifications-count {
