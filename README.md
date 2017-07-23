@@ -1,5 +1,12 @@
-# Tongs
-Tongs lucha por un internet con contenido de calidad para las personas.
+# Newdot
+Fue creado para ayudarte a compartir los temas que más dominas y aumentar tu valor profesional.
+
+Desarrollado con Ruby on Rails y ReactJS. Usa PostgreSQL como base de datos.
+
+Trabaja con Elasticsearch, un motor de búsqueda para encontrar personas, posts y temas.
+
+También usa Redis y Sidekiq para colas de trabajo (índices de Elasticsearch, mailer y sidekiq).
+
 
 ## Dependencias
 
