@@ -16,7 +16,7 @@
   </div>
 
   <div class="post-stats stats clearfix">
-    <!-- <div style="display: flex;justify-content: space-around;">
+    <div style="display: flex;justify-content: space-around;">
       
 
       <div style="text-align: center;">
@@ -26,7 +26,7 @@
       <div style="margin-top: 11px;">
         <%= render partial: 'posts/bookmarks', locals: { post: post } %>
       </div>
-    </div> -->
+    </div>
     <div class="response-count pull-right">
       <% if post.responses_count > 0 %>
         <%= link_to (pluralize(post.responses_count, "respuesta")), post_path(post, anchor: 'responses'), class: 'response-count' %>

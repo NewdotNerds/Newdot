@@ -48,7 +48,7 @@
       <div style="margin: 0; padding-top: 15px; display: flex;">
         <%= avatar_for post.user, size: 40, style: "border-radius: 50%; margin-right: 12px;" %>
         <div>
-          <%= link_to post.username, user_url(post.user), style: "color: #EE4266;
+          <%= link_to post.username, user_url(post.user), style: "color: #04bf75;
               text-decoration: none; font-family: helvetica, 'Open Sans', sans-serif;;" %><br/>
               <small style="color: rgba(0,0,0,0.8); font-family: helvetica, 'Open Sans', sans-serif;">
                 <%= time_ago_in_words(post.created_at) %> &#149; <%= post_length_in_minutes(post.body) %>
