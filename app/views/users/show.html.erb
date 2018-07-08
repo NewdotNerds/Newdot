@@ -16,6 +16,7 @@
           <div class="edit-user">
             <% if user_signed_in? && current_user?(@user) %>
               <%= link_to "Editar", edit_user_path(@user), class: 'button a-to-button edit-button' %>
+              <%= link_to "Resume", asset_path("thinkdoers_experience.pdf"), :target => "blank" %>
             <% end %>
           </div>
         </div>
