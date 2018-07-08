@@ -89,7 +89,7 @@ group :test do
 end
 
 group :production do
-  
+  gem 'coffee-rails', '~> 4.1.0'
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
   gem 'pry-rails', '~> 0.3.4'
