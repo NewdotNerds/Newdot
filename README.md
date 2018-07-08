@@ -1,52 +1,52 @@
 # Newdot
-Fue creado para ayudarte a compartir los temas que más dominas y aumentar tu valor profesional.
+It was created to help you share the topics that you master and increase your professional value.
 
-Desarrollado con Ruby on Rails y ReactJS. Usa PostgreSQL como base de datos.
+Developed with Ruby on Rails and ReactJS. Use PostgreSQL as a database.
 
-Trabaja con Elasticsearch, un motor de búsqueda para encontrar personas, posts y temas.
+Work with Elasticsearch, a search engine to find people, posts and topics.
 
-También usa Redis y Sidekiq para colas de trabajo (índices de Elasticsearch, mailer y sidekiq).
+It also uses Redis and Sidekiq for work queues (Elasticsearch, mailer and sidekiq indexes).
 
 
-## Dependencias
+## Dependencies
 
-Para instrucciones especializadas según plataforma visita https://gorails.com/setup.
+For specialized instructions according to platform visit https://gorails.com/setup.
 
-1. Instala Ruby 2.3.0 con Homebrew:
-`brew install rbenv ruby-build` y luego `rbenv install 2.3.0`
+1. Install Ruby 2.3.0 with Homebrew:
+`brew install rbenv ruby-build` and then `rbenv install 2.3.0`
 
-2. Instala Rails 4.2.6:
-`gem install rails -v 4.2.6` y luego `rbenv rehash`
+2. Install Rails 4.2.6:
+`gem install rails -v 4.2.6` and then `rbenv rehash`
 
-3. Instala PostgreSQL:
+3. Install PostgreSQL:
 `brew install postgresql`
 
-4. Instala Elasticsearch:
+4. Install Elasticsearch:
 `brew install elasticsearch`
 
-5. Instala Redis:
+5. Install Redis:
 `brew install redis`
 
-No olvides correr PostgreSQL, Elasticsearch y Redis en el momento o como background services: `brew services start postgresql elasticsearch redis`
+Don't forget to run PostgreSQL, Elasticsearch and Redis at the moment or as background services: `brew services start postgresql elasticsearch redis`
 
-## Este repositorio
+## This repository
 
-1. Clona Tongs:
+1. CLone Newdot:
 `git clone git@github.com:omartorresrios/Tongs.git`
 
-2. Installa todas las gemas:
+2. Install al the gems:
 `cd Tongs` y luego `bundle install`
 
-3. Ejecuta Sidekiq, Elasticsearch y Mailer:
+3. Execute Sidekiq, Elasticsearch and Mailer:
 `bundle exec sidekiq -q elasticsearch -q mailer -c 3`
 
-4. Instala y migra la base de datos:
+4. Install and migrate db:
 `rake db:setup` y luego `rake db:migrate`
 
-5. Crea un index con Elasticsearch:
+5. Create an index with Elasticsearch:
 `rake elasticsearch:reindex`
 
-6. Corre el servidor local:
+6. Run local server:
 `rails server`
 
 Happy coding!
