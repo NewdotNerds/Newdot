@@ -167,6 +167,14 @@
     font-size: 1em;
   }
 
+  .hi-background-image {
+    background-image: image-url("background/burning-man.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    z-index: 10000
+  }
+
   .overlay-signin {
     position: fixed;
     width: 100%;
