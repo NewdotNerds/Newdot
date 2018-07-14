@@ -1,5 +1,7 @@
 <div class="overlay-main hi-background-image">
-  <object data="assets/newdotlogo.svg" type="image/svg+xml" height="200"></object>
+  <%= image_tag('newdotlogo.svg', "data-svg-fallback" => image_path('logo.svg'),:style => "height: 200px;") %>
+  
+  
   <div class="welcome-desc">
     <p class="desc-first hidden-xs">Conoce los temas de los que hablan tus amigos y aprende de ellos.</p>
     <p class="desc-second"><strong>Comparte todo lo que sepas o te apasione.</strong></p>
