@@ -10,7 +10,7 @@ module SearchableUser
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :username, analyzer: 'autocomplete'
+        indexes :username, type: 'text', analyzer: 'autocomplete'
         indexes :email, type: 'text'
         indexes :avatar_url, type: 'text'
         indexes :slug, type: 'text'
