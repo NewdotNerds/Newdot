@@ -12,7 +12,7 @@ module SearchableUser
       mappings dynamic: 'false' do
         indexes :username, analyzer: 'autocomplete'
         indexes :email
-        indexes :avatar_url
+        indexes :avatar_url, type: 'text'
         indexes :slug
       end
     end
