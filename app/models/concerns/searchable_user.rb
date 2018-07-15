@@ -13,7 +13,7 @@ module SearchableUser
         indexes :username, analyzer: 'autocomplete'
         indexes :email, type: 'text'
         indexes :avatar_url, type: 'text'
-        indexes :slug
+        indexes :slug, type: 'text'
       end
     end
 
