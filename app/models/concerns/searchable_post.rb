@@ -10,7 +10,7 @@ module SearchablePost
 
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
-        indexes :title => [type: 'text', analyzer: 'autocomplete']
+        indexes :title, type: 'text', analyzer: 'autocomplete'
         indexes :body, analyzer: 'english'
         indexes :published_at
         indexes :slug
