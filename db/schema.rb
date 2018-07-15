@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180715033904) do
+ActiveRecord::Schema.define(version: 20180715034858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -122,7 +122,7 @@ ActiveRecord::Schema.define(version: 20180715033904) do
     t.datetime "published_at"
     t.boolean  "featured",          default: false
     t.text     "lead"
-    t.string   "slug"
+    t.text     "slug"
     t.integer  "responses_count",   default: 0,     null: false
     t.integer  "impressions_count"
     t.integer  "counter_cache"
@@ -177,7 +177,7 @@ ActiveRecord::Schema.define(version: 20180715033904) do
   add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string   "name"
+    t.text     "name"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.boolean  "featured",       default: false

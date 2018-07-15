@@ -13,9 +13,9 @@ module SearchablePost
         indexes :title, type: 'text', analyzer: 'autocomplete'
         indexes :body, analyzer: 'english'
         indexes :published_at
-        indexes :slug
+        indexes :slug, type: 'text'
         indexes :tags do
-          indexes :name, analyzer: 'english'
+          indexes :name, type: 'text', analyzer: 'english'
         end
         indexes :user do
           indexes :username, analyzer: 'english'
