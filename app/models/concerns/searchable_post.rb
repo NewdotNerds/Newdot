@@ -12,7 +12,7 @@ module SearchablePost
       mappings dynamic: 'false' do
         indexes :title, type: 'text', analyzer: 'autocomplete'
         indexes :body, type: 'text', analyzer: 'english'
-        indexes :published_at
+        indexes :published_at, type: 'text'
         indexes :slug, type: 'text'
         indexes :tags do
           indexes :name, type: 'text', analyzer: 'english'
