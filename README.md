@@ -1,52 +1,21 @@
-# Newdot
-It was created to help you share the topics that you master and increase your professional value.
-
-Developed with Ruby on Rails and ReactJS. Use PostgreSQL as a database.
-
-Work with Elasticsearch, a search engine to find people, posts and topics.
-
-It also uses Redis and Sidekiq for work queues (Elasticsearch, mailer and sidekiq indexes).
+![newdot](https://user-images.githubusercontent.com/14302316/52187865-c2356880-27fd-11e9-80be-ba6821ede678.png)
 
 
-## Dependencies
+# 🌎 NEWDOT
+Newdot helps you share the topics you master the most and increase your professional value.
 
-For specialized instructions according to platform visit https://gorails.com/setup.
+Link: [here](http://www.newdot.us/)
 
-1. Install Ruby 2.3.0 with Homebrew:
-`brew install rbenv ruby-build` and then `rbenv install 2.3.0`
+## Main Features
+* Write articles.
+* Beautiful modern editor.
+* Section on the feed to be able to follow people.
+* Like and comment posts on the feed.
+* Search engine to find people, tags and posts.
+* Dashboard for Admin users.
 
-2. Install Rails 4.2.6:
-`gem install rails -v 4.2.6` and then `rbenv rehash`
-
-3. Install PostgreSQL:
-`brew install postgresql`
-
-4. Install Elasticsearch:
-`brew install elasticsearch`
-
-5. Install Redis:
-`brew install redis`
-
-Don't forget to run PostgreSQL, Elasticsearch and Redis at the moment or as background services: `brew services start postgresql elasticsearch redis`
-
-## This repository
-
-1. CLone Newdot:
-`git clone git@github.com:omartorresrios/Tongs.git`
-
-2. Install al the gems:
-`cd Tongs` y luego `bundle install`
-
-3. Execute Sidekiq, Elasticsearch and Mailer:
-`bundle exec sidekiq -q elasticsearch -q mailer -c 3`
-
-4. Install and migrate db:
-`rake db:setup` y luego `rake db:migrate`
-
-5. Create an index with Elasticsearch:
-`rake elasticsearch:reindex`
-
-6. Run local server:
-`rails server`
-
-Happy coding!
+## Technical characteristics
+* Backend: Ruby on Rails, PostgreSQL and Redis.
+* Frontend: ReactJS, HTML, CSS, jQuery.
+* Work with Elasticsearch, a search engine to find people, posts and topics.
+* Work with Sidekiq for work queues (Elasticsearch, mailer and sidekiq indexes).
